@@ -10,10 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_091031) do
+ActiveRecord::Schema.define(version: 2020_08_24_162223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "track_id", null: false
+    t.boolean "correct_artist"
+    t.boolean "correct_title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_answers_on_player_id"
+    t.index ["track_id"], name: "index_answers_on_track_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "max_score"
+    t.string "state"
+    t.bigint "playlist_id", null: false
+    t.integer "current_track_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["playlist_id"], name: "index_games_on_playlist_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "user_name"
+    t.integer "score"
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_players_on_game_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "spotify_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "title"
+    t.string "artist"
+    t.integer "duration_ms"
+    t.bigint "game_id", null: false
+    t.string "spotify_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_tracks_on_game_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +74,15 @@ ActiveRecord::Schema.define(version: 2020_08_24_091031) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "players"
+  add_foreign_key "answers", "tracks"
+  add_foreign_key "games", "playlists"
+  add_foreign_key "games", "users"
+  add_foreign_key "players", "games"
+  add_foreign_key "tracks", "games"
 end
