@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_101841) do
     t.integer "current_track_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "game_pin"
     t.index ["playlist_id"], name: "index_games_on_playlist_id"
     t.index ["user_id"], name: "index_games_on_user_id"
   end

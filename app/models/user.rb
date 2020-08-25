@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :games
+
   devise :omniauthable, :omniauth_providers => [:spotify]
 
   def self.from_omniauth(auth)
@@ -12,4 +13,6 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
+
+  validates :user_name, presence: true
 end
