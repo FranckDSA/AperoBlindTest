@@ -30,7 +30,7 @@ class GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:max_score, :playlist)
+    params.require(:game).permit(:max_score, :playlist_id)
   end
 
   def set_game

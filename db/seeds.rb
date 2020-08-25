@@ -1,13 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-require 'open-uri'
-require 'json'
+p "Destroying tables..."
 
-url = 'https://api.spotify.com/v1/browse/featured-playlists'
-p data = JSON.parse(open(url).string)
+Playlist.destroy_all
+Game.destroy_all
+
+p "Tables destroyed!"
+
+playlist_id_cuba = "1KGdyl3UgwzO6wG1Ivksnp"
+playlist_id_diner = "37i9dQZF1DX915ogFalrko"
+playlist_id_hits = "37i9dQZF1DXdPec7aLTmlC"
+playlist_id_annees2000 = "37i9dQZF1DXacPj7eARo6k"
+playlist_id_bofilm = "37i9dQZF1DX7g9DBqnMitx"
+playlist_id_dance = "37i9dQZF1DWUwJ0RFwrgQP"
+
+playlists = []
+playlists << playlist_id_cuba
+playlists << playlist_id_diner
+playlists << playlist_id_hits
+playlists << playlist_id_annees2000
+playlists << playlist_id_bofilm
+playlists << playlist_id_dance
+
+playlists.each do |id|
+  playlist = RSpotify::Playlist.find_by_id(id)
+  Playlist.create(
+    name: playlist.name,
+    image: playlist.images.first["url"],
+    spotify_id: playlist.id
+    )
+end
+
+p "Playlists created"
+
