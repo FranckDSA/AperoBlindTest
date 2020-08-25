@@ -15,6 +15,7 @@ class AnswersController < ApplicationController
     @game.save
     @answer.player_id = current_player.id
     @answer.track_id = @game.current_track_id
+
     @answer.save!
   end
 
