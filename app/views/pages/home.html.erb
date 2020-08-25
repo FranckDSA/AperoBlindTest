@@ -1,7 +1,14 @@
 
+
 <%= simple_form_for :player, url: players_path, defaults: {label: false}, method: "POST" do |f| %>
   <%= f.input :game_pin_entered %>
   <%= f.input :username %>
   <%= f.submit "Enter the Game!", class: "" %>
 <% end %>
-Ò
+
+
+<%= link_to "Create a new game", omniauth_authorize_path(:user, :spotify) %>
+
+
+
+
