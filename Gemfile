@@ -22,6 +22,8 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-spotify'
+gem 'rspotify', '~> 2.9.1'
+gem 'faker'
 # cloudinary
 gem 'cloudinary', '~> 1.12.0'
 
