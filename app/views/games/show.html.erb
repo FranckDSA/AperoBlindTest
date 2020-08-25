@@ -7,7 +7,13 @@
 
 <p>
   <% @game.players.each do |player| %>
-  <%= player.user_name %> is ready to play
+  <li><%= player.user_name %> is ready to play</li>
   <% end %>
 </p>
+
+<p>
+  <%= @game.state %>
+</p>
+
+<button id="launch-game" type="button" class="btn btn-light" data-state="<%= @game.state %>">Launch the game</button>
 
