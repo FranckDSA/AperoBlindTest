@@ -24,8 +24,6 @@ class AnswersController < ApplicationController
   end
 
   def update
-    raise
-    #On selectionne la dernière réponse et on bloque les autres players
     @answer = @game.answers.last
     @answer.update(answer_params)
   end
