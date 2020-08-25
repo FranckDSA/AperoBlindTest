@@ -15,6 +15,7 @@ class AnswersController < ApplicationController
     @game.save
     @answer.player_id = current_player.id
     @answer.track_id = @game.current_track_id
+
     @answer.save!
   end
 
@@ -23,8 +24,6 @@ class AnswersController < ApplicationController
   end
 
   def update
-    raise
-    #On selectionne la dernière réponse et on bloque les autres players
     @answer = @game.answers.last
     @answer.update(answer_params)
   end
