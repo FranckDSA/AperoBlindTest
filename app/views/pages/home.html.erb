@@ -1,6 +1,6 @@
 
 
-<%= simple_form_for :player, url: players_path, defaults: {label: false}, method: "POST" do |f| %>
+<%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
   <%= f.input :game_pin_entered %>
   <%= f.input :username %>
   <%= f.submit "Enter the Game!", class: "" %>
