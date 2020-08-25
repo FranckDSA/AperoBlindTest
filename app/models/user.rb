@@ -21,4 +21,5 @@ class User < ApplicationRecord
   end
 
   validates :user_name, presence: true
+  has_one_attached :photo
 end
