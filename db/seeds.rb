@@ -44,7 +44,8 @@ game = Game.create!(
   user_id: User.first.id,
   state: "pending",
   max_score: 20,
-  playlist_id: Playlist.first.id
+  playlist_id: Playlist.first.id,
+  game_pin: (('0'..'9').to_a + ('a'..'z').to_a).sample(4).join
   )
 
 p "Game created"
