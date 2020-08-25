@@ -4,6 +4,7 @@ p "Destroying tables..."
 
 Playlist.destroy_all
 Game.destroy_all
+User.destroy_all
 
 p "Tables destroyed!"
 
@@ -24,7 +25,7 @@ playlists << playlist_id_dance
 
 playlists.each do |id|
   playlist = RSpotify::Playlist.find_by_id(id)
-  Playlist.create(
+  Playlist.create!(
     name: playlist.name,
     image: playlist.images.first["url"],
     spotify_id: playlist.id
@@ -33,3 +34,25 @@ end
 
 p "Playlists created"
 
+user = User.create!(
+  email: "nicolas.kiger@gmail.com",
+  password: "123456",
+  user_name: "Nico",
+  uid: "9blz2ine1b7ffzwhkpdjy75za")
+
+game = Game.create!(
+  user_id: User.first.id,
+  state: "pending",
+  max_score: 20,
+  playlist_id: Playlist.first.id
+  )
+
+p "Game created"
+
+3.times do
+  player = Player.create!(
+    user_name: Faker::Superhero.name,
+    game_id: Game.first.id,
+    score: 0
+  )
+end
