@@ -1,0 +1,5 @@
+<%= simple_form_for @game, defaults: {label: false}, method: "POST" do |f| %>
+  <%= f.input :max_score %>
+  <%= f.association :playlist %>
+  <%= f.submit "Create a new game", class: "" %>
+<% end %>
