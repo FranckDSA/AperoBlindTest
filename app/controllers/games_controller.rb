@@ -17,7 +17,9 @@ class GamesController < ApplicationController
     @game.user = current_user
     # states = ["pending","paused","playing","ended"]
     @game.state = "pending"
-    @game.save
+    @game.game_pin = (('0'..'9').to_a + ('a'..'z').to_a).sample(4).join
+    @game.save!
+    redirect_to game_path(@game)
   end
 
   def edit

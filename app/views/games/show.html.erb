@@ -1,0 +1,13 @@
+# Show du gamemaster
+
+<p>Hello <%= @game.user.user_name %></p>
+
+<p>Your game pin is </p>
+<h2><%= @game.game_pin %></h2>
+
+<p>
+  <% @game.players.each do |player| %>
+  <%= player.user_name %> is ready to play
+  <% end %>
+</p>
+

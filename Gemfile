@@ -24,6 +24,8 @@ gem 'redis', '~> 4.0'
 gem 'omniauth-spotify'
 gem 'rspotify', '~> 2.9.1'
 gem 'faker'
+# cloudinary
+gem 'cloudinary', '~> 1.12.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
