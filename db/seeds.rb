@@ -4,7 +4,7 @@ p "Destroying tables..."
 
 Playlist.destroy_all
 Game.destroy_all
-User.destroy_all
+# User.destroy_all
 
 p "Tables destroyed!"
 
@@ -34,11 +34,11 @@ end
 
 p "Playlists created"
 
-user = User.create!(
-  email: "nicolas.kiger@gmail.com",
-  password: "123456",
-  user_name: "Nico",
-  uid: "9blz2ine1b7ffzwhkpdjy75za")
+# user = User.create!(
+#   email: "nicolas.kiger@gmail.com",
+#   password: "123456",
+#   user_name: "Nico",
+#   uid: "9blz2ine1b7ffzwhkpdjy75za")
 
 game = Game.create!(
   user_id: User.first.id,
