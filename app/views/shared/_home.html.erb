@@ -1,0 +1,11 @@
+# Show du gamemaster
+<%= link_to "Create a new game", omniauth_authorize_path(:user, :spotify) %>
+
+
+# Show du player
+<%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
+  <%= f.input :game_pin_entered %>
+  <%= f.input :user_name %>
+  <%= f.submit "Enter the Game!", class: "" %>
+<% end %>
+

@@ -1,27 +1,11 @@
+<<<<<<< HEAD
+
+=======
+<%= render 'shared/show/waiting-room' %>
+>>>>>>> 5a2698c0e1a32163441d11df65f581730a82cf50
 
 
-<!-- Id game & data-game-id importants -->
-<div id="game" data-game-id="<%= @game.id %>">
-  <p>Hello <%= @game.user.user_name %></p>
+<%#= render 'shared/show/playing' %>
+<%#= render 'shared/show/buzz' %>
+<%#= render 'shared/show/pause' %>
 
-  <p>Your game pin is </p>
-  <h2><%= @game.game_pin %></h2>
-
-  <p>
-    <% @game.players.each do |player| %>
-    <li><%= player.user_name %> is ready to play</li>
-    <% end %>
-  </p>
-
-  <p>
-    <%= @game.state %>
-  </p>
-
-  <%= simple_form_for @game, method: "PATCH" do |f|%>
-  <%= f.hidden_field :state, value:"playing", type:"hidden" %>
-  <%= f.submit "Launch the game" %>
-  <% end %>
-
-  <!-- <button id="launch-game" type="button" class="btn btn-light" data-state="<%= @game.state %>">Launch the game</button> -->
-
-</div>
