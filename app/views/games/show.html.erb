@@ -1,38 +1,11 @@
-# Show du gamemaster
 
-<!-- Id game & data-game-id importants -->
 <div id="game" data-game-id="<%= @game.id %>">
-  <p>Hello <%= @game.user.user_name %></p>
-
-  <p>Your game pin is </p>
-  <h2><%= @game.game_pin %></h2>
-
-  <p>
-    <% @game.players.each do |player| %>
-    <li><%= player.user_name %> is ready to play</li>
-    <% end %>
-  </p>
-
-  <p>
-    <%= @game.state %>
-  </p>
-
-  <%= simple_form_for @game, method: "PATCH" do |f|%>
-  <%= f.hidden_field :state, value:"playing", type:"hidden" %>
-  <%= f.submit "Launch the game" %>
-  <% end %>
-
-  <!-- <button id="launch-game" type="button" class="btn btn-light" data-state="<%= @game.state %>">Launch the game</button> -->
-
+  <%= render 'conditions' %>
 </div>
 
 
 
 
-
-
-
-
-
+</div>
 
 <%= render 'shared/player-display' %>

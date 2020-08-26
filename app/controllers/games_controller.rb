@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:show]
+
   def index
     @games = Game.all
   end
@@ -43,13 +45,13 @@ class GamesController < ApplicationController
 
   def update
     @game.update(game_params_update)
-    GameChannel.broadcast_to(@game, "")
+    GameChannel.broadcast_to(@game, render_to_string(partial: 'conditions'))
   end
 
   private
 
   def game_params_update
-    params.require(:game).permit(:max_score, :playlist_id, :current_track_id)
+    params.require(:game).permit(:max_score, :playlist_id, :current_track_id, :state)
   end
 
   def game_params_creation
