@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   end
 
   def show
-
+    GameChannel.broadcast_to(@game, "test")
   end
 
   def new
@@ -23,14 +23,14 @@ class GamesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    GameChannel.broadcast_to(@game, "")
   end
 
   private
+
   def game_params
     params.require(:game).permit(:max_score, :playlist_id)
   end
