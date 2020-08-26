@@ -1,0 +1,9 @@
+<% if @game.state == "playing"%>
+    <%= render 'playing' %>
+  <% elsif @game.state == "paused" %>
+    <%= render 'paused' %>
+  <% elsif @game.state == "pending" %>
+    <%= render 'pending' %>
+  <% elsif @game.state == "ended" %>
+   <%= render 'ended' %>
+  <% end %>
