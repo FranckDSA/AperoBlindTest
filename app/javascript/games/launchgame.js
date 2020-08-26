@@ -3,7 +3,6 @@ const initUpdateGameToPlaying = () => {
   launching.addEventListener("click", (event) => {
     // Do something (callback)
     launching.dataset.state = "playing";
-
   });
 }
 
