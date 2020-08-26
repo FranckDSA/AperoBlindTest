@@ -1,9 +1,7 @@
 # Show du gamemaster
-<p>Image de la track en cours</p>
-<p>button title (disabled)</p>
-<p>button title (disabled)</p>
-<p>Bar de progression</p>
-<p>Start - pause - next - stop</p>
+
+<%= render 'shared/_player-display.html.erb' %>
+
 <p>Score en modal (pop up)</p>
 
 <%= simple_form_for @game, method: "PATCH" do |f|%>
