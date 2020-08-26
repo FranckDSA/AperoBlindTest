@@ -6,6 +6,11 @@
 <p>Start - pause - next - stop</p>
 <p>Score en modal (pop up)</p>
 
+<%= simple_form_for @game, method: "PATCH" do |f|%>
+  <%= f.hidden_field :state, value:"paused", type:"hidden" %>
+  <%= f.submit "Pause the game" %>
+<% end %>
+
 # Show du player
 <p>Buzzer</p>
 <p>Score du player</p>

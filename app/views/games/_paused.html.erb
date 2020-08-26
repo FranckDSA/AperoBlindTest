@@ -7,6 +7,11 @@ Buzzer name
 Buzzer countdown
 Start - pause (disabled) - next - stop
 
+<%= simple_form_for @game, method: "PATCH" do |f|%>
+  <%= f.hidden_field :state, value:"playing", type:"hidden" %>
+  <%= f.submit "Start again" %>
+<% end %>
+
 # Show des players
 <p>Buzzer (displayed) </p>
 <p>Score du player</p>
