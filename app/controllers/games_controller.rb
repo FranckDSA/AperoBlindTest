@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:show]
+
   def index
     @games = Game.all
   end
@@ -13,6 +15,7 @@ class GamesController < ApplicationController
   end
 
   def create
+    raise
     @game = Game.new(game_params)
     @game.user = current_user
     # states = ["pending","paused","playing","ended"]

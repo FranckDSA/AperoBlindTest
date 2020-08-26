@@ -10,7 +10,7 @@
             <input type="hidden" name="game[playlist_id]" value="">
             <div class="category-choices">
               <% Playlist.all.each do |playlist| %>
-                <input type="checkbox" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]">
+                <input type="hidden" value="<%= playlist.id %>" name="game[playlist_id]">
                 <label for="playlist" class="category-choice">
                   <img src="<%= playlist.image %>" alt="">
                   <p><%= playlist.name %></p>
