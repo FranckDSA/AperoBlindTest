@@ -7,15 +7,20 @@
 
 <%= link_to "Create a new game", omniauth_authorize_path(:user, :spotify) %>
 
-<html>
-<head>
-  <title>Spotify Web Playback SDK Quick Start Tutorial</title>
-</head>
-<body>
+
   <h1>APERO BLIND TEST</h1>
+  <h2>Current playlist: <%=Game.first.playlist.name%></h2>
+  <img src="<%=Game.first.playlist.image%>" alt="" style="width: 200px">
+
+  <div class="current-track" style="color:blue">
+    <h2>Current track:<%=Game.first.tracks.first.title%></h2>
+    <img src="<%=Game.first.tracks.first.image%>" alt="" style="width: 200px">
+  </div>
+
   <button type="button" class="btn btn-primary" id="pause">Pause</button>
   <button type="button" class="btn btn-primary" id="resume">Resume</button>
   <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
+  <button type="button" class="btn btn-primary" id="end">End Game</button>
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
   <script>
     window.onSpotifyWebPlaybackSDKReady = () => {
@@ -37,11 +42,12 @@
       // Ready
       player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
+        const id = "34FbkFgAbv4ffvhL2XQMVm";
+        "<%= Game.first.playlist.name%>"
         play({
           playerInstance: player,
-          spotify_uri: 'spotify:track:34FbkFgAbv4ffvhL2XQMVm',
+          spotify_uri: `spotify:track:${id}`,
         });
-
       });
 
       // Not Ready
@@ -93,6 +99,11 @@
         player.nextTrack().then(() => {
           console.log('Skipped to next track!');
         });
+      });
+
+      const button_endgame = document.querySelector('#end');
+      button_endgame.addEventListener('click', () => {
+        player.disconnect()
       });
 
 };
