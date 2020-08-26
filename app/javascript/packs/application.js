@@ -27,11 +27,14 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initUpdateGameToPlaying } from '../games/launchgame';
+// import { initUpdateGameToPlaying } from '../games/launchgame';
 import { initPlaylistChoice } from '../games/formcreation';
+import { initGameCable } from '../channels/gamechannel.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initUpdateGameToPlaying();
+  // initUpdateGameToPlaying();
+  initPlaylistChoice();
+  initGameCable();
 });
