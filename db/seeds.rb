@@ -46,7 +46,7 @@ sleep(1)
 
 p "Game creation..."
 
-game = Game.create!(
+game = Game.new(
   user_id: User.first.id,
   state: "pending",
   max_score: 20,
@@ -54,7 +54,9 @@ game = Game.create!(
   game_pin: (('0'..'9').to_a + ('a'..'z').to_a).sample(4).join
 )
 
-p "Game created!"
+game.save
+
+p "Game initiated!"
 
 sleep(1)
 
@@ -75,6 +77,13 @@ game_playlist.tracks.each do |track|
     )
 end
 p "Tracks created!"
+
+sleep(1)
+
+game.current_track = game.tracks.first
+game.save!
+
+p "Game saved with track!"
 
 sleep(1)
 
