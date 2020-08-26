@@ -315,8 +315,10 @@ Devise.setup do |config|
 # ).join(' ')
 
   config.omniauth :spotify, Rails.application.credentials.spotify[:client_id], Rails.application.credentials.spotify[:client_secret], scope: %w(
-  playlist-read-private
-  user-read-private
-  user-read-email
-).join(' ')
+    playlist-read-private
+    user-read-private
+    user-read-email
+    streaming
+    user-modify-playback-state
+  ).join(' ')
 end
