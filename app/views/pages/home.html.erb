@@ -8,10 +8,4 @@
 <%= link_to "Create a new game", omniauth_authorize_path(:user, :spotify) %>
 
 
-
-<%#= cl_image_tag("jtlum54kqzsdm6hbn7n4h6o0irql",
-      width: 400, height: 300, crop: :fill) %>
-
-
-<iframe src="https://open.spotify.com/embed?uri=spotify:playlist:1KGdyl3UgwzO6wG1Ivksnp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
+<%= render 'shared/player-display' %>
