@@ -21,21 +21,23 @@ class GamesController < ApplicationController
     @game.state = "pending"
     @game.game_pin = (('0'..'9').to_a + ('a'..'z').to_a).sample(4).join
 
-    # game_playlist_spotify_id = Playlist.find(@game.playlist_id).spotify_id
-    # game_playlist = RSpotify::Playlist.find_by_id(game_playlist_spotify_id)
+    @game.save!
 
-    # game_playlist.tracks.each do |track|
-    #   Track.create!(
-    #     title: track.name,
-    #     artist: track.artists.first.name,
-    #     duration_ms: track.duration_ms,
-    #     spotify_id: track.id,
-    #     image: track.album.images.first["url"],
-    #     game_id: game.id
-    #     )
-    #   end
+    game_playlist_spotify_id = @game.playlist.spotify_id
+    game_playlist = RSpotify::Playlist.find_by_id(game_playlist_spotify_id)
 
-    # @game.current_track = Track.first
+    game_playlist.tracks.each do |track|
+      Track.create!(
+        title: track.name,
+        artist: track.artists.first.name,
+        duration_ms: track.duration_ms,
+        spotify_id: track.id,
+        image: track.album.images.first["url"],
+        game_id: @game.id
+      )
+    end
+
+    @game.current_track = @game.tracks.first
     @game.save!
     redirect_to game_path(@game)
   end
