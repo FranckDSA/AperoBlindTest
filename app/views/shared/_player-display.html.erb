@@ -15,7 +15,7 @@
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
   <script>
     window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = '<%= current_user.token %>';
+      const token = '<%= @game.user.token %>';
       const player = new Spotify.Player({
         name: 'AperoBlindTests',
         getOAuthToken: cb => { cb(token);}
