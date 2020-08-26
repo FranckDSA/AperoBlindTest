@@ -3,6 +3,7 @@ class Game < ApplicationRecord
   has_many :tracks, dependent: :destroy
   belongs_to :user
   belongs_to :playlist
+  belongs_to :current_track, class_name: 'Track'
   validates :user_id, :max_score, :state, :playlist_id, presence: true
   has_many :answers, through: :players
 

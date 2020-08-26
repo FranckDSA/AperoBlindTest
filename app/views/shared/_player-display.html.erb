@@ -1,14 +1,15 @@
 <h1>APERO BLIND TEST</h1>
-  <h2>Current playlist: <%=Game.first.playlist.name%></h2>
-  <img src="<%=Game.first.playlist.image%>" alt="" style="width: 200px">
+
+  <h2>Current playlist: <%=@game.playlist.name%></h2>
+  <img src="<%=@game.playlist.image%>" alt="" style="width: 200px">
 
   <div class="current-track" style="color:blue">
-    <h2>Current track:<%=Game.first.tracks.first.title%></h2>
-    <img src="<%=Game.first.tracks.first.image%>" alt="" style="width: 200px">
+    <h3>Current track: <%=@game.current_track.title%></h3>
+    <h3> Artist: <%=@game.current_track.artist%></h3>
+    <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
   </div>
 
-  <button type="button" class="btn btn-primary" id="pause">Pause</button>
-  <button type="button" class="btn btn-primary" id="resume">Resume</button>
+  <button type="button" class="btn btn-light" id="play">Pause</button>
   <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
   <button type="button" class="btn btn-primary" id="end">End Game</button>
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
@@ -32,7 +33,7 @@
       // Ready
       player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
-        const id = "<%=Game.first.tracks.first.spotify_id%>";
+        const id = "<%=@game.current_track.spotify_id%>";
         play({
           playerInstance: player,
           spotify_uri: `spotify:track:${id}`,
@@ -69,22 +70,39 @@
         });
       };
 
-      const button_pause = document.querySelector('#pause');
-      button_pause.addEventListener('click', () => {
-        player.pause().then(() => {
+      const button = document.querySelector('#play');
+      button.addEventListener('click', () => {
+        console.log(button.innerHTML);
+        if (button.innerHTML == "Pause") {
+          button.innerHTML = "Play";
+          button.classList.remove("btn-light");
+          button.classList.add("btn-success");
+          player.pause().then(() => {
           console.log('Paused!');
         });
-      });
-
-      const button_resume = document.querySelector('#resume');
-      button_resume.addEventListener('click', () => {
-        player.resume().then(() => {
+        } else {
+          button.innerHTML = "Pause";
+          button.classList.remove("btn-success");
+          button.classList.add("btn-light");
+          player.resume().then(() => {
           console.log('Resumed!');
         });
+        };
       });
 
       const button_nexttrack = document.querySelector('#nexttrack');
       button_nexttrack.addEventListener('click', () => {
+        var token = document.querySelector('meta[name="csrf-token"]').content;
+        fetch("/games/<%= @game.id %>", {
+          method: "PATCH",
+          body: JSON.stringify({game: {current_track_id: <%=@game.current_track_id + 1%> }}),
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-Token': token,
+            'Content-Type': 'application/json',
+          },
+          credentials: 'same-origin'
+        })
         player.nextTrack().then(() => {
           console.log('Skipped to next track!');
         });
@@ -94,15 +112,6 @@
       button_endgame.addEventListener('click', () => {
         player.disconnect()
       });
-
 };
-  </script>
-
-<div class="container">
-  <h2><%=Game.first.tracks.each_with_index do |track, index|%>
-    <%= track.title %>
-  <% end %>
-  </h2>
-</div>
-
+</script>
 
