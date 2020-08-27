@@ -49,7 +49,7 @@
 
       // Connect to the player!
       player.connect();
-      var token = document.querySelector('meta[name="csrf-token"]').content;
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
       const play = ({
         spotify_uri,
@@ -81,7 +81,7 @@
             body: JSON.stringify({game: {state: "paused" }}),
             headers: {
               'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': token,
+              'X-CSRF-Token': csrfToken,
               'Content-Type': 'application/json',
             },
             credentials: 'same-origin'
@@ -98,7 +98,7 @@
             body: JSON.stringify({game: {state: "playing" }}),
             headers: {
               'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': token,
+              'X-CSRF-Token': csrfToken,
               'Content-Type': 'application/json',
             },
             credentials: 'same-origin'
@@ -119,7 +119,7 @@
           body: JSON.stringify({game: {current_track_id: <%=@game.current_track_id + 1%> }}),
           headers: {
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-Token': token,
+            'X-CSRF-Token': csrfToken,
             'Content-Type': 'application/json',
           },
           credentials: 'same-origin'
