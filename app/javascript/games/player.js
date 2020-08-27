@@ -51,14 +51,6 @@ const initPlayer = () => {
     };
   });
 
-  // const button_buzz = document.querySelector('.buzz');
-  // button_buzz.addEventListener('click', () => {
-  //   console.log(button_buzz.innerHTML);
-  //     window.spotifyPlayer.pause().then(() => {
-  //       console.log('Paused!');
-  //     });
-  // });
-
   const button_nexttrack = document.querySelector('#nexttrack');
   button_nexttrack.addEventListener('click', () => {
     fetch(`/games/${gameId}`, {
@@ -75,6 +67,26 @@ const initPlayer = () => {
       console.log('Skipped to next track!');
     });
   });
+
+  // Test Pen
+  // const clickValidation = document.querySelector("#validation");
+  //   clickValidation.addEventListener('click', () => {
+  //     window.spotifyPlayer.nextTrack().then(() => {
+  //     console.log('Skipped to next track!');
+  //   });
+  //     const playerId = clickValidation.dataset.playerId;
+  //     fetch(`/players/${playerId}`, {
+  //     method: "PATCH",
+  //     body: JSON.stringify({player: {score: 1 }}),
+  //     headers: {
+  //       'X-Requested-With': 'XMLHttpRequest',
+  //       'X-CSRF-Token': csrfToken,
+  //       'Content-Type': 'application/json',
+  //     },
+  //     credentials: 'same-origin'
+  //   })
+  // });
+  // Test Pen
 
   const button_endgame = document.querySelector('#end');
   button_endgame.addEventListener('click', () => {
