@@ -1,6 +1,5 @@
 # Show du gamemaster
 
-
   <div id="player" data-token-current-user="<%= current_user.token %>"
     data-current-track-spotify-id="<%=@game.current_track.spotify_id%>"
     data-game-id="<%= @game.id %>"
@@ -20,8 +19,6 @@
       <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
       <button type="button" class="btn btn-primary" id="end">End Game</button>
   </div>
-
-
 
 
     <%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
