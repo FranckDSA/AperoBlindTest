@@ -17,6 +17,7 @@ class PlayersController < ApplicationController
       @player.save
       session[:player_id] = @player.id
       redirect_to game_path(@game)
+      broadcast
     else
       render "pages/home"
     end

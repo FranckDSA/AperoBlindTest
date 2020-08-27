@@ -1,9 +1,4 @@
-<!-- # Show du gamemaster -->
-
-<% if current_user == @game.user %>
 <!-- Id game & data-game-id importants -->
-
-  <div id="game" data-game-id="<%= @game.id %>">
     <p>Hello <%= @game.user.user_name %></p>
 
     <p>Your game pin is </p>
@@ -19,14 +14,4 @@
     <%= f.hidden_field :state, value:"playing", type:"hidden" %>
     <%= f.submit "Launch the game" %>
     <% end %>
-  </div>
 
-# Show du player
-
-<% elsif current_user.nil? || current_user != @game.user %>
-  <p>
-    <% @game.players.each do |player| %>
-    <li><%= player.user_name %> is ready to play</li>
-    <% end %>
-  </p>
-<% end %>
