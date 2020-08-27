@@ -182,6 +182,18 @@
           credentials: 'same-origin'
         })
         player.nextTrack().then(() => {
+          // Rajouter par Pen
+          fetch("/games/<%= @game.id %>", {
+            method: "PATCH",
+            body: JSON.stringify({game: {state: "ended" }}),
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+              'X-CSRF-Token': token,
+              'Content-Type': 'application/json',
+            },
+            credentials: 'same-origin'
+          })
+          // --
           console.log('Skipped to next track!');
 
         });
@@ -195,9 +207,16 @@
 
   <p>Score en modal (pop up)</p>
 
+
+# Show du player
+
 <% elsif current_user.nil? || current_user != @game.user %>
   # Show du player
-  <p>Buzzer</p>
+
+<%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
+  <%= f.submit "Buzz !", class: "" %>
+<% end %>
+
   <p>Mon score: <%= @current_player.score %></p>
   <p>Score en modal (pop up)</p>
 <% end %>
