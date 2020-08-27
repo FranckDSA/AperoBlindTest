@@ -31,6 +31,7 @@ import "bootstrap";
 import { initPlaylistChoice } from '../games/formcreation';
 import { initGameCable } from '../channels/gamechannel.js';
 import { initPlayer } from '../games/player.js';
+import { countDown } from '../games/countDown.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initPlaylistChoice();
   initGameCable();
   initPlayer();
+  countDown();
 });
