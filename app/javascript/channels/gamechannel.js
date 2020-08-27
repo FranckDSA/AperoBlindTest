@@ -7,7 +7,11 @@ const initGameCable = () => {
     console.log(id);
     consumer.subscriptions.create({ channel: "GameChannel", id: id }, {
       received(data) {
-        gameContainer.innerHTML = data; // called when data is broadcast in the cable
+        gameContainer.innerHTML = data;
+        const event = document.createEvent("HTMLEvents");
+        event.initEvent("turbolinks:load", true, true);
+        event.eventName = "turbolinks:load";
+        document.dispatchEvent(event);
       },
     });
   }
