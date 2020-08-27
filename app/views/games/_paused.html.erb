@@ -8,10 +8,10 @@
   Buzzer countdown
   Start - pause (disabled) - next - stop
 
-<%= simple_form_for @game, method: "PATCH" do |f|%>
-  <%= f.hidden_field :state, value:"playing", type:"hidden" %>
-  <%= f.submit "Start again" %>
-<% end %>
+  <%= simple_form_for @game, method: "PATCH" do |f|%>
+    <%= f.hidden_field :state, value:"playing", type:"hidden" %>
+    <%= f.submit "Start again" %>
+  <% end %>
 
 <% elsif current_user.nil? || current_user != @game.user %>
 
