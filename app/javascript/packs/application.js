@@ -30,6 +30,7 @@ import "bootstrap";
 // import { initUpdateGameToPlaying } from '../games/launchgame';
 import { initPlaylistChoice } from '../games/formcreation';
 import { initGameCable } from '../channels/gamechannel.js';
+import { initPlayer } from '../games/player.js';
 import { countDown } from '../games/countDown.js';
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   // initUpdateGameToPlaying();
   initPlaylistChoice();
   initGameCable();
+  initPlayer();
   countDown();
 });

@@ -1,222 +1,28 @@
 # Show du gamemaster
-<% if current_user == @game.user %>
+<div id="player" data-token-current-user="<%= current_user.token %>"
+  data-current-track-spotify-id="<%=@game.current_track.spotify_id%>"
+  data-game-id="<%= @game.id %>"
+  data-next-track-id="<%=@game.current_track_id + 1%>">
+  <h1>APERO BLIND TEST</h1>
+  <% if current_user == @game.user %>
+    <h2>Current playlist: <%=@game.playlist.name%></h2>
+    <img src="<%=@game.playlist.image%>" alt="" style="width: 200px">
 
-<h1>APERO BLIND TEST</h1>
-
-  <h2>Current playlist: <%=@game.playlist.name%></h2>
-  <img src="<%=@game.playlist.image%>" alt="" style="width: 200px">
-
-  <div class="current-track" style="color:blue">
-    <h3>Current track: <%=@game.current_track.title%></h3>
-    <h3> Artist: <%=@game.current_track.artist%></h3>
-    <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
-  </div>
-
-  <button type="button" class="btn btn-light" id="play">Pause</button>
-  <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
-  <button type="button" class="btn btn-primary" id="end">End Game</button>
-  <script src="https://sdk.scdn.co/spotify-player.js"></script>
-  <script>
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = '<%= current_user.token %>';
-      const player = new Spotify.Player({
-        name: 'AperoBlindTests',
-        getOAuthToken: cb => { cb(token);}
-      });
-
-      // Error handling
-      player.addListener('initialization_error', ({ message }) => { console.error(message); });
-      player.addListener('authentication_error', ({ message }) => { console.error(message); });
-      player.addListener('account_error', ({ message }) => { console.error(message); });
-      player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-      // Playback status updates
-      player.addListener('player_state_changed', state => { console.log(state); });
-
-      // Ready
-      player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
-        const id = "<%=@game.current_track.spotify_id%>";
-        play({
-          playerInstance: player,
-          spotify_uri: `spotify:track:${id}`,
-        });
-
-        // Error handling
-        player.addListener('initialization_error', ({ message }) => { console.error(message); });
-        player.addListener('authentication_error', ({ message }) => { console.error(message); });
-        player.addListener('account_error', ({ message }) => { console.error(message); });
-        player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-        // Playback status updates
-        player.addListener('player_state_changed', state => { console.log(state); });
-
-        // Ready
-        player.addListener('ready', ({ device_id }) => {
-          console.log('Ready with Device ID', device_id);
-          const id = "<%=@game.current_track.spotify_id%>";
-          play({
-            playerInstance: player,
-            spotify_uri: `spotify:track:${id}`,
-          });
-        });
+    <div class="current-track" style="color:blue">
+      <h3>Current track: <%=@game.current_track.title%></h3>
+      <h3> Artist: <%=@game.current_track.artist%></h3>
+      <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
+    </div>
+    <button type="button" class="btn btn-light" id="play">Pause</button>
+    <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
+    <button type="button" class="btn btn-primary" id="end">End Game</button>
+</div>
 
 
-      // Connect to the player!
-      player.connect();
-      const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-
-        // Connect to the player!
-        player.connect();
-        var token = document.querySelector('meta[name="csrf-token"]').content;
-
-        const play = ({
-          spotify_uri,
-          playerInstance: {
-            _options: {
-              getOAuthToken,
-              id
-            }
-          }
-        }) => {
-          getOAuthToken(access_token => {
-            fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
-              method: 'PUT',
-              body: JSON.stringify({ uris: [spotify_uri] }),
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${access_token}`
-              },
-            });
-          });
-        };
-
-        const button = document.querySelector('#play');
-        button.addEventListener('click', () => {
-          console.log(button.innerHTML);
-          if (button.innerHTML == "Pause") {
-            fetch("/games/<%= @game.id %>", {
-              method: "PATCH",
-              body: JSON.stringify({game: {state: "paused" }}),
-              headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRF-Token': token,
-                'Content-Type': 'application/json',
-              },
-              credentials: 'same-origin'
-            })
-            button.innerHTML = "Play";
-            button.classList.remove("btn-light");
-            button.classList.add("btn-success");
-            player.pause().then(() => {
-              console.log('Paused!');
-            });
-          } else {
-            fetch("/games/<%= @game.id %>", {
-              method: "PATCH",
-              body: JSON.stringify({game: {state: "playing" }}),
-              headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRF-Token': token,
-                'Content-Type': 'application/json',
-              },
-              credentials: 'same-origin'
-            })
-            button.innerHTML = "Pause";
-            button.classList.remove("btn-success");
-            button.classList.add("btn-light");
-            player.resume().then(() => {
-              console.log('Resumed!');
-            });
-          };
-        });
-
-
-      const button = document.querySelector('#play');
-      button.addEventListener('click', () => {
-        console.log(button.innerHTML);
-        if (button.innerHTML == "Pause") {
-          fetch("/games/<%= @game.id %>", {
-            method: "PATCH",
-            body: JSON.stringify({game: {state: "paused" }}),
-            headers: {
-              'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': csrfToken,
-              'Content-Type': 'application/json',
-            },
-            credentials: 'same-origin'
-          })
-          button.innerHTML = "Play";
-          button.classList.remove("btn-light");
-          button.classList.add("btn-success");
-          player.pause().then(() => {
-            console.log('Paused!');
-          });
-        } else {
-          fetch("/games/<%= @game.id %>", {
-            method: "PATCH",
-            body: JSON.stringify({game: {current_track_id: <%=@game.current_track_id + 1%> }}),
-            headers: {
-              'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': csrfToken,
-              'Content-Type': 'application/json',
-            },
-            credentials: 'same-origin'
-          })
-          player.nextTrack().then(() => {
-            console.log('Skipped to next track!');
-          });
-        };
-      });
-
-      const button_nexttrack = document.querySelector('#nexttrack');
-      button_nexttrack.addEventListener('click', () => {
-        fetch("/games/<%= @game.id %>", {
-          method: "PATCH",
-          body: JSON.stringify({game: {current_track_id: <%=@game.current_track_id + 1%> }}),
-          headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-Token': csrfToken,
-            'Content-Type': 'application/json',
-          },
-          credentials: 'same-origin'
-        })
-        player.nextTrack().then(() => {
-          // Rajouter par Pen
-          fetch("/games/<%= @game.id %>", {
-            method: "PATCH",
-            body: JSON.stringify({game: {state: "ended" }}),
-            headers: {
-              'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': token,
-              'Content-Type': 'application/json',
-            },
-            credentials: 'same-origin'
-          })
-          // --
-          console.log('Skipped to next track!');
-
-        });
-
-        const button_endgame = document.querySelector('#end');
-        button_endgame.addEventListener('click', () => {
-          player.disconnect()
-        });
-  };
-  </script>
-
-  <p>Score en modal (pop up)</p>
-
-
-# Show du player
-
-<% elsif current_user.nil? || current_user != @game.user %>
-  # Show du player
-
-<%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
-  <%= f.submit "Buzz !", class: "" %>
-<% end %>
-
-  <p>Mon score: <%= @current_player.score %></p>
-  <p>Score en modal (pop up)</p>
+  <% elsif current_user.nil? || current_user != @game.user %>
+    <%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
+      <%= f.submit "Buzz !", class: "" %>
+    <% end %>
+    <p>Mon score: <%= @current_player.score %></p>
+    <p>Score en modal (pop up)</p>
 <% end %>
