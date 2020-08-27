@@ -11,11 +11,6 @@
     <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
   </div>
 
-  <%#= simple_form_for @game, method: "PATCH" do |f|%>
-  <%#= f.hidden_field :state, value:"paused", type:"hidden" %>
-  <%#= f.submit "Pause the game", id="play" %>
-  <%# end %>
-
   <button type="button" class="btn btn-light" id="play">Pause</button>
   <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
   <button type="button" class="btn btn-primary" id="end">End Game</button>
@@ -54,7 +49,7 @@
 
       // Connect to the player!
       player.connect();
-      var token = document.querySelector('meta[name="csrf-token"]').content;
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
       const play = ({
         spotify_uri,
@@ -86,7 +81,7 @@
             body: JSON.stringify({game: {state: "paused" }}),
             headers: {
               'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': token,
+              'X-CSRF-Token': csrfToken,
               'Content-Type': 'application/json',
             },
             credentials: 'same-origin'
@@ -103,7 +98,7 @@
             body: JSON.stringify({game: {state: "playing" }}),
             headers: {
               'X-Requested-With': 'XMLHttpRequest',
-              'X-CSRF-Token': token,
+              'X-CSRF-Token': csrfToken,
               'Content-Type': 'application/json',
             },
             credentials: 'same-origin'
@@ -124,7 +119,7 @@
           body: JSON.stringify({game: {current_track_id: <%=@game.current_track_id + 1%> }}),
           headers: {
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-Token': token,
+            'X-CSRF-Token': csrfToken,
             'Content-Type': 'application/json',
           },
           credentials: 'same-origin'
