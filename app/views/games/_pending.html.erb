@@ -1,7 +1,7 @@
 # Show du gamemaster
 
 <!-- Id game & data-game-id importants -->
-<div id="game" data-game-id="<%= @game.id %>">
+<!-- <div id="game" data-game-id="<%= @game.id %>"> -->
   <p>Hello <%= @game.user.user_name %></p>
 
   <p>Your game pin is </p>
@@ -13,15 +13,11 @@
     <% end %>
   </p>
 
-  <p>
-    <%= @game.state %>
-  </p>
-
   <%= simple_form_for @game, method: "PATCH" do |f|%>
   <%= f.hidden_field :state, value:"playing", type:"hidden" %>
   <%= f.submit "Launch the game" %>
   <% end %>
-</div>
+<!-- </div> -->
 
 # Show du player
 

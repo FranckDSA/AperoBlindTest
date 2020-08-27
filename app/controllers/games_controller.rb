@@ -20,7 +20,6 @@ class GamesController < ApplicationController
     # states = ["pending","paused","playing","ended"]
     @game.state = "pending"
     @game.game_pin = (('0'..'9').to_a + ('a'..'z').to_a).sample(4).join
-
     @game.save!
 
     game_playlist_spotify_id = @game.playlist.spotify_id
