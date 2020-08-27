@@ -1,10 +1,10 @@
+<% if current_user == @game.user %>
 # Show du gamemaster
 <div id="player" data-token-current-user="<%= current_user.token %>"
   data-current-track-spotify-id="<%=@game.current_track.spotify_id%>"
   data-game-id="<%= @game.id %>"
   data-next-track-id="<%=@game.current_track_id + 1%>">
   <h1>APERO BLIND TEST</h1>
-  <% if current_user == @game.user %>
     <h2>Current playlist: <%=@game.playlist.name%></h2>
     <img src="<%=@game.playlist.image%>" alt="" style="width: 200px">
 
