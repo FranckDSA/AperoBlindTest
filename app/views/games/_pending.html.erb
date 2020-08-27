@@ -2,8 +2,10 @@
 
 <% if current_user == @game.user %>
 <!-- Id game & data-game-id importants -->
+
   <div id="game" data-game-id="<%= @game.id %>">
     <p>Hello <%= @game.user.user_name %></p>
+
 
     <p>Your game pin is </p>
     <h2><%= @game.game_pin %></h2>
@@ -18,11 +20,13 @@
       <%= @game.state %>
     </p>
 
+
     <%= simple_form_for @game, method: "PATCH" do |f|%>
     <%= f.hidden_field :state, value:"playing", type:"hidden" %>
     <%= f.submit "Launch the game" %>
     <% end %>
   </div>
+
 
 # Show du player
 
