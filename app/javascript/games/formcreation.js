@@ -1,9 +1,9 @@
 const initPlaylistChoice = () => {
-$(document).ready(function(){
-  $(".category-choice").click(function(){
-    $(this).toggleClass("active");
+  $(document).ready(function(){
+    $(".category-choice").click(function(){
+      $(this).toggleClass("active");
+    });
   });
-});
-}
+  }
 
 export { initPlaylistChoice };

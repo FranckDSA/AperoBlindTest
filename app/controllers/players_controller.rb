@@ -23,9 +23,26 @@ class PlayersController < ApplicationController
     end
   end
 
+  def update
+    @player = Player.find(params[:id])
+    @player.score += 1
+    @player.save
+    # @player.update(params_player_update)
+    @game = @player.game
+    @game.state = "playing"
+    @game.save
+    @answer = Answer.new
+    broadcast
+  end
+
   private
 
   def params_player
       params.require(:player).permit(:user_name)
   end
+
+  def params_player_update
+    params.require(:player).permit(:user_name, :score)
+  end
+
 end

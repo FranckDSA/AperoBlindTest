@@ -34,7 +34,6 @@ const initPlayer = () => {
   const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
   /*NEW CODE*/
-
   const button = document.querySelector('#play');
   if (button) {
     button.addEventListener('click', () => {
@@ -74,6 +73,26 @@ const initPlayer = () => {
       });
     });
   }
+
+  // Test Pen
+  // const clickValidation = document.querySelector("#validation");
+  //   clickValidation.addEventListener('click', () => {
+  //     window.spotifyPlayer.nextTrack().then(() => {
+  //     console.log('Skipped to next track!');
+  //   });
+  //     const playerId = clickValidation.dataset.playerId;
+  //     fetch(`/players/${playerId}`, {
+  //     method: "PATCH",
+  //     body: JSON.stringify({player: {score: 1 }}),
+  //     headers: {
+  //       'X-Requested-With': 'XMLHttpRequest',
+  //       'X-CSRF-Token': csrfToken,
+  //       'Content-Type': 'application/json',
+  //     },
+  //     credentials: 'same-origin'
+  //   })
+  // });
+  // Test Pen
 
   const button_endgame = document.querySelector('#end');
   if (button_endgame) {

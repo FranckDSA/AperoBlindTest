@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   end
   resources :answers, only: [:update, :edit]
     # Index ajouté par rapport au schema de DB
-  resources :players, only: [:index, :new, :create]
+  resources :players, only: [:index, :new, :create, :update]
 end
