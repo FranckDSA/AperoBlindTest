@@ -1,15 +1,15 @@
-<div class="current-track" style="color:blue">
-  <h3>Current track: <%=@game.current_track.title%></h3>
-  <h3> Artist: <%=@game.current_track.artist%></h3>
-  <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
+<div id="buzz-user">
+  <div class="current-track" style="color:blue">
+    <h3>Current track: <%=@game.current_track.title%></h3>
+    <h3> Artist: <%=@game.current_track.artist%></h3>
+    <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
+  </div>
+  <h2><%= @game.answers.last.player.user_name %> is playing</h2>
+  <div id="countdown" style="font-size: 60px">
+  </div>
+  <button type="button" class="btn btn-success" id="validation">Validate <%= @game.answers.last.player.user_name %>'s answer</button>
+  <button type="button" class="btn btn-light" id="resume">Resume</button>
 </div>
-<h2><%= @game.answers.last.player.user_name %> is playing</h2>
-<div id="countdown" style="font-size: 60px">
-</div>
-<button type="button" class="btn btn-success" id="validation">Validate <%= @game.answers.last.player.user_name %>'s answer</button>
-<button type="button" class="btn btn-light" id="resume">Resume</button>
-
-
 
 
 
