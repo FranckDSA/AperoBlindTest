@@ -15,11 +15,6 @@
       <% end %>
     </p>
 
-    <p>
-      <%= @game.state %>
-    </p>
-
-
     <%= simple_form_for @game, method: "PATCH" do |f|%>
     <%= f.hidden_field :state, value:"playing", type:"hidden" %>
     <%= f.submit "Launch the game" %>
