@@ -40,5 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initPlaylistChoice();
   initGameCable();
   initPlayer();
-  countDown();
+  countDown(10);
 });
