@@ -39,6 +39,7 @@ class GamesController < ApplicationController
 
     @game.current_track = @game.tracks.first
     @game.save!
+
     redirect_to game_path(@game)
   end
 
