@@ -1,4 +1,9 @@
 # Show du tout le monde
-Score of all players
-
-
+<div class="container">
+  Score of all players
+  <% @game.players.each do |player| %>
+  <div class="playerscore">
+    <p><%= player.user_name %>-<%= player.score %></p>
+  </div>
+  <% end %>
+</div>
