@@ -7,7 +7,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    GameChannel.broadcast_to(@game, "test")
+    @current_player = current_player if current_user == nil || current_user != @game.user
+    # GameChannel.broadcast_to(@game, "test")
   end
 
   def new
