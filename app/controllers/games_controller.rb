@@ -9,7 +9,6 @@ class GamesController < ApplicationController
   def show
     @answer = Answer.new
     @current_player = current_player if current_user == nil || current_user != @game.user
-    # GameChannel.broadcast_to(@game, "test")
   end
 
   def new

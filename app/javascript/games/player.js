@@ -51,13 +51,13 @@ const initPlayer = () => {
     };
   });
 
-  const button_buzz = document.querySelector('.buzz');
-  button_buzz.addEventListener('click', () => {
-    console.log(button_buzz.innerHTML);
-      window.spotifyPlayer.pause().then(() => {
-        console.log('Paused!');
-      });
-  });
+  // const button_buzz = document.querySelector('.buzz');
+  // button_buzz.addEventListener('click', () => {
+  //   console.log(button_buzz.innerHTML);
+  //     window.spotifyPlayer.pause().then(() => {
+  //       console.log('Paused!');
+  //     });
+  // });
 
   const button_nexttrack = document.querySelector('#nexttrack');
   button_nexttrack.addEventListener('click', () => {
