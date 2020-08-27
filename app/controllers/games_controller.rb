@@ -9,7 +9,6 @@ class GamesController < ApplicationController
   def show
     @answer = Answer.new
     @current_player = current_player if current_user == nil || current_user != @game.user
-    # GameChannel.broadcast_to(@game, "test")
   end
 
   def new
@@ -50,7 +49,7 @@ class GamesController < ApplicationController
   def update
     @game.update(game_params_update)
     @answer = Answer.new
-    GameChannel.broadcast_to(@game, render_to_string(partial: 'conditions'))
+    broadcast
   end
 
   private
