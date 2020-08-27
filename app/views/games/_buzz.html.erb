@@ -1,5 +1,5 @@
 # Show du gamemaster
-<!-- <h2>Current playlist: <%=@game.playlist.name%></h2>
+<!-- <h2>Current playlist: <%#=@game.playlist.name%></h2>
   <img src="<%=@game.playlist.image%>" alt="" style="width: 200px"> -->
 
   <div class="current-track" style="color:blue">
@@ -8,16 +8,15 @@
     <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
   </div>
 
-<!--   <button type="button disabled" class="btn btn-light" id="play">Pause</button>
-  <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
-  <button type="button" class="btn btn-primary" id="end">End Game</button> -->
-
 <p>
   The answer of <%= @game.answers.last.player.user_name %> in
   <div id="countdown" style="font-size: 60px"></div>
 </p>
 
-
+<button type="button" class="btn btn-primary" id="validation">Good answer!</button>
+<button type="button disabled" class="btn btn-light" id="play">Pause</button>
+<button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
+<button type="button" class="btn btn-primary" id="end">End Game</button>
 
 
 button validation (artist + title) vert => playing next_song

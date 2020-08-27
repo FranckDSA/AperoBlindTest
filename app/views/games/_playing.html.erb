@@ -1,28 +1,32 @@
 # Show du gamemaster
-<div id="player" data-token-current-user="<%= current_user.token %>"
-  data-current-track-spotify-id="<%=@game.current_track.spotify_id%>"
-  data-game-id="<%= @game.id %>"
-  data-next-track-id="<%=@game.current_track_id + 1%>">
-  <h1>APERO BLIND TEST</h1>
-  <% if current_user == @game.user %>
-    <h2>Current playlist: <%=@game.playlist.name%></h2>
-    <img src="<%=@game.playlist.image%>" alt="" style="width: 200px">
-
-    <div class="current-track" style="color:blue">
-      <h3>Current track: <%=@game.current_track.title%></h3>
-      <h3> Artist: <%=@game.current_track.artist%></h3>
-      <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
-    </div>
-    <button type="button" class="btn btn-light" id="play">Pause</button>
-    <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
-    <button type="button" class="btn btn-primary" id="end">End Game</button>
-</div>
 
 
-  <% elsif current_user.nil? || current_user != @game.user %>
+  <div id="player" data-token-current-user="<%= current_user.token %>"
+    data-current-track-spotify-id="<%=@game.current_track.spotify_id%>"
+    data-game-id="<%= @game.id %>"
+    data-next-track-id="<%=@game.current_track_id + 1%>">
+    <h1>APERO BLIND TEST</h1>
+
+      <h2>Current playlist: <%=@game.playlist.name%></h2>
+      <img src="<%=@game.playlist.image%>" alt="" style="width: 200px">
+
+      <div class="current-track" style="color:blue">
+        <h3> Current track: <%=@game.current_track.title%></h3>
+        <h3> Artist: <%=@game.current_track.artist%></h3>
+        <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
+      </div>
+
+      <button type="button" class="btn btn-light" id="play">Pause</button>
+      <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
+      <button type="button" class="btn btn-primary" id="end">End Game</button>
+  </div>
+
+
+
+
     <%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
-      <%= f.submit "Buzz !", class: "" %>
+      <%= f.submit "Buzz !", class: "buzz"%>
     <% end %>
+
     <p>Mon score: <%= @current_player.score %></p>
     <p>Score en modal (pop up)</p>
-<% end %>

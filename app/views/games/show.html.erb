@@ -1,10 +1,8 @@
 <!-- Id game & data-game-id importants -->
-<div id="game" data-game-id="<%= @game.id %>">
-  <%= render 'conditions' %>
+<div id="game" data-game-id="<%= @game.id %>" data-user="<%= @game.user == current_user %>">
+  <% if current_user == @game.user %>
+    <%= render 'conditions_user' %>
+  <% else %>
+    <%= render 'conditions_player' %>
+  <% end %>
 </div>
-
-
-
-
-
-<!--  <%= render 'shared/player-display' %> -->

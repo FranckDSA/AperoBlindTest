@@ -50,7 +50,7 @@ class GamesController < ApplicationController
   def update
     @game.update(game_params_update)
     @answer = Answer.new
-    GameChannel.broadcast_to(@game, render_to_string(partial: 'conditions'))
+    broadcast
   end
 
   private
