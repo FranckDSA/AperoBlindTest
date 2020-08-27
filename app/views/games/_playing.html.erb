@@ -152,9 +152,10 @@
 
 # Show du player
 
-<%= simple_form_for @game, method: "PATCH" do |f|%>
-  <%= f.hidden_field :state, value:"buzz", type:"hidden" %>
-  <%= f.submit "Buzzer" %>
+<!-- <button type="button" class="btn btn-light" id="buzz">Buzzer</button> -->
+
+<%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
+  <%= f.submit "Buzz !", class: "" %>
 <% end %>
 
 <p>Score du player</p>

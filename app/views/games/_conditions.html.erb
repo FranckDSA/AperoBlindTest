@@ -8,4 +8,6 @@
     <%= render 'pending' %>
   <% elsif @game.state == "ended" %>
    <%= render 'ended' %>
+  <% elsif @game.state == "validation" %>
+   <%= render 'validation' %>
   <% end %>
