@@ -1,17 +1,24 @@
 <!-- Id game & data-game-id importants -->
-    <p>Hello <%= @game.user.user_name %></p>
+<div class="container home-center">
+    <%= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2") %>
+    <h2 class="p-3">Hello <%= @game.user.user_name %></h2>
 
-    <p>Your game pin is </p>
-    <h2><%= @game.game_pin %></h2>
+    <div class="box-pin">
+      <p> Invite your friends to play with this game pin is : </p>
+      <h2 id="blue-game-pin"><%= @game.game_pin %></h2>
+    </div>
 
-    <p>
-      <% @game.players.each do |player| %>
-      <li><%= player.user_name %> is ready to play</li>
-      <% end %>
-    </p>
+    <div class="waiting-room">
+      <p class="py-3"> Wait for your friends to launch the game </p>
+      <p>
+        <% @game.players.each do |player| %>
+        <li><%= player.user_name %> is ready to play</li>
+        <% end %>
+      </p>
+    </div>
 
     <%= simple_form_for @game, method: "PATCH" do |f|%>
     <%= f.hidden_field :state, value:"playing", type:"hidden" %>
-    <%= f.submit "Launch the game" %>
+    <%= f.submit "Launch the game", class:"btn btn-primary blue-background"%>
     <% end %>
-
+</div>
