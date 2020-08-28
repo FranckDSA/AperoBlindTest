@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <!-- <div class="col-xs-12 col-sm-6 col-sm-offset-3"> -->
       <div class="form-post">
         <%= simple_form_for @game, defaults: {label: false}, method: "POST" do |f| %>
           <%#= f.association :playlist, as: :check_boxes %>
-          <h1>Choisis ton style de musique</h1>
+          <h1>Choose your playlist </h1>
           <div class="form-group">
             <label class="control-label radio_buttons optional"></label>
             <!-- <input type="hidden" name="game[playlist_id]" value=""> -->
@@ -18,12 +18,12 @@
                 </label>
               <% end %>
              </div>
-            <h1>Choisis le nombre de points</h1>
+            <h1>Choose the winner score</h1>
           <%#= f.input :max_score %>
           <label for="game[max_score]"></label>
-          <input type="range" name="game[max_score]" min="10" max="50" value="" step="5">
+          <input type="range" name="game[max_score]" min="3" max="50" value="" step="5" class="range-bar">
           </div>
-          <%= f.submit "Create a new game", class: "" %>
+          <%= f.submit "Create a new game", class: "btn btn-light" %>
         <% end %>
        </div>
     </div>
