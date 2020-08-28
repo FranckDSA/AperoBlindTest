@@ -3,4 +3,10 @@
 <% end %>
 
 <!-- <p>Mon score: <%#= @current_player.score %></p> -->
-<p>Score en modal (pop up)</p>
+
+<h2>Scores</h2>
+<p>
+  <% @game.players.each do |player| %>
+  <li><%= player.user_name %> : <%= player.score %></li>
+  <% end %>
+</p>
