@@ -1,0 +1,56 @@
+# Show du player
+
+
+
+<%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
+  <%= f.input :game_pin_entered %>
+  <%= f.input :user_name %>
+  <%= f.submit "Enter the Game!", class: "" %>
+<% end %>
+
+<!-- <label class="mdc-text-field mdc-text-field--filled">
+  <span class="mdc-text-field__ripple"></span>
+  <input id="game_pin_entered" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" maxlength="4">
+  <span class="mdc-floating-label" id="my-label-id">Game pin</span>
+  <span class="mdc-line-ripple"></span>
+</label>
+<div class="mdc-text-field-helper-line">
+  <div class="mdc-text-field-character-counter">0 / 4</div>
+</div> -->
+
+<%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
+  <label class="mdc-text-field mdc-text-field--filled">
+  <span class="mdc-text-field__ripple"></span>
+  <input name="game_pin_entered" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" maxlength="4" value="">
+  <span class="mdc-floating-label" id="my-label-id">Game pin</span>
+  <span class="mdc-line-ripple"></span>
+  </label>
+  <div class="mdc-text-field-helper-line">
+    <div class="mdc-text-field-character-counter">0 / 4</div>
+  </div>
+
+  <label class="mdc-text-field mdc-text-field--filled">
+  <span class="mdc-text-field__ripple"></span>
+  <input name="user_name" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" maxlength="10" value="">
+  <span class="mdc-floating-label" id="my-label-id">Please choose a username</span>
+  <span class="mdc-line-ripple"></span>
+  </label>
+  <div class="mdc-text-field-helper-line">
+    <div class="mdc-text-field-character-counter">0 / 10</div>
+  </div>
+  <%= f.submit "Enter the Game!", class: "" %>
+<% end %>
+
+
+
+
+
+
+
+
+  <input type="submit">
+
+
+
+
+</form>
