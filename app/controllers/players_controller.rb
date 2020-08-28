@@ -30,6 +30,7 @@ class PlayersController < ApplicationController
     # @player.update(params_player_update)
     @game = @player.game
     @game.state = "playing"
+    @game.current_track_id += 1
     @game.save
     @answer = Answer.new
     broadcast
