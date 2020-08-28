@@ -9,7 +9,7 @@
 <div id="countdown" style="font-size: 60px">
 </div>
 <button type="button" class="btn btn-success" id="validation" data-player-id="<%= @game.answers.last.player.id %>">Validate <%= @game.answers.last.player.user_name %>'s answer</button>
-<button type="button" class="btn btn-light" id="resume">Resume</button>
+<button type="button" class="btn btn-light" id="resume" data-game-id="<%= @game.id %>">Resume</button>
 
 </div>
 
