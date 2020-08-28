@@ -1,4 +1,5 @@
 <!-- Id game & data-game-id importants -->
+<div class="container">
     <p>Hello <%= @game.user.user_name %></p>
 
     <p>Your game pin is </p>
@@ -14,4 +15,4 @@
     <%= f.hidden_field :state, value:"playing", type:"hidden" %>
     <%= f.submit "Launch the game" %>
     <% end %>
-
+</div>
