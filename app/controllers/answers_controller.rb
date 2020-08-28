@@ -1,22 +1,24 @@
 class AnswersController < ApplicationController
+skip_before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @answers = Answer.all
   end
 
   def new
-    # @answer = Answer.new
+    @answer = Answer.new
   end
 
   def create
     @answer = Answer.new
     @game = Game.find(params[:game_id])
-    @game.state = "paused"
+    @game.state = "buzz"
     @game.save
     @answer.player_id = current_player.id
     @answer.track_id = @game.current_track_id
-
     @answer.save!
+    redirect_to game_path(@game)
+    broadcast
   end
 
   def edit
@@ -26,6 +28,7 @@ class AnswersController < ApplicationController
   def update
     @answer = @game.answers.last
     @answer.update(answer_params)
+    broadcast
   end
 
   private

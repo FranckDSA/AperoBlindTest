@@ -1,0 +1,17 @@
+<!-- Id game & data-game-id importants -->
+    <p>Hello <%= @game.user.user_name %></p>
+
+    <p>Your game pin is </p>
+    <h2><%= @game.game_pin %></h2>
+
+    <p>
+      <% @game.players.each do |player| %>
+      <li><%= player.user_name %> is ready to play</li>
+      <% end %>
+    </p>
+
+    <%= simple_form_for @game, method: "PATCH" do |f|%>
+    <%= f.hidden_field :state, value:"playing", type:"hidden" %>
+    <%= f.submit "Launch the game" %>
+    <% end %>
+

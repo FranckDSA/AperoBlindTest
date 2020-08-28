@@ -7,13 +7,17 @@
           <h1>Choisis ton style de musique</h1>
           <div class="form-group">
             <label class="control-label radio_buttons optional"></label>
-            <input type="hidden" name="game[playlist_id]" value="">
+            <!-- <input type="hidden" name="game[playlist_id]" value=""> -->
             <div class="category-choices">
               <% Playlist.all.each do |playlist| %>
+                <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
                 <input type="hidden" value="<%= playlist.id %>" name="game[playlist_id]">
                 <label for="playlist" class="category-choice">
                   <img src="<%= playlist.image %>" alt="">
                   <p><%= playlist.name %></p>
+                  <p>
+                    <%= playlist.id %>
+                  </p>
                 </label>
               <% end %>
              </div>

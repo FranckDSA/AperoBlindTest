@@ -30,14 +30,19 @@ import "bootstrap";
 // import { initUpdateGameToPlaying } from '../games/launchgame';
 import { initPlaylistChoice } from '../games/formcreation';
 import { initGameCable } from '../channels/gamechannel.js';
-import { initCounterTenSeconds } from '../components/counter.js';
 
+import { initCounterTenSeconds } from '../components/counter.js';
 // import for material Design
 import {MDCTextField} from '@material/textfield';
 // import {MDCRipple} from '@material/ripple';
 import {MDCIconButtonToggle} from '@material/icon-button';
 // import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCLinearProgress } from '@material/linear-progress';
+
+import { initPlayer } from '../games/player.js';
+import { countDown } from '../games/countDown.js';
+import { validateAnswers } from '../games/validateAnswers.js';
+import { resumeGame } from '../games/resumeGame.js';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -46,6 +51,7 @@ document.addEventListener('turbolinks:load', () => {
   // initUpdateGameToPlaying();
   initPlaylistChoice();
   initGameCable();
+
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);
   const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
@@ -71,7 +77,10 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
-
+  initPlayer();
+  countDown(10);
+  validateAnswers();
+  resumeGame();
 });
 
 // material-design JavaScript instantiation
