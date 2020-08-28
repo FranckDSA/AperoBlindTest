@@ -1,3 +1,4 @@
+/*Fonction Play avec uri de chanson et l'instance du player Spotify*/
 const play = ({
   spotify_uri,
   playerInstance: {
@@ -19,8 +20,8 @@ const play = ({
   });
 };
 
+/*Fonction Player Spotify*/
 const initPlayer = () => {
-  console.log("InitPlayer");
   const playerElement = document.querySelector("#player");
   if (!playerElement) {
     return;
@@ -33,7 +34,7 @@ const initPlayer = () => {
 
   const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
-  /*NEW CODE*/
+  /*Button play / pause*/
   const button = document.querySelector('#play');
   if (button) {
     button.addEventListener('click', () => {
@@ -55,6 +56,7 @@ const initPlayer = () => {
     });
   }
 
+  /*Button Next track*/
   const button_nexttrack = document.querySelector('#nexttrack');
   if (button_nexttrack) {
     button_nexttrack.addEventListener('click', () => {
@@ -74,26 +76,7 @@ const initPlayer = () => {
     });
   }
 
-  // Test Pen
-  // const clickValidation = document.querySelector("#validation");
-  //   clickValidation.addEventListener('click', () => {
-  //     window.spotifyPlayer.nextTrack().then(() => {
-  //     console.log('Skipped to next track!');
-  //   });
-  //     const playerId = clickValidation.dataset.playerId;
-  //     fetch(`/players/${playerId}`, {
-  //     method: "PATCH",
-  //     body: JSON.stringify({player: {score: 1 }}),
-  //     headers: {
-  //       'X-Requested-With': 'XMLHttpRequest',
-  //       'X-CSRF-Token': csrfToken,
-  //       'Content-Type': 'application/json',
-  //     },
-  //     credentials: 'same-origin'
-  //   })
-  // });
-  // Test Pen
-
+  /*Button Fin du jeu*/
   const button_endgame = document.querySelector('#end');
   if (button_endgame) {
     button_endgame.addEventListener('click', () => {
@@ -101,6 +84,7 @@ const initPlayer = () => {
     });
   }
 
+  /*Button Buzzer qui arrête la track en cours*/
   if (!document.querySelector("#spotify-js")) {
     const js = document.createElement("script");
     js.id = "spotify-js"
@@ -123,6 +107,7 @@ const initPlayer = () => {
     return;
   };
 
+  /*Lancement du player Spotify*/
   window.onSpotifyWebPlaybackSDKReady = () => {
     window.spotifyPlayer = new Spotify.Player({
       name: 'AperoBlindTests',
