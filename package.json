@@ -2,6 +2,11 @@
   "name": "AperoBlindTest",
   "private": true,
   "dependencies": {
+    "@material/circular-progress": "^7.0.0",
+    "@material/icon-button": "^7.0.0",
+    "@material/linear-progress": "^7.0.0",
+    "@material/ripple": "^7.0.0",
+    "@material/textfield": "^7.0.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

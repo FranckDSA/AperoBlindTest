@@ -1,0 +1,113 @@
+.master-control-area {
+  height: $controle-size;
+  width: $controle-size;
+  border-radius: 50%;
+  background-color: $spotify-green;
+  //border: 4px $spotify-green solid;
+  position: absolute;
+  top: $structure-size;
+  opacity: 80%;
+
+  .play {
+    height: $controle-size/2;
+    width: $controle-size/2;
+    border-top-left-radius: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+   // opacity: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .mdc-icon-button {
+        height: $controle-size/3;
+        width: $controle-size/3;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+      .material-icons {
+        font-size: $controle-size/3;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+
+  .next {
+    height: $controle-size/2;
+    width: $controle-size/2;
+    border-top-right-radius: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+    opacity: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .mdc-icon-button {
+        height: $controle-size/3;
+        width: $controle-size/3;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+      .material-icons {
+        font-size: $controle-size/3;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+
+  .middle-bar {
+    height: 0px;
+    width: $controle-size;
+    border: 1px white solid;
+    position: absolute;
+    top: $controle-size/2;
+    left: 0px;
+    opacity: 10%;
+  }
+
+  .good-answer {
+    height: $controle-size/2;
+    width: $controle-size;
+    // border-top: 1px white solid;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: white;
+    opacity: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    .mdc-icon-button {
+        height: $controle-size/3;
+        width: $controle-size/3;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+      .material-icons {
+        font-size: $controle-size/3;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+}
+

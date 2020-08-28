@@ -30,10 +30,20 @@ import "bootstrap";
 // import { initUpdateGameToPlaying } from '../games/launchgame';
 import { initPlaylistChoice } from '../games/formcreation';
 import { initGameCable } from '../channels/gamechannel.js';
+
+import { initCounterTenSeconds } from '../components/counter.js';
+// import for material Design
+import {MDCTextField} from '@material/textfield';
+// import {MDCRipple} from '@material/ripple';
+import {MDCIconButtonToggle} from '@material/icon-button';
+// import { MDCCircularProgress } from '@material/circular-progress';
+import { MDCLinearProgress } from '@material/linear-progress';
+
 import { initPlayer } from '../games/player.js';
 import { countDown } from '../games/countDown.js';
 import { validateAnswers } from '../games/validateAnswers.js';
 import { resumeGame } from '../games/resumeGame.js';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -41,8 +51,49 @@ document.addEventListener('turbolinks:load', () => {
   // initUpdateGameToPlaying();
   initPlaylistChoice();
   initGameCable();
+
+  // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+  // initCounterTenSeconds(linearProgress);
+  const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+
+
+  const iconToggleTwo = document.querySelector('#answer');
+    iconToggleTwo.addEventListener("click", (event) => {
+    // Do something (callback)
+    if (iconToggleTwo.innerText === "done") {
+      iconToggleTwo.innerText = "done_outline";
+    } else if (iconToggleTwo.innerText === "done_outline") {
+      iconToggleTwo.innerText = "done";
+    }
+  });
+
+    const iconToggleOne = document.querySelector('#play');
+    iconToggleOne.addEventListener("click", (event) => {
+    // Do something (callback)
+    if (iconToggleOne.innerText === "play_arrow") {
+      iconToggleOne.innerText = "pause";
+    } else if (iconToggleOne.innerText === "pause") {
+      iconToggleOne.innerText = "play_arrow";
+    }
+  });
+
   initPlayer();
   countDown(10);
   validateAnswers();
   resumeGame();
 });
+
+// material-design JavaScript instantiation
+
+// const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
+// const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+
+// const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
+//const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+
+// const iconToggleTwo = new MDCIconButtonToggle(document.querySelector('#answer'));
+// const iconToggle = new MDCIconButtonToggle(document.querySelector('#play'));
+
+
+
+
