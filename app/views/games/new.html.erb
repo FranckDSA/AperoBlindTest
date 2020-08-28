@@ -11,7 +11,7 @@
             <div class="category-choices">
               <% Playlist.all.each do |playlist| %>
                 <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
-                <input type="hidden" value="<%= playlist.id %>" name="game[playlist_id]">
+                <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
                 <label for="playlist" class="category-choice">
                   <img src="<%= playlist.image %>" alt="">
                   <p><%= playlist.name %></p>
