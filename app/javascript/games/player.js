@@ -84,6 +84,13 @@ const initPlayer = () => {
     });
   }
 
+    const endedgame = document.querySelector('#ended');
+  if (endedgame) {
+    endedgame.addEventListener('click', () => {
+      window.spotifyPlayer.disconnect()
+    });
+  }
+
   /*Button Buzzer qui arrête la track en cours*/
   if (!document.querySelector("#spotify-js")) {
     const js = document.createElement("script");
