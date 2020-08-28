@@ -1,5 +1,11 @@
 <div class="container" id="ended">
-  Score of all players
+  <div class="coupe">
+      <%= cl_image_tag("AperoBlindTest/Download-Winner-PNG-File_geemhb") %>
+  </div>
+  <div class="thewinner">
+    <H2>THE WINNER: <%= @game.answers.last.player.user_name %></H2>
+  </div>
+  <h1>Scores:</h1>
   <% @game.players.each do |player| %>
   <div class="playerscore">
     <p><%= player.user_name %>-<%= player.score %></p>
