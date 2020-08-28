@@ -8,15 +8,15 @@ const validateAnswers = () => {
       clickValidation.addEventListener('click', () => {
         const playerId = clickValidation.dataset.playerId;
         fetch(`/players/${playerId}`, {
-        method: "PATCH",
-        body: JSON.stringify({player: {score: 1 }}),
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-          'X-CSRF-Token': csrfToken,
-          'Content-Type': 'application/json',
-        },
-        credentials: 'same-origin'
-      })
+          method: "PATCH",
+          body: JSON.stringify({player: {score: 1 }}),
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-Token': csrfToken,
+            'Content-Type': 'application/json',
+          },
+          credentials: 'same-origin'
+        })
     })
 };
 export { validateAnswers };
