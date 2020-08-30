@@ -9,6 +9,18 @@
 
 <%#= render 'shared/navbar' %>
 
+
+<%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2" ) %>
+
+<%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", :transformation=>[
+  {:width=>100, :crop=>"scale"},
+  {:angle=>90}
+  ])%>
+
+<%#= cl_image_tag("AperoBlindTest/Boule_ui1wfg" ) %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path("AperoBlindTest/Boule_ui1wfg") %>')">
+
 <%#= render 'shared/home' %>
 
 <%#= render 'shared/counter-ten-seconds' %>
