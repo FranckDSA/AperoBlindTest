@@ -1,8 +1,14 @@
-<div class="player-home d-flex flex-column border-top">
-  <p class="py-3">If you are a player, please</p>
+<div class="bottom">
+
+  <h2>If you are a player, please</h2>
+
+  <h3>Enter your game pin:</h3>
   <%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
     <%= f.input :game_pin_entered, placeholder:'****' %>
-    <%= f.input :user_name, placeholder:'SuperSunny' %>
-    <%= f.submit "enter the game!", class: "btn btn-primary blue-background"%>
+
+  <h3>Enter your game username:</h3>
+  <%= f.input :user_name, placeholder:'SuperSunny' %>
+    <%= f.submit "ENTER !", class: "btn btn-primary"%>
   <% end %>
+
 </div>
