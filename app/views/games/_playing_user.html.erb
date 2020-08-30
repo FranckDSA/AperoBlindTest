@@ -1,5 +1,6 @@
-<div class="container" style="text-align:center;">
-  <%= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2") %>
+<%= render 'shared/navbar_abt_user' %>
+
+<div class="top" style="text-align:center;">
 
   <div class="current-playlist-image">
     <img src="<%=@game.playlist.image%>" alt="">
@@ -17,29 +18,29 @@
     </div>
   </div>
 
-<!-- <button type="button" class="btn btn-light" id="play">Pause</button>
-<button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
-<button type="button" class="btn btn-primary" id="end">End Game</button> -->
-
- <div class="container">
-   </div class="button-player">
-     <button type="button" class="btn btn-light blue-background" id="play">Pause</button>
-     <button type="button" class="btn btn-primary blue-background" id="nexttrack">Next track</button>
-     <button type="button" class="btn btn-primary blue-background" id="end">End Game</button>
-   </div>
- </div>
-
-<%= render 'shared/control-game-master' %>
+  <%= render 'shared/control-game-master' %>
 
   <div class="container">
-   <div class="score-recap">
-     <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
+    <div class="score-recap">
+      <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
       <p>
         <% @game.players.each do |player| %>
         <li><%= player.user_name %> : <%= player.score %></li>
         <% end %>
       </p>
-   </div>
+    </div>
   </div>
 </div>
 
+
+<!-- <button type="button" class="btn btn-light" id="play">Pause</button>
+<button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
+<button type="button" class="btn btn-primary" id="end">End Game</button> -->
+
+<!--  <div class="container">
+   </div class="button-player">
+     <button type="button" class="btn btn-light blue-background" id="play">Pause</button>
+     <button type="button" class="btn btn-primary blue-background" id="nexttrack">Next track</button>
+     <button type="button" class="btn btn-primary blue-background" id="end">End Game</button>
+   </div>
+ </div> -->

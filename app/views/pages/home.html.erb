@@ -1,28 +1,9 @@
-<div class="container p-3 home-center">
-  <%= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2") %>
-
-  <h2>Welcome to Apero BlindTest</h2>
-  <%= render 'shared/user_management' %>
-  <%= render 'shared/player_management' %>
+<div id="logo-and-name" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/on-dark-logo-and-name_zoiyp5", :crop => :lpad) %>')">
 </div>
 
 
-<%#= render 'shared/navbar' %>
-
-
-<%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2" ) %>
-
-<%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", :transformation=>[
-  {:width=>100, :crop=>"scale"},
-  {:angle=>90}
-  ])%>
-
-<%#= cl_image_tag("AperoBlindTest/Boule_ui1wfg" ) %>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path("AperoBlindTest/Boule_ui1wfg") %>')">
-
-<%#= render 'shared/home' %>
-
-<%#= render 'shared/counter-ten-seconds' %>
-
-<%#= render 'shared/control-game-master' %>
+<div id="enter" class="hidden">
+  <%= render 'shared/navbar_abt' %>
+  <%= render 'shared/user_management' %>
+  <%= render 'shared/player_management' %>
+</div>
