@@ -1,9 +1,8 @@
-# Show du player
-
-
-
-<%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
-  <%= f.input :game_pin_entered %>
-  <%= f.input :user_name %>
-  <%= f.submit "Enter the Game!", class: "" %>
-<% end %>
+<div class="player-home d-flex flex-column border-top">
+  <p class="py-3">If you are a player, please</p>
+  <%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
+    <%= f.input :game_pin_entered, placeholder:'****' %>
+    <%= f.input :user_name, placeholder:'SuperSunny' %>
+    <%= f.submit "enter the game!", class: "btn btn-primary blue-background"%>
+  <% end %>
+</div>

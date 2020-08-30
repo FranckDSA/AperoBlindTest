@@ -1,2 +1,6 @@
-# Show du gamemaster
-<%= link_to "Create a new game", omniauth_authorize_path(:user, :spotify) %>
+<div class="user-home d-flex flex-column border-top">
+  <p class="py-3">If you are the gamemaster please</p>
+  <p>
+    <%= link_to "create a new game", omniauth_authorize_path(:user, :spotify), class:"btn btn-primary blue-background" %>
+  </p>
+</div>

@@ -1,0 +1,59 @@
+.current-playlist-image {
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.current-track {
+  background-color: #7fcae3;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  color:white;
+  border-radius: 5px;
+}
+
+.current-track h3 {
+  font-size: 22px;
+  padding: 5px;
+  margin: 0px;
+}
+
+.current-track-img {
+  height: 250px;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://images.pexels.com/photos/3991976/pexels-photo-3991976.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: cover;
+  position: relative;
+}
+
+.current-track-info {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.current-track-description p {
+  font-size: 18px;
+  margin: 0px;
+  text-align:left;
+}
+
+.score-recap {
+  width: 100%;
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 20px 0px;
+  color:white;
+  border-radius: 5px;
+}
+
+.score-recap h3 {
+  font-size: 22px;
+  padding: 5px;
+  margin: 0px;
+}
+
+.score-recap p {
+  font-size: 18px;
+  margin: 0px;
+  text-align:left;
+}

@@ -2,12 +2,14 @@
     <%= render 'games/playing_player' %>
   <%# elsif @game.state == "paused" %>
     <%#= render 'paused' %>
-  <% elsif @game.state == "buzz" %>
-    <%= render 'games/buzz_player' %>
-  <% elsif @game.state == "pending" %>
-    <%= render 'games/pending_player' %>
-  <% elsif @game.state == "ended" %>
-   <%= render 'games/ended' %>
-  <% elsif @game.state == "validation" %>
-   <%= render 'games/validation_player' %>
-  <% end %>
+<% elsif @game.state == "buzz" %>
+  <%= render 'games/buzz_player' %>
+<% elsif @game.state == "pending" %>
+  <%= render 'games/pending_player' %>
+<% elsif @game.state == "ended" %>
+ <%= render 'games/ended' %>
+<% elsif @game.state == "validation" %>
+ <%= render 'games/validation_player' %>
+<% elsif @game.state == "ended" %>
+  <%= render 'games/ended' %>
+<% end %>
