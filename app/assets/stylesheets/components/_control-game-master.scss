@@ -2,11 +2,11 @@
   height: $controle-size;
   width: $controle-size;
   border-radius: 50%;
-  background-color: $spotify-green;
+  background-color: white;
   //border: 4px $spotify-green solid;
   position: absolute;
   top: $structure-size;
-  opacity: 80%;
+  opacity: 100%;
 
   .play {
     height: $controle-size/2;
@@ -110,4 +110,10 @@
     }
   }
 }
+
+.endgame {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  }
 

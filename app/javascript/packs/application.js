@@ -62,30 +62,30 @@ document.addEventListener('turbolinks:load', () => {
   // const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
 
-  const iconToggleTwo = document.querySelector('#answer');
-    if (iconToggleTwo) {
-        iconToggleTwo.addEventListener("click", (event) => {
-    // Do something (callback)
-      if (iconToggleTwo.innerText === "done") {
-        iconToggleTwo.innerText = "done_outline";
-      } else if (iconToggleTwo.innerText === "done_outline") {
-        iconToggleTwo.innerText = "done";
-      }
-    });
-  };
+  // const iconToggleTwo = document.querySelector('#answer');
+  //   if (iconToggleTwo) {
+  //       iconToggleTwo.addEventListener("click", (event) => {
+  //   // Do something (callback)
+  //     if (iconToggleTwo.innerText === "done") {
+  //       iconToggleTwo.innerText = "done_outline";
+  //     } else if (iconToggleTwo.innerText === "done_outline") {
+  //       iconToggleTwo.innerText = "done";
+  //     }
+  //   });
+  // };
 
 
-  const iconToggleOne = document.querySelector('#play');
-    if (iconToggleOne) {
-       iconToggleOne.addEventListener("click", (event) => {
-    // Do something (callback)
-      if (iconToggleOne.innerText === "play_arrow") {
-        iconToggleOne.innerText = "pause";
-      } else if (iconToggleOne.innerText === "pause") {
-        iconToggleOne.innerText = "play_arrow";
-      }
-    });
-  }
+  // const iconToggleOne = document.querySelector('#play');
+  //   if (iconToggleOne) {
+  //      iconToggleOne.addEventListener("click", (event) => {
+  //   // Do something (callback)
+  //     if (iconToggleOne.innerText === "play_arrow") {
+  //       iconToggleOne.innerText = "pause";
+  //     } else if (iconToggleOne.innerText === "pause") {
+  //       iconToggleOne.innerText = "play_arrow";
+  //     }
+  //   });
+  // }
 });
 
 // material-design JavaScript instantiation

@@ -9,9 +9,12 @@
   <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
 </div>
 
-<button type="button" class="btn btn-light" id="play">Pause</button>
+<!-- <button type="button" class="btn btn-light" id="play">Pause</button>
 <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
-<button type="button" class="btn btn-primary" id="end">End Game</button>
+<button type="button" class="btn btn-primary" id="end">End Game</button> -->
+
+
+<%= render 'shared/control-game-master' %>
 
 
 <h2>Scores</h2>
