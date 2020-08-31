@@ -1,7 +1,7 @@
 <%= render 'shared/navbar_abt_user' %>
 
 <!-- Id game & data-game-id importants -->
-<div class="container home-center">
+<div class="container home-center iphone-xs" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/dark-glass_t3324r", :width=> 375, :crop => :lpad) %>')">
     <h2 class="p-3">Hello <%= @game.user.user_name %></h2>
     <p>
       <!-- Avatar du game master -->

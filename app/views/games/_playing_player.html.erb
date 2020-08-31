@@ -1,10 +1,5 @@
-<%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
-  <%= f.submit "Buzz !", class: "buzz gros-buzzer"%>
-<% end %>
-
 <!-- <p>Mon score: <%#= @current_player.score %></p> -->
-
-
+<div class="iphone-xs" style="background-color: #D2D2D2">
 
 <button id="click-modal">
     <i class="fas fa-star"></i>
@@ -17,10 +12,18 @@
     <div class="score-recap">
       <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
       <p>
-        <% @game.players.each do |player| %>
+        <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+        <% @sorted.each do |player| %>
         <li><%= player.user_name %> : <%= player.score %></li>
         <% end %>
       </p>
     </div>
   </div>
+</div>
+
+<div class="playing">
+  <h2> Your score : <%= @current_player.score %> </h2>
+  <%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
+  <input type="image" <%= cl_image_tag "AperoBlindTest/buzzer_x9ub3k"%>
+  <% end %>
 </div>
