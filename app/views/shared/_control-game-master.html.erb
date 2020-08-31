@@ -1,29 +1,35 @@
-<div class="master-control-area">
+<div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/player-playing_dr5xkk", :width=> 357, :crop => :lpad) %>')">
 
   <div class="play">
-    <button class="mdc-icon-button">
+<!--     <button class="mdc-icon-button">
       <i id="play" class="material-icons mdc-icon-button__icon">pause</i>
-    </button>
+    </button> -->
+    <span id="play" class="material-icons"> pause </span>
+    <h3>PLAY</h3>
   </div>
 
-  <div class="middle-bar"></div>
+  <!-- <div class="middle-bar"></div> -->
 
   <div class="next">
-  <button class="mdc-icon-button">
+<!--   <button class="mdc-icon-button">
     <i id="nexttrack" class="material-icons mdc-icon-button__icon">fast_forward</i>
-  </button>
+  </button> -->
+  <span id="nexttrack" class="material-icons"> fast_forward </span>
+  <h3>NEXT</h3>
   </div>
 
 
   <div class="good-answer">
-    <button  class="mdc-icon-button">
+<!--     <button  class="mdc-icon-button">
       <i id="answer" class="material-icons mdc-icon-button__icon">done_outline</i>
-    </button>
+    </button> -->
+    <span id="answer" class="material-icons"> done </span>
   </div>
 
+  <div class="endgame">
+    <span id="end" class="material-icons"> stop </span>
+    <h3> STOP !</h3>
+  </div>
 </div>
 
-<div class="endgame">
 
-
-</div>
