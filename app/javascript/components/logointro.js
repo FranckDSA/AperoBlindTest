@@ -33,7 +33,17 @@ const initIntroLogo = () => {
     name.classList.add("animate__bounceInRight");
   };
 
+  const initEndScores = () => {
+    const score = document.querySelector('#coolscores');
+    if (!score) {
+      return
+    }
+    score.classList.add("animate__fadeInDownBig");
+  };
+
+
 export { initIntroLogo };
 export { initLogoFadeOut };
 export { initEnterFadeIn };
 export { initPendingPlayers };
+export { initEndScores };

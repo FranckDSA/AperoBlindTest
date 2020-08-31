@@ -8,10 +8,12 @@
     <H2>THE WINNER: <%= @game.answers.last.player.user_name %></H2>
   </div>
   <h1>Scores:</h1>
-  <% @game.players.each do |player| %>
-  <div class="playerscore">
-    <p><%= player.user_name %>-<%= player.score %></p>
-  </div>
+  <% @sorted = @game.players.sort_by { |obj| obj.score} %>
+  <% @sorted.each do |player| %>
+    <% sleep 2 %>
+    <div class="playerscore">
+      <p id="coolscores" class="animate__animated"><%= player.user_name %> - <%= player.score %></p>
+    </div>
   <% end %>
   <div>
     <h3><%= link_to "Back to da homepage", root_path %></h3>
