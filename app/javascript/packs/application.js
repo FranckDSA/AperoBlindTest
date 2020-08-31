@@ -44,6 +44,8 @@ import { countDown } from '../games/countDown.js';
 import { validateAnswers } from '../games/validateAnswers.js';
 import { resumeGame } from '../games/resumeGame.js';
 import { initIntroLogo } from '../components/logointro.js';
+import { initLogoFadeOut } from '../components/logointro.js';
+import { initEnterFadeIn } from '../components/logointro.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -55,7 +57,10 @@ document.addEventListener('turbolinks:load', () => {
   countDown(10);
   validateAnswers();
   resumeGame();
-  setTimeout(initIntroLogo, 2000);
+  // initIntroLogo();
+  setTimeout(initIntroLogo,1000);
+  setTimeout(initLogoFadeOut,2000);
+  setTimeout(initEnterFadeIn,3000);
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);
