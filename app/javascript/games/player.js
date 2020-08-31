@@ -132,14 +132,12 @@ const initPlayer = () => {
     });
   }
 
-   /*Button END GAME ALEX*/
-  //   const endedgame = document.querySelector('#ended');
-  // if (endedgame) {
-  //   endedgame.addEventListener('click', () => {
-  //     window.spotifyPlayer.disconnect();
-  //     console.log('End of the game');
-  //   });
-  // }
+   /*END GAME FRANCK*/
+   const endedgame = document.querySelector('#ended');
+   if (endedgame) {
+    window.spotifyPlayer.disconnect();
+     console.log('End of the game');
+    };
 
   /*Button Buzzer qui arrête la track en cours*/
   if (!document.querySelector("#spotify-js")) {

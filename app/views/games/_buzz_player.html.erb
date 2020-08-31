@@ -2,10 +2,15 @@
 
 <%= render 'shared/navbar_user' %>
 
-
-<h2>
-  <%= @game.answers.last.player.user_name %> is playing
-</h2>
+<% if @current_player == @game.answers.last.player %>
+  <h2>
+    Your Turn !!
+  </h2>
+<% else %>
+  <h2>
+    <%= @game.answers.last.player.user_name %> is playing
+  </h2>
+<% end %>
 <div id="countdown" style="font-size: 60px">
 </div>
 

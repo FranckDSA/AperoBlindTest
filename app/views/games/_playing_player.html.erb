@@ -30,3 +30,11 @@
   <% end %>
 </div>
 
+
+<div class="buzz-group">
+      <h3>Buzz to answer!</h3>
+      <%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
+      <input type="image" <%= cl_image_tag "AperoBlindTest/buzzer_x9ub3k", width: 300, height: 400 %> </input>
+      <% end %>
+    </div>
+
