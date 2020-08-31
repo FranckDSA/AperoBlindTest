@@ -3,58 +3,61 @@
 <!--   <div class="current-playlist-image">
     <img src="<%=@game.playlist.image%>" alt="">
   </div> -->
-<div class="iphone-xs" style="background-color: #030303">
+<div class="iphone-xs" style="background-color: #d2d2d2">
 
-<div class="playing">
-  <div class="current-track">
-    <h3><strong>🎶 CURRENT TRACK 🎶</strong></h3>
-<!--     <div class="current-track-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=@game.current_track.image%>');">
-    </div> -->
-    <div class="current-track-info">
-      <div class="current-track-description">
-        <p> Title: <strong><%=@game.current_track.title%></strong></h3>
-        <p> Artist: <strong><%=@game.current_track.artist%></strong></h3>
+  <div class="playing">
+    <div class="current-track">
+      <h3><strong>🎶 CURRENT TRACK 🎶</strong></h3>
+  <!--     <div class="current-track-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=@game.current_track.image%>');">
+      </div> -->
+      <div class="current-track-info">
+        <div class="current-track-description">
+          <p> Title: <strong><%=@game.current_track.title%></strong></h3>
+          <p> Artist: <strong><%=@game.current_track.artist%></strong></h3>
+        </div>
       </div>
     </div>
   </div>
 
   <%= render 'shared/control-game-master' %>
-</div>
+
+  <button id="click-modal">
+      <i class="fas fa-star"></i>
+  </button>
 
 
-<button id="click-modal">
-    <i class="fas fa-star"></i>
-</button>
-
-
-<div id="modal-scores" class="hidden">
-  <div class="container">
-    <span class="close">&times;</span>
-    <div class="score-recap">
-      <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
-      <p>
-        <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
-        <% @sorted.each do |player| %>
-        <li><%= player.user_name %> : <%= player.score %></li>
-        <% end %>
-      </p>
+  <div id="modal-scores" class="hidden">
+    <div class="container">
+      <span class="close">&times;</span>
+      <div class="score-recap">
+        <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
+        <p>
+          <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+          <% @sorted.each do |player| %>
+          <li><%= player.user_name %> : <%= player.score %></li>
+          <% end %>
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
-</div> -->
+  <div class="logo-bottom-left">
+
+  <%= cl_image_tag "AperoBlindTest/on-white-abt_hlwddy"%>
+
+  </div>
+
+</div>
 
 
 <!-- <button type="button" class="btn btn-light" id="play">Pause</button>
 <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
 <button type="button" class="btn btn-primary" id="end">End Game</button>
  -->
- <div class="container">
+<!--  <div class="container">
    </div class="button-player">
      <button type="button" class="btn btn-light blue-background" id="play">Pause</button>
      <button type="button" class="btn btn-primary blue-background" id="nexttrack">Next track</button>
      <button type="button" class="btn btn-primary blue-background" id="end">End Game</button>
    </div>
- </div>
-
-</div>
+ </div> -->

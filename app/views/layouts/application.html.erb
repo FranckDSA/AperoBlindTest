@@ -13,7 +13,9 @@
   </head>
 
   <body>
-   <div class="iphone-xs" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/dark-glass_t3324r", :width=> 375, :crop => :lpad) %>')">
+
+    <div class="iphone-xs" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/dark-glass_t3324r", :width=> 375, :crop => :lpad) %>')">
+      
       <%= yield %>
       <%= render 'shared/flashes' %>
     </div>
