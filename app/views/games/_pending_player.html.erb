@@ -1,6 +1,5 @@
-
 <div class="container home-center iphone-xs" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/dark-glass_t3324r", :width=> 375, :crop => :lpad) %>')">
-    <%= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", width: 200, height: 200) %>
+    <%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", width: 200, height: 200) %>
 
     <!-- <div class="box-pin">
       <p> Invite your friends to play with this game pin is : </p>
@@ -9,7 +8,7 @@
 
 
 
-    <div class="waiting-room">
+    <div class="waiting-room" style="color: #D2D2D2">
       <h3 class="py-3"> Wait for your friends to launch the game </h3>
       <h4>
         <% @game.players.each do |player| %>
@@ -17,4 +16,6 @@
         <% end %>
       </h4>
     </div>
+</div>
+
 </div>

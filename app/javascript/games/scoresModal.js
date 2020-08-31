@@ -31,6 +31,9 @@
 
 const initScoresModal = () => {
   const modal = document.querySelector('#modal-scores');
+  if (!modal) {
+    return
+  }
   const playing = document.querySelector('.playing');
   const btn = document.querySelector('#click-modal');
   const span = document.getElementsByClassName("close")[0];
