@@ -28,25 +28,25 @@
     <!-- <div class="form-group"> -->
     <label class="control-label radio_buttons optional"></label>
     <!-- <input type="hidden" name="game[playlist_id]" value=""> -->
+      <p style="color: white">YOUR PLAYLISTS (x3)</p>
       <div class="category-choices">
-        <p style="color: white">YOUR PLAYLISTS (x3)</p>
         <% Playlist.where(user_id: current_user.id).each do |playlist| %>
           <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
           <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
           <label for="playlist" class="category-choice">
-            <img class="avatar-large" src="<%= playlist.image %>" alt="">
+            <img class="" src="<%= playlist.image %>" alt="">
             <p><%= playlist.name %></p>
           </label>
         <% end %>
       </div>
 
+      <p style="color: white">RECOMMENDED PLAYLISTS (x3)</p>
       <div class="category-choices">
-        <p style="color: white">RECOMMENDED PLAYLISTS (x3)</p>
         <% Playlist.where(user_id: nil).each do |playlist| %>
           <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
           <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
           <label for="playlist" class="category-choice">
-            <img class="avatar-large" src="<%= playlist.image %>" alt="">
+            <img class="" src="<%= playlist.image %>" alt="">
             <p><%= playlist.name %></p>
           </label>
         <% end %>
