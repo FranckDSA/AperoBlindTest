@@ -1,3 +1,5 @@
+<div class="iphone-xs" style="background-color: #030303">
+
 <div id="buzz-user">
   <div class="current-track" style="color:blue">
     <h3>Current track: <%=@game.current_track.title%></h3>
@@ -6,13 +8,12 @@
   </div>
 
 <h2><%= @game.answers.last.player.user_name %> is playing</h2>
-<div id="countdown" style="font-size: 60px">
-</div>
+<div id="countdown" style="font-size: 60px"></div>
 <button type="button" class="btn btn-success blue-background" id="validation" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>" > Validate <%= @game.answers.last.player.user_name %>'s answer </button>
 <button type="button" class="btn btn-light" id="resume" data-game-id="<%= @game.id %>">Resume</button>
 
 </div>
 
 
-
+</div>
 
