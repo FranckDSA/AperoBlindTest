@@ -1,14 +1,16 @@
 import consumer from "./consumer";
 
+let gameCableInitialized = false;
+
 const initGameCable = () => {
   const gameContainer = document.getElementById('game');
-  if (gameContainer) {
+  if (gameContainer && gameCableInitialized == false) {
+    console.log("InitGameCable")
     const id = gameContainer.dataset.gameId;
     const user = gameContainer.dataset.user;
-    console.log(id);
     consumer.subscriptions.create({ channel: "GameChannel", id: id }, {
       received(data) {
-        console.log(user)
+        console.log("Data received");
         if (user == "true") {
           gameContainer.innerHTML = data.user;
           // gameContainer.innerHTML = data;
@@ -17,13 +19,13 @@ const initGameCable = () => {
           gameContainer.innerHTML = data.player;
           // gameContainer.innerHTML = data;
         }
-
         const event = document.createEvent("HTMLEvents");
         event.initEvent("turbolinks:load", true, true);
         event.eventName = "turbolinks:load";
         document.dispatchEvent(event);
       },
     });
+    gameCableInitialized = true;
   }
 }
 
