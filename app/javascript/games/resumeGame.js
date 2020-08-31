@@ -9,7 +9,7 @@ const resumeGame = () => {
         const gameId = buttonResume.dataset.gameId;
         fetch(`/games/${gameId}`, {
           method: "PATCH",
-          body: JSON.stringify({game: {state: "playing" }}),
+          body: JSON.stringify({game: {state: "resuming" }}),
           headers: {
             'X-Requested-With': 'XMLHttpRequest',
             'X-CSRF-Token': csrfToken,
