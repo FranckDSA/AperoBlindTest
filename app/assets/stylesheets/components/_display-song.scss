@@ -1,4 +1,88 @@
 #display-song {
+  width: 375px;
+  height: 300px;
+  position: absolute;
+  top: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //background-color: $grey-light;
+  border-radius: 10px;
+  //border-bottom: 4px $grey-light solid;
+
+  .pic-frame {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 155px;
+  }
+
+  .img-track {
+    border-radius: 5px;
+  }
+
+  .cartouche-song {
+    //width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    //justify-content: space-between;
+    padding: 5px;
+    //background-color: rgba(0, 0, 0, 0.1);
+    border-left: 1px $grey-medium solid;
+  }
+
+  .track {
+    //width: 80px;
+    // height: 60px;
+    //background-color: $grey-medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  h1 {
+    width: 375px;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 5px;
+    margin: 0px;
+    background-color: $grey-light;
+    //border-radius: 20px;
+  }
+
+  h2 {
+    color: $grey-medium;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  h3 {
+    color: $grey-medium;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0px;
+  }
+
+  p {
+    color: $grey-user;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    margin: 0px 0px 0px 5px;
+    padding: 0px;
+  }
 
 
+  .material-icons {
+    color: white;
+    font-size: 24px;
+    margin: 5px;
+  }
 }
+
+

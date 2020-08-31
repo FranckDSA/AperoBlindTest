@@ -1,1 +1,29 @@
+<div id="display-song">
 
+<!--     <span><h1>YOUR PLAYLIST:</h1></span> -->
+  <span><h2>YOUR PLAYLIST</h2></span>
+  <span><h1>" <%=@game.playlist.name.upcase%> "</h1></span>
+
+  <div class="cartouche">
+    <div class="track">
+      <span><h2>TRACK</h2></span>
+    </div>
+
+    <div>
+      <div class="cartouche-song">
+        <span><h3>title:</h3></span>
+        <span><p><%=@game.current_track.title.upcase%></p></span>
+      </div>
+
+      <div class="cartouche-song">
+        <h3>artist:</h3>
+        <p><%=@game.current_track.artist.upcase%></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pic-frame">
+    <img src="<%=@game.current_track.image%>" class= "img-track" style="width:100%;height:100%;">
+  </div>
+
+</div>
