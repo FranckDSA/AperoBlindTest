@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update]
+  before_action :set_game, only: [:show, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
@@ -43,13 +43,14 @@ class GamesController < ApplicationController
     redirect_to game_path(@game)
   end
 
-  def edit
-  end
-
   def update
     @game.update(game_params_update)
     @answer = Answer.new
     broadcast
+  end
+
+  def destroy
+    @game.destroy
   end
 
   private

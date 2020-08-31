@@ -55,7 +55,7 @@ document.addEventListener('turbolinks:load', () => {
   countDown(10);
   validateAnswers();
   resumeGame();
-  initIntroLogo();
+  setTimeout(initIntroLogo, 2000);
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);
