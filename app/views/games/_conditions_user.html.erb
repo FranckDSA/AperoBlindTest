@@ -1,14 +1,15 @@
 <% if @game.state != "pending" %>
   <div id="player" data-token-current-user="<%= @game.user.token %>"
-  data-current-track-spotify-id="<%=@game.current_track.spotify_id%>"
+  data-current-track-spotify-id="<%= @game.current_track.spotify_id %>"
   data-game-id="<%= @game.id %>"
-  data-next-track-id="<%=@game.current_track_id + 1%>"></div>
+  data-next-track-id="<%= @game.current_track_id + 1 %>"
+  data-game-state="<%= @game.state %>"></div>
 <% end %>
 
 <% if @game.state == "playing"%>
   <%= render 'games/playing_user' %>
-<%# elsif @game.state == "paused" %>
-  <%#= render 'paused' %>
+<% elsif @game.state == "resuming" %>
+  <%= render 'games/playing_user' %>
 <% elsif @game.state == "buzz" %>
   <%= render 'games/buzz_user' %>
 <% elsif @game.state == "pending" %>
