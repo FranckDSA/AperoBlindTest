@@ -24,6 +24,6 @@
 <div class="playing">
   <h2> Your score : <%= @current_player.score %> </h2>
   <%= simple_form_for [ @game, @answer ], defaults: {label: false} do |f| %>
-  <input type="image" <%= cl_image_tag "AperoBlindTest/buzzer_x9ub3k"%>
+    <input type="image" <%= cl_image_tag "AperoBlindTest/buzzer_x9ub3k"%>
   <% end %>
 </div>
