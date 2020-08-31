@@ -14,7 +14,9 @@
       <p class="py-3"> Wait for your friends to launch the game </p>
       <p>
         <% @game.players.each do |player| %>
-        <li><%= player.user_name %> is ready to play</li>
+        <div class="container">
+          <li id="pendingplayers" class="animate__animated"><%= player.user_name %> is ready to play</li>
+        </div>
         <% end %>
       </p>
     </div>

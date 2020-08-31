@@ -5,7 +5,7 @@ const initIntroLogo = () => {
     return
   }
   const enter = document.querySelector('#enter');
-  logo.classList.add("animate__pulse");
+  logo.classList.add("animate__heartBeat");
 };
 
   const initLogoFadeOut = () => {
@@ -25,6 +25,15 @@ const initIntroLogo = () => {
     enter.classList.add("animate__fadeIn");
   };
 
+  const initPendingPlayers = () => {
+    const name = document.querySelector('#pendingplayers');
+    if (!name) {
+      return
+    }
+    name.classList.add("animate__bounceInRight");
+  };
+
 export { initIntroLogo };
 export { initLogoFadeOut };
 export { initEnterFadeIn };
+export { initPendingPlayers };
