@@ -1,18 +1,16 @@
 <%= render 'shared/navbar_abt_user' %>
 
-<div class="top" style="text-align:center;">
-
-  <div class="current-playlist-image">
+<!--   <div class="current-playlist-image">
     <img src="<%=@game.playlist.image%>" alt="">
-  </div>
+  </div> -->
 
 <div id="click-modal"></div>
 
 <div class="playing">
   <div class="current-track">
     <h3><strong>🎶 CURRENT TRACK 🎶</strong></h3>
-    <div class="current-track-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=@game.current_track.image%>');">
-    </div>
+<!--     <div class="current-track-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=@game.current_track.image%>');">
+    </div> -->
     <div class="current-track-info">
       <div class="current-track-description">
         <p> Title: <strong><%=@game.current_track.title%></strong></h3>
@@ -23,6 +21,20 @@
 
   <%= render 'shared/control-game-master' %>
 </div>
+
+
+<!--   <div class="container">
+    <div class="score-recap">
+      <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
+      <p>
+        <% @game.players.each do |player| %>
+        <li><%= player.user_name %> : <%= player.score %></li>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div> -->
+
 
 
 <!-- <button type="button" class="btn btn-light" id="play">Pause</button>
