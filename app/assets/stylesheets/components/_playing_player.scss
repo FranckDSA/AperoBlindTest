@@ -1,0 +1,47 @@
+.playing {
+  font-family: "Nunito";
+  color: #030303;
+  text-align: center;
+}
+
+.buzz-group {
+  margin-top: 70px;
+}
+
+#new_answer > input[type=image]:nth-child(2) {
+  width: 400px;
+  height: 400px;
+}
+
+#game > div > strong > strong > div > div.img-buzzer > img {
+  filter: contrast(2);
+  border-radius: 50%;
+  height: 200px;
+  border: 1px solid #D2D2D2;
+  box-shadow: #D2D2D2;
+}
+
+.img-buzzer {
+  height: 240px;
+  width: 240px;
+  padding: 20px;
+  border: 1px solid #D2D2D2;
+  border-radius: 50%;
+  // background-color: #D2D2D2;
+  opacity: 0.4;
+  margin-top: 40px;
+}
+
+.btn-buzzer {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #D2D2D2;
+  border: 5px white solid;
+  opacity: 100%;
+  width: 200px;
+}
+
+#game > div > strong > strong > div > div.scores > p:nth-child(1) {
+  margin-bottom: 0;
+}

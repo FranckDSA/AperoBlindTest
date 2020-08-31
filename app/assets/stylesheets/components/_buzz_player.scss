@@ -1,0 +1,23 @@
+.display-center {
+  margin-top: 59px;
+  font-family: "Nunito";
+}
+
+#countdown {
+  text-align: center;
+}
+
+.playing {
+  font-family: "Nunito";
+  color: #030303;
+  text-align: center;
+}
+
+#countdown {
+  filter: contrast(2);
+  border-radius: 50%;
+  height: 200px;
+  border: 1px solid #D2D2D2;
+  box-shadow: #D2D2D2;
+  text-align: center;
+}
