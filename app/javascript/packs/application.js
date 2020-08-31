@@ -70,7 +70,6 @@ document.addEventListener('turbolinks:load', () => {
   initScoresModal();
 
 
-
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);
 

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :games
+  has_many :playlists, dependent: :destroy
 
   devise :omniauthable, :omniauth_providers => [:spotify]
 
@@ -19,6 +20,19 @@ class User < ApplicationRecord
       user.avatar = auth.info.image
     end
     user.save!
+
+    user.playlists.destroy_all
+    # user.spotify_playlists.destroy_all
+
+    me = RSpotify::User.find(user.uid)
+    me.playlists.first(3).each do |playlist|
+      Playlist.create!(
+        name: playlist.name,
+        image: playlist.images.first["url"],
+        spotify_id: playlist.id,
+        user_id: user.id
+      )
+    end
     user
   end
 

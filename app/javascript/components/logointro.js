@@ -1,4 +1,3 @@
-
 const initIntroLogo = () => {
   const logo = document.querySelector('#logo-and-name');
   if (!logo) {
@@ -7,7 +6,6 @@ const initIntroLogo = () => {
   const enter = document.querySelector('#enter');
   logo.classList.add("animate__heartBeat");
 };
-
   const initLogoFadeOut = () => {
     const logo = document.querySelector('#logo-and-name');
     if (!logo) {
@@ -15,7 +13,6 @@ const initIntroLogo = () => {
     }
     logo.classList.add("animate__fadeOut");
   };
-
   const initEnterFadeIn = () => {
     const enter = document.querySelector('#enter');
     if (!enter) {
@@ -40,8 +37,6 @@ const initIntroLogo = () => {
     }
     score.classList.add("animate__fadeInDownBig");
   };
-
-
 export { initIntroLogo };
 export { initLogoFadeOut };
 export { initEnterFadeIn };
