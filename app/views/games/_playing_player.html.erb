@@ -4,9 +4,23 @@
 
 <!-- <p>Mon score: <%#= @current_player.score %></p> -->
 
-<h2>Scores</h2>
-<p>
-  <% @game.players.each do |player| %>
-  <li><%= player.user_name %> : <%= player.score %></li>
-  <% end %>
-</p>
+
+
+<button id="click-modal">
+    <i class="fas fa-star"></i>
+</button>
+
+
+<div id="modal-scores" class="hidden">
+  <div class="container">
+    <span class="close">&times;</span>
+    <div class="score-recap">
+      <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
+      <p>
+        <% @game.players.each do |player| %>
+        <li><%= player.user_name %> : <%= player.score %></li>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
