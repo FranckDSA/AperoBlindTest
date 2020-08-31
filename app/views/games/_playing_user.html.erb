@@ -1,9 +1,10 @@
-<%= render 'shared/navbar_abt_user' %>
+<%#= render 'shared/navbar_abt_user' %>
 
 <!--   <div class="current-playlist-image">
     <img src="<%=@game.playlist.image%>" alt="">
   </div> -->
 
+<div class="playing">
   <div class="current-track">
     <h3><strong>🎶 CURRENT TRACK 🎶</strong></h3>
 <!--     <div class="current-track-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=@game.current_track.image%>');">
@@ -17,28 +18,40 @@
   </div>
 
   <%= render 'shared/control-game-master' %>
+</div>
 
-<!--   <div class="container">
+
+<button id="click-modal">
+    <i class="fas fa-star"></i>
+</button>
+
+
+<div id="modal-scores" class="hidden">
+  <div class="container">
+    <span class="close">&times;</span>
     <div class="score-recap">
       <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
       <p>
-        <% @game.players.each do |player| %>
+        <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+        <% @sorted.each do |player| %>
         <li><%= player.user_name %> : <%= player.score %></li>
         <% end %>
       </p>
     </div>
   </div>
+</div>
+
 </div> -->
 
 
 <!-- <button type="button" class="btn btn-light" id="play">Pause</button>
 <button type="button" class="btn btn-primary" id="nexttrack">Next track</button>
-<button type="button" class="btn btn-primary" id="end">End Game</button> -->
-
-<!--  <div class="container">
+<button type="button" class="btn btn-primary" id="end">End Game</button>
+ -->
+ <div class="container">
    </div class="button-player">
      <button type="button" class="btn btn-light blue-background" id="play">Pause</button>
      <button type="button" class="btn btn-primary blue-background" id="nexttrack">Next track</button>
      <button type="button" class="btn btn-primary blue-background" id="end">End Game</button>
    </div>
- </div> -->
+ </div>

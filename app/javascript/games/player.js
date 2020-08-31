@@ -36,69 +36,50 @@ const initPlayer = () => {
 
   /*Button play / pause*/
 
-  // const button = document.querySelector('#play');
-  // if (button) {
-  //   button.addEventListener('click', () => {
-  //     if (button.innerHTML == "Pause") {
-  //       button.innerHTML = "Play";
-  //       button.classList.remove("btn-light");
-  //       button.classList.add("btn-success");
-  //       window.spotifyPlayer.pause().then(() => {
-  //         console.log('Paused!');
-  //       });
-  //     } else {
-  //       button.innerHTML = "Pause";
-  //       button.classList.remove("btn-success");
-  //       button.classList.add("btn-light");
-  //       window.spotifyPlayer.resume().then(() => {
-  //         console.log('Resumed!');
-  //       });
-  //     };
-  //   });
-  // }
-
-  const iconTogglePlay = document.querySelector('#play');
-    if (iconTogglePlay) {
-      iconTogglePlay.addEventListener("click", (event) => {
-    // Do something (callback)
-      if (iconTogglePlay.innerText === "pause") {
-        iconTogglePlay.innerText = "play_arrow";
+  const button = document.querySelector('#play');
+  if (button) {
+    button.addEventListener('click', () => {
+      if (button.innerHTML == "Pause") {
+        button.innerHTML = "Play";
+        button.classList.remove("btn-light");
+        button.classList.add("btn-success");
         window.spotifyPlayer.pause().then(() => {
-        console.log('Paused!');
-         });
-      } else if (iconTogglePlay.innerText === "play_arrow") {
-        iconTogglePlay.innerText = "pause";
+          console.log('Paused!');
+        });
+      } else {
+        button.innerHTML = "Pause";
+        button.classList.remove("btn-success");
+        button.classList.add("btn-light");
         window.spotifyPlayer.resume().then(() => {
-        console.log('Resumed!');
-      });
+          console.log('Resumed!');
+        });
       };
     });
   }
 
-  /*Button Next track*/
-
-  // const button_nexttrack = document.querySelector('#nexttrack');
-  // if (button_nexttrack) {
-  //   button_nexttrack.addEventListener('click', () => {
-  //     fetch(`/games/${gameId}`, {
-  //       method: "PATCH",
-  //       body: JSON.stringify({game: {current_track_id: nextTrackId }}),
-  //       headers: {
-  //         'X-Requested-With': 'XMLHttpRequest',
-  //         'X-CSRF-Token': csrfToken,
-  //         'Content-Type': 'application/json',
-  //       },
-  //       credentials: 'same-origin'
-  //     })
-  //     window.spotifyPlayer.nextTrack().then(() => {
-  //       console.log('Skipped to next track!');
+  // const iconTogglePlay = document.querySelector('#play');
+  //   if (iconTogglePlay) {
+  //     iconTogglePlay.addEventListener("click", (event) => {
+  //   // Do something (callback)
+  //     if (iconTogglePlay.innerText === "pause") {
+  //       iconTogglePlay.innerText = "play_arrow";
+  //       window.spotifyPlayer.pause().then(() => {
+  //       console.log('Paused!');
+  //        });
+  //     } else if (iconTogglePlay.innerText === "play_arrow") {
+  //       iconTogglePlay.innerText = "pause";
+  //       window.spotifyPlayer.resume().then(() => {
+  //       console.log('Resumed!');
   //     });
+  //     };
   //   });
   // }
 
-  const iconTogglenext = document.querySelector('#nexttrack');
-  if (iconTogglenext) {
-    iconTogglenext.addEventListener("click", (event) => {
+  /*Button Next track*/
+
+  const button_nexttrack = document.querySelector('#nexttrack');
+  if (button_nexttrack) {
+    button_nexttrack.addEventListener('click', () => {
       fetch(`/games/${gameId}`, {
         method: "PATCH",
         body: JSON.stringify({game: {current_track_id: nextTrackId }}),
@@ -115,6 +96,25 @@ const initPlayer = () => {
     });
   }
 
+  // const iconTogglenext = document.querySelector('#nexttrack');
+  // if (iconTogglenext) {
+  //   iconTogglenext.addEventListener("click", (event) => {
+  //     fetch(`/games/${gameId}`, {
+  //       method: "PATCH",
+  //       body: JSON.stringify({game: {current_track_id: nextTrackId }}),
+  //       headers: {
+  //         'X-Requested-With': 'XMLHttpRequest',
+  //         'X-CSRF-Token': csrfToken,
+  //         'Content-Type': 'application/json',
+  //       },
+  //       credentials: 'same-origin'
+  //     })
+  //     window.spotifyPlayer.nextTrack().then(() => {
+  //       console.log('Skipped to next track!');
+  //     });
+  //   });
+  // }
+
 
   /*Button Fin du jeu*/
   const button_endgame = document.querySelector('#end');
@@ -124,12 +124,12 @@ const initPlayer = () => {
     });
   }
 
-    const endedgame = document.querySelector('#ended');
-  if (endedgame) {
-    endedgame.addEventListener('click', () => {
-      window.spotifyPlayer.disconnect()
-    });
-  }
+  //   const endedgame = document.querySelector('#ended');
+  // if (endedgame) {
+  //   endedgame.addEventListener('click', () => {
+  //     window.spotifyPlayer.disconnect()
+  //   });
+  // }
 
   /*Button Buzzer qui arrête la track en cours*/
   if (!document.querySelector("#spotify-js")) {
@@ -150,6 +150,7 @@ const initPlayer = () => {
         playerInstance: window.spotifyPlayer,
         spotify_uri: `spotify:track:${currentTrackSpotifyId}`,
       });
+      window.changedPosition = false;
     };
     return;
   };
@@ -168,7 +169,17 @@ const initPlayer = () => {
     window.spotifyPlayer.addListener('playback_error', ({ message }) => { console.error(message); });
 
     // Playback status updates
-    window.spotifyPlayer.addListener('player_state_changed', state => { console.log(state); });
+    // A CHANGER NE PAS TOUCHER SVPPPPP
+    window.spotifyPlayer.addListener('player_state_changed', state => {
+      console.log("State", state);
+      console.log("Position", state.position);
+      if (!window.changedPosition) {
+        window.spotifyPlayer.seek(state.position).then(() => {
+          console.log('Changed position!');
+          window.changedPosition = true;
+        });
+      }
+    });
 
     // Ready
     window.spotifyPlayer.addListener('ready', ({ device_id }) => {
