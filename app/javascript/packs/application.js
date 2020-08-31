@@ -44,7 +44,7 @@ import { countDown } from '../games/countDown.js';
 import { validateAnswers } from '../games/validateAnswers.js';
 import { resumeGame } from '../games/resumeGame.js';
 import { initIntroLogo } from '../components/logointro.js';
-import { scoresModal } from '../games/scoresModal.js';
+import { initScoresModal } from '../games/scoresModal.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -57,6 +57,7 @@ document.addEventListener('turbolinks:load', () => {
   validateAnswers();
   resumeGame();
   initIntroLogo();
+  initScoresModal ();
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);
