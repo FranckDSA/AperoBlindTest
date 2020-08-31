@@ -42,70 +42,50 @@ const initPlayer = () => {
 
   /*Button play / pause*/
 
-  const button = document.querySelector('#play');
-  if (button) {
-    button.addEventListener('click', () => {
-      if (button.innerHTML == "Pause") {
-        button.innerHTML = "Play";
-        button.classList.remove("btn-light");
-        button.classList.add("btn-success");
-        window.spotifyPlayer.pause().then(() => {
-          console.log('Paused by Game Master!');
-        });
-      } else {
-        button.innerHTML = "Pause";
-        button.classList.remove("btn-success");
-        button.classList.add("btn-light");
-        window.spotifyPlayer.resume().then(() => {
-          console.log('Resumed by Game Master!');
-        });
-      };
-    });
-  }
-
- /*Button Play ALEX*/
-  // const iconTogglePlay = document.querySelector('#play');
-  //   if (iconTogglePlay) {
-  //     iconTogglePlay.addEventListener("click", (event) => {
-  //   // Do something (callback)
-  //     if (iconTogglePlay.innerText === "pause") {
-  //       iconTogglePlay.innerText = "play_arrow";
+  // const button = document.querySelector('#play');
+  // if (button) {
+  //   button.addEventListener('click', () => {
+  //     if (button.innerHTML == "Pause") {
+  //       button.innerHTML = "Play";
+  //       button.classList.remove("btn-light");
+  //       button.classList.add("btn-success");
   //       window.spotifyPlayer.pause().then(() => {
-  //       console.log('Paused by Game Master!');
-  //        });
-  //     } else if (iconTogglePlay.innerText === "play_arrow") {
-  //       iconTogglePlay.innerText = "pause";
+  //         console.log('Paused by Game Master!');
+  //       });
+  //     } else {
+  //       button.innerHTML = "Pause";
+  //       button.classList.remove("btn-success");
+  //       button.classList.add("btn-light");
   //       window.spotifyPlayer.resume().then(() => {
-  //       console.log('Resumed by Game Master!');
-  //     });
+  //         console.log('Resumed by Game Master!');
+  //       });
   //     };
   //   });
   // }
 
-  /*Button Next track*/
-  const button_nexttrack = document.querySelector('#nexttrack');
-  if (button_nexttrack) {
-    button_nexttrack.addEventListener('click', () => {
-      fetch(`/games/${gameId}`, {
-        method: "PATCH",
-        body: JSON.stringify({game: {current_track_id: nextTrackId }}),
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-          'X-CSRF-Token': csrfToken,
-          'Content-Type': 'application/json',
-        },
-        credentials: 'same-origin'
-      })
-      window.spotifyPlayer.nextTrack().then(() => {
-        console.log('Skipped to next track!');
+ /*Button Play ALEX*/
+  const iconTogglePlay = document.querySelector('#play');
+    if (iconTogglePlay) {
+      iconTogglePlay.addEventListener("click", (event) => {
+    // Do something (callback)
+      if (iconTogglePlay.innerText === "pause") {
+        iconTogglePlay.innerText = "play_arrow";
+        window.spotifyPlayer.pause().then(() => {
+        console.log('Paused by Game Master!');
+         });
+      } else if (iconTogglePlay.innerText === "play_arrow") {
+        iconTogglePlay.innerText = "pause";
+        window.spotifyPlayer.resume().then(() => {
+        console.log('Resumed by Game Master!');
       });
+      };
     });
   }
 
-   /*Button NEXT TRACK ALEX*/
-  // const iconTogglenext = document.querySelector('#nexttrack');
-  // if (iconTogglenext) {
-  //   iconTogglenext.addEventListener("click", (event) => {
+  /*Button Next track*/
+  // const button_nexttrack = document.querySelector('#nexttrack');
+  // if (button_nexttrack) {
+  //   button_nexttrack.addEventListener('click', () => {
   //     fetch(`/games/${gameId}`, {
   //       method: "PATCH",
   //       body: JSON.stringify({game: {current_track_id: nextTrackId }}),
@@ -122,6 +102,26 @@ const initPlayer = () => {
   //   });
   // }
 
+   /*Button NEXT TRACK ALEX*/
+  const iconTogglenext = document.querySelector('#nexttrack');
+  if (iconTogglenext) {
+    iconTogglenext.addEventListener("click", (event) => {
+      fetch(`/games/${gameId}`, {
+        method: "PATCH",
+        body: JSON.stringify({game: {current_track_id: nextTrackId }}),
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-Token': csrfToken,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'same-origin'
+      })
+      window.spotifyPlayer.nextTrack().then(() => {
+        console.log('Skipped to next track!');
+      });
+    });
+  }
+
 
   /*Button Fin du jeu*/
   const button_endgame = document.querySelector('#end');
@@ -132,14 +132,12 @@ const initPlayer = () => {
     });
   }
 
-   /*Button END GAME ALEX*/
-  //   const endedgame = document.querySelector('#ended');
-  // if (endedgame) {
-  //   endedgame.addEventListener('click', () => {
-  //     window.spotifyPlayer.disconnect();
-  //     console.log('End of the game');
-  //   });
-  // }
+   /*END GAME FRANCK*/
+   const endedgame = document.querySelector('#ended');
+   if (endedgame) {
+    window.spotifyPlayer.disconnect();
+     console.log('End of the game');
+    };
 
   /*Button Buzzer qui arrête la track en cours*/
   if (!document.querySelector("#spotify-js")) {

@@ -1,11 +1,11 @@
 .master-control-area {
-  height: $controle-size;
+  height: 425px;
   width: $controle-size;
-  border-radius: 50%;
-  background-color: white;
+  //border-radius: 50%;
+  //background-color: white;
   //border: 4px $spotify-green solid;
   position: absolute;
-  top: $structure-size;
+  top: 385px;
   opacity: 100%;
   .play {
     height: $controle-size/2;
@@ -14,27 +14,28 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: white;
-   // opacity: 30%;
+    //background-color: white;
+    opacity: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .mdc-icon-button {
-        height: $controle-size/3;
-        width: $controle-size/3;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
+      .material-icons {
+        font-size: 100px;
+        color: $grey-user;
+        margin: 0px;
+        padding: 0px;
         position: absolute;
         top: 40px;
         right: 20px;
-      .material-icons {
-        font-size: $controle-size/3;
-        margin: 0px;
-        padding: 0px;
       }
-    }
+      h3 {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        font-weight: 400;
+        right: 35px;
+        color: $grey-user;
+      }
   }
   .next {
     height: $controle-size/2;
@@ -43,28 +44,31 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    background-color: white;
+    //background-color: white;
     opacity: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .mdc-icon-button {
-        height: $controle-size/3;
-        width: $controle-size/3;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
+      .material-icons {
+        font-size: 100px;
+        color: $grey-user;
+        margin: 0px;
+        padding: 0px;
         position: absolute;
         top: 40px;
         left: 20px;
-      .material-icons {
-        font-size: $controle-size/3;
-        margin: 0px;
-        padding: 0px;
-      }
     }
+      h3 {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        font-weight: 400;
+        left: 35px;
+        color: $grey-user;
+      }
   }
+
+
   .middle-bar {
     height: 0px;
     width: $controle-size;
@@ -78,37 +82,61 @@
     height: $controle-size/2;
     width: $controle-size;
     // border-top: 1px white solid;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
+    //border-bottom-right-radius: 50%;
+    //border-bottom-left-radius: 50%;
     position: absolute;
-    bottom: 0px;
+    top: $controle-size/2;
     right: 0px;
-    background-color: white;
+    //background-color: white;
     opacity: 80%;
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    .mdc-icon-button {
-        height: $controle-size/3;
-        width: $controle-size/3;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        position: absolute;
-        top: 20px;
-      .material-icons {
-        font-size: $controle-size/3;
-        margin: 0px;
-        padding: 0px;
-      }
+    .material-icons {
+      font-size: 100px;
+      color: $grey-light;
+      margin: 0px;
+      padding: 0px;
+      position: absolute;
+      top: 40px;
+    }
+    h3 {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-weight: bolder;
+      left: 35px;
+      color: $grey-user;
+    }
+  }
+
+  .endgame {
+    height: 150px;
+    width: 375px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    opacity: 80%;
+    .material-icons {
+      font-size: 70px;
+      color: $grey-user;
+      margin: 0px;
+      padding: 0px;
+      position: absolute;
+      top: 39px;
+      right: 17px;
+
+    }
+    h3 {
+      position: absolute;
+      bottom: 0px;
+      right: 5px;
+      font-weight: 400;
+      right: 4px;
+      color: $grey-user;
+      margin: 0px;
+      padding: 0px;
     }
   }
 }
-
-.endgame {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  }
