@@ -10,7 +10,7 @@ const initGameCable = () => {
     const user = gameContainer.dataset.user;
     consumer.subscriptions.create({ channel: "GameChannel", id: id }, {
       received(data) {
-        console.log("Data received");
+        console.log("Data received from current game channel and broadcasted");
         if (user == "true") {
           gameContainer.innerHTML = data.user;
           // gameContainer.innerHTML = data;
