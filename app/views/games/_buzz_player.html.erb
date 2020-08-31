@@ -1,16 +1,27 @@
-<div class="iphone-xs" style="background-color: #D2D2D2">
+<div class="iphone-xs" style="background-color: #1E2023">
 
+<%= render 'shared/navbar_abt' %>
 
-<% if @current_player == @game.answers.last.player %>
-  <h2>
-    Your Turn !!
-  </h2>
-<% else %>
-  <h2>
-    <%= @game.answers.last.player.user_name %> is playing
-  </h2>
-<% end %>
-<div id="countdown" style="font-size: 60px">
+<div class="display-center">
+
+ <div class="playing display-center" style="color: white">
+    <div class="scores">
+      <p>
+        <span class="material-icons"> military_tech </span> Winner score : <%= @game.max_score %> points
+      </p>
+
+      <% if @current_player == @game.answers.last.player %>
+      <h2> It's your turn to play</h2>
+      <% end %>
+
+    </div>
+
+    <div class="img-buzzer">
+      <div id="countdown" style="font-size: 60px"></div>
+
+      <%#= cl_image_tag "AperoBlindTest/sound_dmzsmq.gif", width: 200, height: 300, crop: :fill%>
+    </div>
+
 </div>
 
 </div>

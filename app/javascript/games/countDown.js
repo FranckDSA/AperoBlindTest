@@ -20,12 +20,12 @@ const countDown = (tps) => {
       var secondes = tps-moins;
       minutes = ((minutes < 10) ? "0" : "") + minutes;
       secondes = ((secondes < 10) ? "0" : "") + secondes;
-      document.getElementById("countdown").innerHTML = 'Time left : '+secondes;
+      document.getElementById("countdown").innerHTML = +secondes;
       var restant = tps-1;
       setTimeout(() => {countDown(restant)}, 1000);
     }
     else {
-      document.getElementById("countdown").innerHTML = 'Time left over 🥺';
+      document.getElementById("countdown").innerHTML = 'Time is over';
     }
 };
 export { countDown };
