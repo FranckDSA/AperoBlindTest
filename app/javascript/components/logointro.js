@@ -1,11 +1,11 @@
 const initIntroLogo = () => {
   const logo = document.querySelector('#logo-and-name');
   const enter = document.querySelector('#enter');
-  if (logo) {
+  if (logo && enter) {
     logo.addEventListener('click', () => {
     logo.classList.add("hidden");
     enter.classList.remove("hidden");
-    button.classList.add("visible");
+    enter.classList.add("visible");
     });
   };
 };
