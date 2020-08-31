@@ -1,6 +1,5 @@
-
-<div class="container home-center">
-    <%= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", width: 200, height: 200) %>
+<div class="iphone-xs" style="background-color: #D2D2D2">
+    <%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", width: 200, height: 200) %>
 
     <!-- <div class="box-pin">
       <p> Invite your friends to play with this game pin is : </p>
@@ -13,8 +12,12 @@
       <h3 class="py-3"> Wait for your friends to launch the game </h3>
       <h4>
         <% @game.players.each do |player| %>
-        <li><%= player.user_name %> is ready to play</li>
+          <div class="container">
+            <li id="pendingplayers" class="animate__animated"><%= player.user_name %> is ready to play</li>
+          </div>
         <% end %>
       </h4>
     </div>
+</div>
+
 </div>

@@ -1,8 +1,10 @@
+<div class="iphone-xs" style="background-color: #030303">
+
 <%= render 'shared/navbar_abt' %>
 
-<div class="top">
+<div id="top-choose">
   <div class="cartouche">
-    <span class="material-icons"> playlist_add </span>
+    <span class="material-icons"> library_music </span>
     <h2>Choose your playlist </h2>
   </div>
 
@@ -50,14 +52,36 @@
         <% end %>
       </div>
 
-    <h1>Choose the winner score</h1>
-  <%#= f.input :max_score %>
+<div id= "bottom-choose">
+    <div class="cartouche">
+      <span class="material-icons"> military_tech </span>
+      <h2>Choose the winner score</h2>
+    </div>
+        <div id="choose-bar" class="cartouche-bar">
+          <h3>3pts</h3>
+          <h3>20pts</h3>
+          <h3>35pts</h3>
+          <h3>50pts</h3>
+      <!-- <span class="material-icons small"> fastfood </span>
+      <span class="material-icons small"> forward_5 </span>
+      <span class="material-icons small"> forward_10 </span>
+      <span class="material-icons small"> forward_30 </span> -->
+    </div>
+
     <label for="game[max_score]"></label>
-    <input type="range" name="game[max_score]" min="3" max="50" value="" step="5" class="range-bar">
-    <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
-    <!-- </div> -->
-    <%= f.submit "Create a new game", class: "btn btn-light blue-background" %>
+    <!-- <input type="range" name="game[max_score]" min="3" max="50" value="" step="5" class="range-bar">
+    <span class="font-weight-bold text-primary ml-2 valueSpan2"></span> -->
+
+    <input type="range" name="game[max_score]" list="tickmarks" min="3" max="50" value="" step="15" class="range-bar">
+
+    <datalist id="tickmarks">
+      <option value="3">
+      <option value="20">
+      <option value="35">
+      <option value="50">
+    </datalist>
+
+    <%= f.submit "CREATE !", class: "btn btn-light blue-background" %>
   <% end %>
+  </div>
 </div>
-
-
