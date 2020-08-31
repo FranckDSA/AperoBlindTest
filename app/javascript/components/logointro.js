@@ -6,9 +6,6 @@ const initIntroLogo = () => {
   }
   const enter = document.querySelector('#enter');
   logo.classList.add("animate__pulse");
-    // logo.classList.add("animate__fadeOut");
-    // enter.classList.remove("hidden");
-    // enter.classList.add("animate__fadeIn");
 };
 
   const initLogoFadeOut = () => {
