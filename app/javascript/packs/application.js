@@ -44,6 +44,7 @@ import { countDown } from '../games/countDown.js';
 import { validateAnswers } from '../games/validateAnswers.js';
 import { resumeGame } from '../games/resumeGame.js';
 import { initIntroLogo } from '../components/logointro.js';
+import { scoresModal } from '../games/scoresModal.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
