@@ -6,20 +6,50 @@
     <h2>Choose your playlist </h2>
   </div>
 
+ <div class="search-bar">
+    <p style="color: white">SEARCHED PLAYLISTS - TO BE COMPLETED</p>
+    <%= form_tag spotify_playlists_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a playlist"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="category-choices">
+    <p style="color: white">RESULTS</p>
+  </div>
+
   <%= simple_form_for @game, defaults: {label: false}, method: "POST" do |f| %>
     <!-- <div class="form-group"> -->
     <label class="control-label radio_buttons optional"></label>
     <!-- <input type="hidden" name="game[playlist_id]" value=""> -->
-    <div class="category-choices">
-      <% Playlist.all.each do |playlist| %>
-        <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
-        <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
-        <label for="playlist" class="category-choice">
-          <img class="avatar-large" src="<%= playlist.image %>" alt="">
-          <p><%= playlist.name %></p>
-        </label>
-      <% end %>
-     </div>
+      <div class="category-choices">
+        <p style="color: white">YOUR PLAYLISTS (x3)</p>
+        <% Playlist.where(user_id: current_user.id).each do |playlist| %>
+          <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
+          <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
+          <label for="playlist" class="category-choice">
+            <img class="avatar-large" src="<%= playlist.image %>" alt="">
+            <p><%= playlist.name %></p>
+          </label>
+        <% end %>
+      </div>
+
+      <div class="category-choices">
+        <p style="color: white">RECOMMENDED PLAYLISTS (x3)</p>
+        <% Playlist.where(user_id: nil).each do |playlist| %>
+          <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
+          <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
+          <label for="playlist" class="category-choice">
+            <img class="avatar-large" src="<%= playlist.image %>" alt="">
+            <p><%= playlist.name %></p>
+          </label>
+        <% end %>
+      </div>
+
     <h1>Choose the winner score</h1>
   <%#= f.input :max_score %>
     <label for="game[max_score]"></label>
@@ -29,3 +59,5 @@
     <%= f.submit "Create a new game", class: "btn btn-light blue-background" %>
   <% end %>
 </div>
+
+

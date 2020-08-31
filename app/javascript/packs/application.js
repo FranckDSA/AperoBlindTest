@@ -64,7 +64,7 @@ document.addEventListener('turbolinks:load', () => {
   setTimeout(initLogoFadeOut,2000);
   setTimeout(initEnterFadeIn,3000);
   initIntroLogo();
-  initScoresModal ();
+  initScoresModal();
 
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
