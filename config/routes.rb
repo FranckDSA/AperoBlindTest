@@ -10,6 +10,4 @@ Rails.application.routes.draw do
   resources :answers, only: [:update, :edit]
     # Index ajouté par rapport au schema de DB
   resources :players, only: [:index, :new, :create, :update]
-
-  resources :spotify_playlists, only: [:index]
 end
