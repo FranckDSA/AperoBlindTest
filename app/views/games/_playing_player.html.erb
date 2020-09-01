@@ -15,16 +15,16 @@
       YOU'RE THE BEST!
     <% elsif @top3.include?(@current_player) %>
       WELL DONE!
-    <% elsif @top5.include?(@current_player) %>
+    <% else @top5.include?(@current_player) %>
       KEEP GOING!
-    <% else %>
-      LOOSER...
     <% end %>
   </h1></span>
 
   <div>
     <h2>
+      <% if @current_player %>
       Your rank: <%= @sorted.index(@current_player) + 1%> / <%= @game.players.size %>
+      <% end %>
     </h2>
 
   </div>
