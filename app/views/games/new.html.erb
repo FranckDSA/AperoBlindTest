@@ -28,8 +28,8 @@
     <!-- <div class="form-group"> -->
     <label class="control-label radio_buttons optional"></label>
     <!-- <input type="hidden" name="game[playlist_id]" value=""> -->
+      <p style="color: white">YOUR PLAYLISTS (x3)</p>
       <div class="category-choices">
-        <p style="color: white">YOUR PLAYLISTS (x3)</p>
         <% Playlist.where(user_id: current_user.id).each do |playlist| %>
           <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
           <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
@@ -40,8 +40,8 @@
         <% end %>
       </div>
 
+      <p style="color: white">RECOMMENDED PLAYLISTS (x3)</p>
       <div class="category-choices">
-        <p style="color: white">RECOMMENDED PLAYLISTS (x3)</p>
         <% Playlist.where(user_id: nil).each do |playlist| %>
           <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
           <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
@@ -62,15 +62,9 @@
           <h3>20pts</h3>
           <h3>35pts</h3>
           <h3>50pts</h3>
-      <!-- <span class="material-icons small"> fastfood </span>
-      <span class="material-icons small"> forward_5 </span>
-      <span class="material-icons small"> forward_10 </span>
-      <span class="material-icons small"> forward_30 </span> -->
     </div>
 
     <label for="game[max_score]"></label>
-    <!-- <input type="range" name="game[max_score]" min="3" max="50" value="" step="5" class="range-bar">
-    <span class="font-weight-bold text-primary ml-2 valueSpan2"></span> -->
 
     <input type="range" name="game[max_score]" list="tickmarks" min="3" max="50" value="" step="15" class="range-bar">
 
