@@ -15,14 +15,14 @@
     </div>
   </div>
 
-  <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/player-buzzed_cngg9b", :width=> 357, :crop => :lpad) %>')">
+  <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/media-payer-red_yywuw9", :width=> 357, :crop => :lpad) %>')">
 
     <div class="play">
   <!--     <button class="mdc-icon-button">
         <i id="play" class="material-icons mdc-icon-button__icon">pause</i>
       </button> -->
-      <span id="resume" class="material-icons" data-game-id="<%= @game.id %>"> play_arrow </span>
-      <h3>RESUME</h3>
+      <span id="resume" class="material-icons" style= "color: white" data-game-id="<%= @game.id %>"> close </span>
+      <h3 style= "color: white">WRONG</h3>
     </div>
 
     <!-- <div class="middle-bar"></div> -->
@@ -32,7 +32,7 @@
       <i id="nexttrack" class="material-icons mdc-icon-button__icon">fast_forward</i>
     </button> -->
     <span id="" class="material-icons" style="color: #c2c2c2;"> fast_forward </span>
-    <h3 style="color: #c2c2c2;">NEXT</h3>
+    <h3 style="color: #c2c2c2;"></h3>
     </div>
 
 
@@ -40,7 +40,7 @@
   <!--     <button  class="mdc-icon-button">
         <i id="answer" class="material-icons mdc-icon-button__icon">done_outline</i>
       </button> -->
-      <h3 style="color: white;">VALIDATE !</h3>
+      <h3 style="color: white;">GOOD</h3>
       <span id="validation" class="material-icons" style="color: white;" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>" > done </span>
     </div>
 
