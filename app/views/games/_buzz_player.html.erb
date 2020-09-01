@@ -41,11 +41,11 @@
     </div>
 
     <div>
-      <% if @current_player == @game.answers.last.player %>
-        <h4>YOUR TURN TO PLAY!</h4>
-      <% else %>
-        <h4><%= @game.answers.last.player.user_name %> IS PLAYING</h4>
-      <% end %>
+      <%# if @current_player == @game.answers.last.player %>
+        <!-- <h4>YOUR TURN TO PLAY!</h4> -->
+      <%# else %>
+        <h4><%= @game.answers.last.player.user_name.upcase %> IS PLAYING</h4>
+      <%# end %>
     </div>
 
   </div>
