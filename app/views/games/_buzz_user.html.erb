@@ -1,19 +1,76 @@
-<div class="iphone-xs" style="background-color: #030303">
+<div class="iphone-xs" style="background-color: white">
 
-<div id="buzz-user">
-  <div class="current-track" style="color:blue">
-    <h3>Current track: <%=@game.current_track.title%></h3>
-    <h3> Artist: <%=@game.current_track.artist%></h3>
-    <img src="<%=@game.current_track.image%>" alt="" style="width: 200px">
+  <%= render 'shared/navbar_abt_user' %>
+  <%= render 'shared/display_song' %>
+  <div id="buzz-user"></div>
+
+  <div id="buzzer-area">
+    <div class="playing">
+      <span><h1 style="color: black"><%= @game.answers.last.player.user_name %></h1></span>
+      <span><h1 style="color: #858585">IS PLAYING<h1></span>
+    </div>
+
+    <div id="buzzer-user">
+      <div id="countdown" style="font-size: 60px; color: #030303"></div>
+    </div>
   </div>
 
-<h2><%= @game.answers.last.player.user_name %> is playing</h2>
-<div id="countdown" style="font-size: 60px"></div>
-<button type="button" class="btn btn-success blue-background" id="validation" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>" > Validate <%= @game.answers.last.player.user_name %>'s answer </button>
-<button type="button" class="btn btn-light" id="resume" data-game-id="<%= @game.id %>">Resume</button>
+  <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/media-payer-red_yywuw9", :width=> 357, :crop => :lpad) %>')">
 
+    <div class="play">
+  <!--     <button class="mdc-icon-button">
+        <i id="play" class="material-icons mdc-icon-button__icon">pause</i>
+      </button> -->
+      <span id="resume" class="material-icons" style= "color: white" data-game-id="<%= @game.id %>"> close </span>
+      <h3 style= "color: white">WRONG</h3>
+    </div>
+
+    <!-- <div class="middle-bar"></div> -->
+
+    <div class="next">
+  <!--   <button class="mdc-icon-button">
+      <i id="nexttrack" class="material-icons mdc-icon-button__icon">fast_forward</i>
+    </button> -->
+    <span id="" class="material-icons" style="color: #c2c2c2;"> fast_forward </span>
+    <h3 style="color: #c2c2c2;"></h3>
+    </div>
+
+
+    <div class="good-answer">
+  <!--     <button  class="mdc-icon-button">
+        <i id="answer" class="material-icons mdc-icon-button__icon">done_outline</i>
+      </button> -->
+      <h3 style="color: white;">GOOD</h3>
+      <span id="validation" class="material-icons" style="color: white;" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>" > done </span>
+    </div>
+
+    <div class="endgame">
+      <span id="end" class="material-icons"> stop </span>
+      <h3> STOP !</h3>
+    </div>
 </div>
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- buzz-user used to pause the game -->
+
+
+<!-- <button type="button" class="btn btn-light" id="resume" data-game-id="<%= @game.id %>">Resume</button>
+ -->
+
+
+
+
+<!-- <button type="button" class="btn btn-success blue-background" id="validation" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>" > Validate <%= @game.answers.last.player.user_name %>'s answer </button> -->
 

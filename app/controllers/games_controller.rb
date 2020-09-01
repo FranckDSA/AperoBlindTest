@@ -13,6 +13,25 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @user_private_playlists = Playlist.where(user_id: current_user.id, searched: nil)
+    @public_spotify_playlists = Playlist.where(user_id: nil)
+
+    @searched_spotify_playlists = []
+    if params[:query].present?
+      @spotify_playlists = RSpotify::Playlist.search(params[:query], limit: 3)
+      Playlist.where(user_id: current_user.id, searched: true).destroy_all
+      @spotify_playlists.each do |playlist|
+        pl = Playlist.create!(
+              name: playlist.name,
+              image: playlist.images.first["url"],
+              spotify_id: playlist.id,
+              user_id: current_user.id,
+              searched: true,
+            )
+        @searched_spotify_playlists << pl
+      end
+
+    end
   end
 
   def create

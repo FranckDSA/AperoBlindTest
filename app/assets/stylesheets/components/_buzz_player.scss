@@ -3,6 +3,65 @@
   font-family: "Nunito";
 }
 
+#buzzer-user #countdown  {
+  //filter: contrast(2);
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border: 1px solid $grey-dark;
+  box-shadow: #D2D2D2;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buzzer-area {
+  width: 375px;
+  height: 150px;
+  position: absolute;
+  top: 225px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  //opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px $grey-dark solid;
+  border-bottom: 1px $grey-dark solid;
+
+  .playing {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  h1 {
+    color: white;
+    font-weight: 400;
+    font-size: 32px;
+    margin: 5px;
+  }
+
+  h3 {
+    color: $grey-medium;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0px;
+  }
+
+  p {
+    color: $grey-user;
+    font-weight: 400;
+    font-size: px;
+    text-align: left;
+    margin: 0px 0px 0px 5px;
+    padding: 0px;
+  }
+}
+
+
 .playing {
   font-family: "Nunito";
   color: #030303;
