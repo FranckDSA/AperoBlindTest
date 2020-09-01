@@ -23,14 +23,14 @@
   }
 
   h2 {
-    color: $grey-medium;
+    color: white;
     font-weight: 400;
     font-size: 20px;
-    margin: 5px;
+    margin: 15px;
   }
 
   h3 {
-    color: $grey-medium;
+    color: white;
     font-weight: 400;
     font-size: 18px;
     margin: 0px;
@@ -55,6 +55,7 @@
 
 .display-user-players {
   display: flex;
+  justify-content: center;
 
 }
 
