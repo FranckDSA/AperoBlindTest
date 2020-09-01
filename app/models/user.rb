@@ -22,7 +22,6 @@ class User < ApplicationRecord
     user.save!
 
     user.playlists.destroy_all
-    # user.spotify_playlists.destroy_all
 
     me = RSpotify::User.find(user.uid)
     me.playlists.first(3).each do |playlist|
