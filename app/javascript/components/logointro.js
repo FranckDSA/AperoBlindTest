@@ -4,7 +4,7 @@ const initIntroLogo = () => {
     return
   }
   const enter = document.querySelector('#enter');
-  logo.classList.add("animate__heartBeat");
+  logo.classList.add("animate__pulse");
 };
   const initLogoFadeOut = () => {
     const logo = document.querySelector('#logo-and-name');
