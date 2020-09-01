@@ -13,7 +13,7 @@
     <% if @current_player == @game.answers.last.player %>
      YOUR TURN TO PLAY!
     <% else %>
-      <%= @game.answers.last.player.capitalize %> IS PLAYING
+      <% @game.answers.last.player %> IS PLAYING
     <% end %>
   </h1></span>
 
@@ -51,7 +51,7 @@
     <h4>YOUR TURN TO PLAY!</h4>
     <% else %>
     <h4>
-      <%= @game.answers.last.player.capitalize %> IS PLAYING
+      <% @game.answers.last.player %> IS PLAYING
     </h4>
     <% end %>
   </div>
