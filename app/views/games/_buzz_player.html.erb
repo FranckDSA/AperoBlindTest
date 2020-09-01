@@ -10,11 +10,11 @@
     <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
     <% @top5 = @game.players.sort_by { |obj| obj.score}.reverse.first(5) %>
 
-    <% if @current_player == @game.answers.last.player %>
-     YOUR TURN TO PLAY!
-    <% else %>
+    <%# if @current_player == @game.answers.last.player %>
+    <!--  YOUR TURN TO PLAY! -->
+    <%# else %>
       <% @game.answers.last.player %> IS PLAYING
-    <% end %>
+    <%# end %>
   </h1></span>
 
   <div>
