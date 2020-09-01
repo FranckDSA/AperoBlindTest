@@ -183,6 +183,9 @@ const initPlayer = () => {
     // Playback status updates
     // A CHANGER NE PAS TOUCHER SVPPPPP
     window.spotifyPlayer.addListener('player_state_changed', state => {
+      if (!state) {
+        return
+      }
       console.log("Track position - ms", state.position);
       if (gameState == "resuming") {
           window.spotifyPlayer.seek(state.position).then(() => {
