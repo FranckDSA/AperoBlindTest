@@ -3,7 +3,7 @@
   font-family: "Nunito";
 }
 
-#countdown .user-buzzer {
+#buzzer-user #countdown  {
   //filter: contrast(2);
   border-radius: 50%;
   height: 80px;
@@ -57,6 +57,8 @@
     margin: 0px 0px 0px 5px;
     padding: 0px;
   }
+}
+
 
 .playing {
   font-family: "Nunito";
