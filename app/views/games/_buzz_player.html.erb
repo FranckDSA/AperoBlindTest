@@ -2,61 +2,53 @@
 
 <%= render 'shared/navbar_abt' %>
 
-<div id="display-song-player">
+  <div id="display-song-player">
 
-  <span><h1>
-    <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
-    <% @top1 = @game.players.sort_by { |obj| obj.score}.reverse.first(1) %>
-    <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
-    <% @top5 = @game.players.sort_by { |obj| obj.score}.reverse.first(5) %>
-
-    <% if @current_player == @game.answers.last.player %>
-     YOUR TURN TO PLAY!
-    <% else %>
-      <% @game.answers.last.player %> IS PLAYING
-    <% end %>
-  </h1></span>
-
-  <div>
-    <h2>
-      <% if @current_player %>
-      Your rank: <%= @sorted.index(@current_player) + 1%> / <%= @game.players.size %>
-      <% end %>
-    </h2>
-
-  </div>
-
-  <span><h2>Top 3</h2></span>
-  <div class="cartouche">
-    <div>
-      <!-- <div class="cartouche-song">
-        <span><h3>winner score:</h3></span>
-        <span><p><%= @game.max_score %> POINTS</p></span>
-      </div> -->
-
-      <!-- <div class="cartouche-song"> -->
-
-        <% @top3.each do |player| %>
-        <div class="cartouche-song">
-          <h3><%= player.user_name %>:</h3><p><%= player.score %> POINTS </p>
-        </div>
+    <span>
+      <h1>
+        <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+        <% @top1 = @game.players.sort_by { |obj| obj.score}.reverse.first(1) %>
+        <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
+        <% @top5 = @game.players.sort_by { |obj| obj.score}.reverse.first(5) %>
+        <% if @top1.include?(@current_player) %>
+          YOU'RE THE BEST!
+        <% elsif @top3.include?(@current_player) %>
+          WELL DONE!
+        <% else  %>
+          KEEP GOING!
         <% end %>
-      <!-- </div> -->
+      </h1>
+    </span>
 
+    <div>
+      <h2>
+        <% if @current_player %>
+        Your rank: <%= @sorted.index(@current_player) + 1%> / <%= @game.players.size %>
+        <% end %>
+      </h2>
     </div>
-  </div>
 
-  <div>
-    <% if @current_player == @game.answers.last.player %>
-    <h4>YOUR TURN TO PLAY!</h4>
-    <% else %>
-    <h4>
-      <% @game.answers.last.player %> IS PLAYING
-    </h4>
-    <% end %>
-  </div>
+    <span><h2>Top 3</h2></span>
 
-</div>
+    <div class="cartouche">
+      <div>
+          <% @top3.each do |player| %>
+            <div class="cartouche-song">
+              <h3><%= player.user_name %>:</h3><p><%= player.score %> POINTS </p>
+            </div>
+          <% end %>
+      </div>
+    </div>
+
+    <div>
+      <% if @current_player == @game.answers.last.player %>
+        <h4>YOUR TURN TO PLAY!</h4>
+      <% else %>
+        <h4><%= @game.answers.last.player.user_name %> IS PLAYING</h4>
+      <% end %>
+    </div>
+
+  </div>
 
   <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/new-buzz-white_yfnwww", :width=> 357, :crop => :lpad) %>')">
     <div class="rond-noir">
@@ -66,25 +58,19 @@
 
   <!-- <button id="click-modal"><i class="fas fa-star"></i></button> -->
 
-</div>
-
- <div class="playing display-center" style="color: white">
-    <div class="scores">
-      <p>
-        <span class="material-icons"> military_tech </span> Winner score : <%= @game.max_score %> points
-      </p>
-
-      <% if @current_player == @game.answers.last.player %>
-      <h2> It's your turn to play</h2>
-      <% end %>
-
+  <div id="modal-scores" class="hidden">
+    <div class="container">
+      <span class="close">&times;</span>
+      <div class="score-recap">
+        <h3 style="text-align: center"><strong>🏆 SCORE RECAP 🏆<strong></h3>
+        <h4>
+          <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+          <% @sorted.each do |player| %>
+          <li><%= player.user_name %> : <%= player.score %></li>
+          <% end %>
+        </h4>
+      </div>
     </div>
-
-    <!-- <div class="img-buzzer">
-      <div id="countdown" style="font-size: 60px"></div>
-
-      <%#= cl_image_tag "AperoBlindTest/sound_dmzsmq.gif", width: 200, height: 300, crop: :fill%>
-    </div> -->
-</div>
+  </div>
 
 </div>

@@ -17,6 +17,7 @@ skip_before_action :authenticate_user!, only: [:new, :create]
     @answer.player_id = current_player.id
     @answer.track_id = @game.current_track_id
     @answer.save!
+    @current_player = current_player if current_user == nil || current_user != @game.user
     redirect_to game_path(@game)
     broadcast
   end
