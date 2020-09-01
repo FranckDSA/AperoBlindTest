@@ -2,7 +2,7 @@
   width: 375px;
   height: 300px;
   position: absolute;
-  top: 80px;
+  top: 70px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -47,10 +47,10 @@
     width: 375px;
     color: white;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18x;
     padding: 5px;
     margin: 0px;
-    background-color: $grey-light;
+    background-color: #1E2023;
     //border-radius: 20px;
   }
 
@@ -64,14 +64,14 @@
   h3 {
     color: $grey-medium;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0px;
   }
 
   p {
     color: $grey-user;
     font-weight: 400;
-    font-size: 16px;
+    font-size: px;
     text-align: left;
     margin: 0px 0px 0px 5px;
     padding: 0px;
