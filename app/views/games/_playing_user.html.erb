@@ -1,24 +1,7 @@
-<%#= render 'shared/navbar_abt_user' %>
+<div class="iphone-xs" style="background-color: white">
 
-<!--   <div class="current-playlist-image">
-    <img src="<%=@game.playlist.image%>" alt="">
-  </div> -->
-<div class="iphone-xs" style="background-color: #d2d2d2">
-
-  <div class="playing">
-    <div class="current-track">
-      <h3><strong>🎶 CURRENT TRACK 🎶</strong></h3>
-  <!--     <div class="current-track-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=@game.current_track.image%>');">
-      </div> -->
-      <div class="current-track-info">
-        <div class="current-track-description">
-          <p> Title: <strong><%=@game.current_track.title%></strong></h3>
-          <p> Artist: <strong><%=@game.current_track.artist%></strong></h3>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <%= render 'shared/navbar_abt_user' %>
+  <%= render 'shared/display_song' %>
   <%= render 'shared/control-game-master' %>
 
   <button id="click-modal">
@@ -40,13 +23,6 @@
       </div>
     </div>
   </div>
-
-  <div class="logo-bottom-left">
-
-  <%= cl_image_tag "AperoBlindTest/on-white-abt_hlwddy"%>
-
-  </div>
-
 </div>
 
 
@@ -61,3 +37,10 @@
      <button type="button" class="btn btn-primary blue-background" id="end">End Game</button>
    </div>
  </div> -->
+
+
+ <%#= render 'shared/navbar_abt_user' %>
+
+<!--   <div class="current-playlist-image">
+    <img src="<%=@game.playlist.image%>" alt="">
+  </div> -->
