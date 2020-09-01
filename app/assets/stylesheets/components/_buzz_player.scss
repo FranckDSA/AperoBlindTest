@@ -8,7 +8,7 @@
   border-radius: 50%;
   height: 80px;
   width: 80px;
-  border: 1px solid #D2D2D2;
+  border: 1px solid $grey-dark;
   box-shadow: #D2D2D2;
   text-align: center;
   background-color: white;
@@ -19,15 +19,17 @@
 
 #buzzer-area {
   width: 375px;
-  height: 130px;
+  height: 150px;
   position: absolute;
   top: 225px;
   text-align: center;
-  background-color: white;
-  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.9);
+  //opacity: 0.9;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: 1px $grey-dark solid;
+  border-bottom: 1px $grey-dark solid;
 
   .playing {
     display: flex;
