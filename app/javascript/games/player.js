@@ -65,16 +65,19 @@ const initPlayer = () => {
 
  /*Button Play ALEX*/
   const iconTogglePlay = document.querySelector('#play');
+  const iconTogglePlayLabel = document.querySelector('#play-label');
     if (iconTogglePlay) {
       iconTogglePlay.addEventListener("click", (event) => {
     // Do something (callback)
       if (iconTogglePlay.innerText === "pause") {
         iconTogglePlay.innerText = "play_arrow";
+        iconTogglePlayLabel.innerText = "PLAY";
         window.spotifyPlayer.pause().then(() => {
         console.log('Paused by Game Master!');
          });
       } else if (iconTogglePlay.innerText === "play_arrow") {
         iconTogglePlay.innerText = "pause";
+        iconTogglePlayLabel.innerText = "PAUSE";
         window.spotifyPlayer.resume().then(() => {
         console.log('Resumed by Game Master!');
       });
@@ -106,6 +109,7 @@ const initPlayer = () => {
   const iconTogglenext = document.querySelector('#nexttrack');
   if (iconTogglenext) {
     iconTogglenext.addEventListener("click", (event) => {
+      iconTogglePlayLabel.innerText = "PAUSE";
       fetch(`/games/${gameId}`, {
         method: "PATCH",
         body: JSON.stringify({game: {current_track_id: nextTrackId }}),
@@ -119,6 +123,7 @@ const initPlayer = () => {
       window.spotifyPlayer.nextTrack().then(() => {
         console.log('Skipped to next track!');
       });
+
     });
   }
 
