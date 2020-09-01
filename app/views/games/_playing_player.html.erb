@@ -4,66 +4,55 @@
 
   <div id="display-song-player" class="playing">
 
-<!--     <span><h1>YOUR PLAYLIST:</h1></span> -->
-
-  <span><h1>
-    <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
-    <% @top1 = @game.players.sort_by { |obj| obj.score}.reverse.first(1) %>
-    <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
-    <% @top5 = @game.players.sort_by { |obj| obj.score}.reverse.first(5) %>
-    <% if @top1.include?(@current_player) %>
-      YOU'RE THE BEST!
-    <% elsif @top3.include?(@current_player) %>
-      WELL DONE!
-    <% else @top5.include?(@current_player) %>
-      KEEP GOING!
-    <% end %>
-  </h1></span>
-
-  <div>
-    <h2>
-      <% if @current_player %>
-      Your rank: <%= @sorted.index(@current_player) + 1%> / <%= @game.players.size %>
-      <% end %>
-    </h2>
-
-  </div>
-
-  <span><h2>Top 3</h2></span>
-  <div class="cartouche">
-    <div>
-      <!-- <div class="cartouche-song">
-        <span><h3>winner score:</h3></span>
-        <span><p><%= @game.max_score %> POINTS</p></span>
-      </div> -->
-
-      <!-- <div class="cartouche-song"> -->
-
-        <% @top3.each do |player| %>
-        <div class="cartouche-song">
-          <h3><%= player.user_name %>:</h3><p><%= player.score %> POINTS </p>
-        </div>
+    <span>
+      <h1>
+        <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+        <% @top1 = @game.players.sort_by { |obj| obj.score}.reverse.first(1) %>
+        <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
+        <% @top5 = @game.players.sort_by { |obj| obj.score}.reverse.first(5) %>
+        <% if @top1.include?(@current_player) %>
+          YOU'RE THE BEST!
+        <% elsif @top3.include?(@current_player) %>
+          WELL DONE!
+        <% else @top5.include?(@current_player) %>
+          KEEP GOING!
         <% end %>
-      <!-- </div> -->
+      </h1>
+    </span>
 
+    <div>
+      <h2>
+        <% if @current_player %>
+        Your rank: <%= @sorted.index(@current_player) + 1%> / <%= @game.players.size %>
+        <% end %>
+      </h2>
     </div>
-  </div>
 
-  <div>
-    <h4>BUZZ BELOW!</h4>
-  </div>
+    <span><h2>Top 3</h2></span>
 
-</div>
+    <div class="cartouche">
+      <div>
+          <% @top3.each do |player| %>
+            <div class="cartouche-song">
+              <h3><%= player.user_name %>:</h3><p><%= player.score %> POINTS </p>
+            </div>
+          <% end %>
+      </div>
+    </div>
+
+    <div>
+      <h4>BUZZ BELOW!</h4>
+    </div>
+
+  </div>
 
   <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/new-buzz-white_yfnwww", :width=> 357, :crop => :lpad) %>')">
     <%= link_to game_answers_path(@game), method: :post do %>
-    <%= cl_image_tag "AperoBlindTest/sound-1_luzly8.gif", crop: :fill, class:"gif-buzzer"%>
+      <%= cl_image_tag "AperoBlindTest/sound-1_luzly8.gif", crop: :fill, class:"gif-buzzer"%>
     <% end %>
   </div>
 
   <!-- <button id="click-modal"><i class="fas fa-star"></i></button> -->
-
-</div>
 
   <div id="modal-scores" class="hidden">
     <div class="container">
@@ -80,5 +69,4 @@
     </div>
   </div>
 
-
-
+</div>

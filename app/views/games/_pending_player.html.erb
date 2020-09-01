@@ -1,23 +1,36 @@
-<div class="iphone-xs" style="background-color: #D2D2D2">
-    <%#= cl_image_tag("AperoBlindTest/headphones-g_uvt1g2", width: 200, height: 200) %>
+<div class="iphone-xs" style="background-color: #1E2023">
 
-    <!-- <div class="box-pin">
-      <p> Invite your friends to play with this game pin is : </p>
-      <h2 id="blue-game-pin"><%= @game.game_pin %></h2>
-    </div> -->
+  <%= render 'shared/navbar_abt' %>
 
+  <div id="pending-player">
 
+    <h1>BE THE BEST!</h1>
 
-    <div class="waiting-room">
-      <h3 class="py-3"> Wait for your friends to launch the game </h3>
-      <h4>
-        <% @game.players.each do |player| %>
-          <div class="container">
-            <li id="pendingplayers" class="animate__animated"><%= player.user_name %> is ready to play</li>
-          </div>
-        <% end %>
-      </h4>
+    <span><h2>Your gamemaster</h2></span>
+
+    <div class="display-user-players">
+      <img src="<%= @game.user.avatar %>" class="avatar-large" alt="">
+      <h2 id="game-user">
+        <%= @game.user.user_name %> is the gamemaster
+      </h2>
     </div>
-</div>
+
+    <span><h2>Your opponents</h2></span>
+
+    <div class="cartouche">
+      <div>
+            <div class="cartouche-song">
+              <% @game.players.each do |player| %>
+                <h2 id="pendingplayers" class="animate__animated"><%= player.user_name %> is ready to play</h2>
+              <% end %>
+            </div>
+      </div>
+    </div>
+
+    <div>
+      <h4>BE THE BEST!</h4>
+    </div>
 
 </div>
+
+
