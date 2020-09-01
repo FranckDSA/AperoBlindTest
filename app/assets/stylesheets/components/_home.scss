@@ -113,3 +113,83 @@
 .hidding {
   opacity: 0.3;
 }
+
+
+// ended part
+#winner-page {
+  height: 750px;
+  width: 375px;
+  position: absolute;
+  top: 60px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background-color: white;
+
+  .logo-end {
+    height: 356px;
+    width: 366px;
+    position: absolute;
+    top: 80px;
+  }
+
+  .winner-is {
+    position: absolute;
+    top: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      color: $grey-light;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 56px;
+      font-weight: bolder;
+      color: white;
+      margin-bottom: 20px;
+    }
+  }
+
+  .final-score {
+    position: absolute;
+    top: 450px;
+
+    .score {
+      border-left: 1px white solid;
+      margin: 5px;
+    }
+  }
+
+  .next-game {
+    width: 200px;
+    position: absolute;
+    align-self: center ;
+    bottom: 20px;
+
+    .btn-primary {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 30px;
+      background-color: $grey-light;
+      border: 5px white solid;
+      opacity: 100%;
+    }
+
+    a {
+      color: black;
+      font-weight: bold;
+    }
+
+    h3 {
+      text-align: center;
+    }
+  }
+}
+
+
