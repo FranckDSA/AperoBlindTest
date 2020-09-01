@@ -36,6 +36,9 @@ const initScoresModal = () => {
   }
   const playing = document.querySelector('.playing');
   const btn = document.querySelector('#click-modal');
+  if (!btn) {
+    return
+  }
   const span = document.getElementsByClassName("close")[0];
   btn.onclick = function() {
     modal.classList.remove("hidden");
