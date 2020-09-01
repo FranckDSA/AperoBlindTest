@@ -1,7 +1,7 @@
 <div class="navbar-abt">
 
-  <div><img src="<%= @game.user.avatar %>" class="avatar-large" alt=""></div>
+  <%= cl_image_tag("AperoBlindTest/BT-DARK_fpyg71", width: 92, crop: :scale) %>
 
-  <%= cl_image_tag("AperoBlindTest/dark-grey-hp_dnq1bt", width: 50, crop: :scale) %>
+  <div><img src="<%= @game.user.avatar %>" class="avatar-large" alt=""></div>
 
 </div>
