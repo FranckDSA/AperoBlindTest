@@ -3,13 +3,7 @@
   font-family: "Nunito";
 }
 
-#countdown {
-  text-align: center;
-}
-
-
-
-#countdown {
+#countdown .user-buzzer {
   //filter: contrast(2);
   border-radius: 50%;
   height: 80px;
@@ -63,4 +57,29 @@
     margin: 0px 0px 0px 5px;
     padding: 0px;
   }
+
+.playing {
+  font-family: "Nunito";
+  color: #030303;
+  text-align: center;
 }
+
+.rond-noir {
+  background-color: black;
+  border-radius: 50%;
+  width: 345px;
+  height: 345px;
+  margin-left: 6px;
+  margin-top: 5px;
+}
+
+#countdown {
+  font-size: 208px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  width: 345px;
+  height: 345px;
+      padding: 18px;
+}
+

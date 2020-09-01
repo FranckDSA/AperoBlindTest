@@ -26,6 +26,7 @@ const countDown = (tps) => {
     }
     else {
       document.getElementById("countdown").innerHTML = 'X';
+
     }
 };
 export { countDown };
