@@ -49,6 +49,7 @@ import { initEnterFadeIn } from '../components/logointro.js';
 import { initScoresModal } from '../games/scoresModal.js';
 import { initPendingPlayers } from '../components/logointro.js';
 import { initEndScores } from '../components/logointro.js';
+import { endGame } from '../games/endGame.js';
 
 import { waitingForNextSong } from '../games/waitingForNextSong.js';
 
@@ -63,13 +64,13 @@ document.addEventListener('turbolinks:load', () => {
   validateAnswers();
   resumeGame();
 
-  // initIntroLogo();
   initEndScores();
   initPendingPlayers();
   setTimeout(initIntroLogo,1000);
   setTimeout(initLogoFadeOut,2000);
   setTimeout(initEnterFadeIn,3000);
   initScoresModal();
+  // endGame();
 
   waitingForNextSong();
 

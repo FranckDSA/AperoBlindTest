@@ -3,13 +3,13 @@
 <%= render 'shared/navbar_abt' %>
 
 <div id="top-choose">
-  <div class="cartouche">
+<!--   <div class="cartouche">
     <span class="material-icons"> library_music </span>
     <h2>Choose a playlist </h2>
-  </div>
+  </div> -->
 
  <div class="search-bar">
-    <div class="search-form-control form-group mb-4 mt-4">
+    <div class="search-form-control form-group">
       <%= form_tag new_game_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -24,49 +24,55 @@
 
   <%= simple_form_for @game, defaults: {label: false}, method: "POST" do |f| %>
     <div class="playlist-select pt-0 mt-0">
+
+    <div class="cartouche sticky-top">
+      <span class="material-icons" style="margin: 0px;"> arrow_drop_down</span>
+      <span> <p style="color: white">scroll</p> </span>
+    </div>
       <% if @searched_spotify_playlists.any? %>
         <p style="color: white; font-size: 16px;">RESULTS FOR '<%= params[:query].upcase %>'</p>
-        <div class="category-choices mb-4">
+        <div class="category-choices mb-2">
           <% @searched_spotify_playlists.each do |playlist| %>
             <!-- <input type="hidden" value="" name="game[playlist_id]"> -->
             <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
             <label for="playlist" class="category-choice">
               <img class="" src="<%= playlist.image %>" alt="">
-              <p><%= playlist.name %></p>
+              <p><%= playlist.name.first(20)%></p>
             </label>
           <% end %>
         </div>
       <% end %>
 
       <p style="color: white; font-size: 16px;">YOUR PLAYLISTS</p>
-      <div class="category-choices mb-4">
+      <div class="category-choices mb-2">
         <% @user_private_playlists.each do |playlist| %>
           <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
           <label for="playlist" class="category-choice">
             <img class="" src="<%= playlist.image %>" alt="">
-            <p><%= playlist.name %></p>
+            <p><%= playlist.name.first(20) %></p>
           </label>
         <% end %>
       </div>
 
       <% if @searched_spotify_playlists.blank? %>
       <p style="color: white; font-size: 16px;">RECOMMENDED PLAYLISTS</p>
-      <div class="category-choices mb-4">
+      <div class="category-choices mb-2">
         <% @public_spotify_playlists.each do |playlist| %>
           <input type="radio" class="hidden" value="<%= playlist.id %>" name="game[playlist_id]" style="display:none">
           <label for="playlist" class="category-choice">
             <img class="" src="<%= playlist.image %>" alt="">
-            <p><%= playlist.name %></p>
+            <p><%= playlist.name.first(20) %></p>
           </label>
         <% end %>
       </div>
      <% end %>
+
   </div>
 <div id= "bottom-choose">
-    <div class="cartouche">
+<!--     <div class="cartouche">
       <span class="material-icons"> military_tech </span>
       <h2>Choose winning score</h2>
-    </div>
+    </div> -->
         <div id="choose-bar" class="cartouche-bar">
           <h3>5pts</h3>
           <h3>20pts</h3>

@@ -17,8 +17,8 @@
     <div class="box-players-list mt-2 mb-5">
       <h2> Player's list in the game </h2>
         <% @game.players.each_with_index do |player, index| %>
-        <div class="container">
-          <h2 id="pendingplayers" class="animate__animated"><%= index + 1%> - <%= player.user_name %> is ready to play</h2>
+        <div class="container" >
+          <h2  class="pendingplayers animate__animated"><%= index + 1%> - <%= player.user_name %> is ready to play</h2>
         </div>
         <% end %>
     </div>
