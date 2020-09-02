@@ -15,10 +15,11 @@
     top: 0px;
     left: 0px;
     //background-color: white;
-    opacity: 80%;
+    opacity: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
       .material-icons {
         font-size: 100px;
         color: $grey-user;
@@ -49,6 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
       .material-icons {
         font-size: 100px;
         color: $grey-user;
@@ -88,11 +90,12 @@
     top: $controle-size/2;
     right: 0px;
     //background-color: white;
-    opacity: 80%;
+    opacity: 90%;
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    cursor: pointer;
     .material-icons {
       font-size: 100px;
       color: $grey-light;
@@ -117,6 +120,7 @@
     bottom: 0px;
     right: 0px;
     opacity: 80%;
+    cursor: pointer;
     .material-icons {
       font-size: 70px;
       color: $grey-user;

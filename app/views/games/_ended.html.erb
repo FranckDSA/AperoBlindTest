@@ -1,26 +1,31 @@
+<div class="container" id="ended"></div>
+
 <div class="iphone-xs" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/dark-glass_t3324r", :width=> 375, :crop => :lpad) %>')">
-
-<div class="container" id="ended">
-  <div class="coupe">
-      <%= cl_image_tag("AperoBlindTest/Download-Winner-PNG-File_geemhb") %>
-  </div>
-  <div class="thewinner">
-    <% if @game.answers.present? %>
-      <H2>THE WINNER: <%= @game.answers.last.player.user_name %></H2>
-    <% else %>
-      <h2>No players ...</h2>
-    <% end %>
-  </div>
-  <h1>Scores:</h1>
-  <% @sorted = @game.players.sort_by { |obj| obj.score} %>
-  <% @sorted.each do |player| %>
-    <div class="playerscore">
-      <p id="coolscores" class="animate__animated"><%= player.user_name %> - <%= player.score %></p>
+  <%= render 'shared/navbar_abt' %>
+  <div id="winner-page">
+    <div class="logo-end" class="" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/colour-hp_mwvesv", :crop => :scale) %>')">
     </div>
-  <% end %>
-  <div>
-    <h3><%= link_to "Back to da homepage", root_path %></h3>
+
+    <div class="winner-is">
+      <span><h1>THE WINNER IS:</h1></span>
+      <span><h2><%= @game.answers.last.player.user_name %></h2></span>
+    </div>
+
+    <div class="final-score">
+      <h1>Scores:</h1>
+
+      <% @sorted = @game.players.sort_by { |obj| obj.score} %>
+      <% @sorted.each do |player| %>
+
+        <div class="score">
+          <h2 id="coolscores" class="animate__animated" style="color: white; font-size: 20px;padding-left: 5px;"><%= player.user_name %> - <%= player.score %> POINTS</h2>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="next-game">
+      <h3 class= "btn-primary"><%= link_to "New Game", root_path %></h3>
+    </div>
   </div>
 </div>
 
-</div>

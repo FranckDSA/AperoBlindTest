@@ -9,19 +9,14 @@
 .category-choice {
   background: white;
   width: 100px;
-  opacity: 0.8;
+  opacity: 0.7;
   border-radius: 5px;
-  //border-left: 1px white solid;
-  // flex: 0 0 30%;
-  //text-align: center;
-  // margin: 13px;
-  // margin-bottom: 0;
-
   img {
     height: 100px;
     width: 100px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    object-fit: cover;
   }
 
   &:hover {
@@ -29,16 +24,11 @@
     cursor: pointer;
   }
   &.active {
-  // background: $brand-primary;
-  // background: red;
   color: black;
   opacity: 1;
+  border: 2px solid white;
   }
 }
-
-// img {
-//   width: 100px;
-// }
 
 .range-bar {
   margin: 0px;
