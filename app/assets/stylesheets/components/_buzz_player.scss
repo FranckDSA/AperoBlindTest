@@ -82,8 +82,17 @@
   color: white;
   text-align: center;
   align-items: center;
-  width: 345px;
-  height: 345px;
-      padding: 18px;
+  height: 300px;
+  width: 300px;
 }
 
+.display-gif-timer {
+  border-radius: 50%;
+  position: absolute;
+  top: 380px;
+  opacity: 100%;
+  height: 300px;
+  width: 300px;
+  border: 2px rgba(50,50,50,0.75) solid;
+  animation-iteration-count: 10;
+}

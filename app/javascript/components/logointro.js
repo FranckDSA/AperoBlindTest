@@ -55,6 +55,14 @@ const initIntroLogo = () => {
     buzz.classList.add("animate__animated","animate__pulse");
   };
 
+  const initPulseTimer = () => {
+    const timer = document.querySelector('.display-gif-timer');
+    if (!timer) {
+      return
+    }
+    timer.classList.add("animate__animated","animate__pulse");
+  };
+
   const initLienFadeOut = () => {
     const lien = document.querySelector('#lienform');
     if (!lien) {
@@ -92,3 +100,4 @@ export { initPendingPlayers };
 export { initEndScores };
 export { initPulseBuzzer };
 export { activeForm };
+export { initPulseTimer };
