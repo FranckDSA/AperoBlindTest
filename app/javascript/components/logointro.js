@@ -45,8 +45,38 @@ const initIntroLogo = () => {
     }
     score.classList.add("animate__fadeInDownBig");
   };
+
+  const initLienFadeOut = () => {
+    const lien = document.querySelector('#lienform');
+    if (!lien) {
+      return
+    }
+    lien.classList.add("animate__fadeOut");
+  };
+
+  const initFormFadeIn = () => {
+    const form = document.querySelector('#downhome');
+    if (!form) {
+      return
+    }
+    form.classList.remove("hidden");
+    form.classList.add("animate__fadeIn");
+  };
+
+  const activeForm = () => {
+    const lienclick = document.querySelector('#lienform');
+    if (!lienclick) {
+      return
+    }
+    lienclick.addEventListener("click", (event) => {
+      initLienFadeOut();
+      initFormFadeIn();
+    })
+  };
+
 export { initIntroLogo };
 export { initLogoFadeOut };
 export { initEnterFadeIn };
 export { initPendingPlayers };
 export { initEndScores };
+export { activeForm };
