@@ -15,9 +15,13 @@
 .navbar-abt {
   display: flex;
   justify-content: space-between;
-  width: 365px;
-  height:60px;
+  width: 97vw;
+  height:6,46vh;
   position: absolute;
   top: 0px;
   padding: 5px;
+
+    .blind-test {
+      height: 7.20vh
+    }
 }

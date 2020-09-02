@@ -18,7 +18,7 @@ class GamesController < ApplicationController
 
     @searched_spotify_playlists = []
     if params[:query].present?
-      @spotify_playlists = RSpotify::Playlist.search(params[:query], limit: 3)
+      @spotify_playlists = RSpotify::Playlist.search(params[:query], limit: 6)
       Playlist.where(user_id: current_user.id, searched: true).destroy_all
       @spotify_playlists.each do |playlist|
         pl = Playlist.create!(

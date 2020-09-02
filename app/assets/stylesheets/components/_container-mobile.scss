@@ -1,7 +1,7 @@
 .iphone-xs {
   margin: 0px auto;
-  width: 375px;
-  height: 812px;
+  width: 100vw;
+  height: 100vh;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
   width: 360px;
   position: absolute;
   height: 92vh;
-  top: 60px;
+  top: 9vh;
   padding: 5px;
   text-align: center;
 
@@ -57,7 +57,7 @@
 #bottom-choose {
   width: 360px;
   position: absolute;
-  bottom: 8px;
+  top: 65.27vh;
   padding: 5px;
   text-align: center;
 
