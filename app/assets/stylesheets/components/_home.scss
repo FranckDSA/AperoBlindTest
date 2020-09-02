@@ -2,7 +2,7 @@
   height: 498px;
   width: 261px;
   position: absolute;
-  top: 150px;
+  top: 17vh;
 //
 }
 
@@ -18,7 +18,7 @@
 }
 
 #enter {
-  width: 375px;
+  width: 100vw;
   color: white;
   display: flex;
   flex-direction: column;
@@ -27,52 +27,45 @@
  .top {
   width: 360px;
   position: absolute;
-  top: 130px;
-  padding: 5px;
+  top: 13.00vh;
   text-align: center;
-  //background-color: rgba(0, 0, 0, 0.3);
-  //border-radius: 5px;
-  //border: 1px white solid;
 
     h2 {
       font-family: 'Nunito', sans-serif;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 400;
       color: white;
-      margin-bottom: 15px;
+      //margin-bottom: 15px;
     }
 
     p {
       font-family: 'Nunito', sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       color: black;
       margin-bottom: 5px;
     }
 
     .btn-primary {
-      padding: 15px;
-      margin: 30px 10px 10px 10px;
-      border-radius: 40px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border: 2px white solid;
+      padding: 10px;
+      margin: 4vh 10px 10px 10px;
+      border-radius: 20px;
+      background-color: $grey-light;
+      border: 5px white solid;
       opacity: 90%;
+      width: 70vw;
     }
     a {
-      color: white;
-      font-weight: 400;
-      font-size: 28px;
+      color: black;
+      font-weight: 700;
+      font-size: 20px;
     }
   }
 
   .bottom {
   width: 360px;
   position: absolute;
-  top: 410px;
-  padding: 5px;
+  top: 40vh;
   text-align: center;
-  //background-color: rgba(0, 0, 0, 0.3);
-  //border-radius: 5px;
-  //border: 1px white solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,17 +73,17 @@
 
   h2 {
     font-family: 'Nunito', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
     color: white;
     margin-bottom: 15px;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700px;
     color: $grey-light;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   p {
@@ -101,34 +94,36 @@
   }
 
   input {
-  font-size: 20px;
-  margin-bottom: 5px;
+  font-size: 16px;
   color: black;
   font-weight: 400;
   margin-bottom: 5px;
+  margin-left: 10px;
   border-radius: 25px;
   text-align: center;
+  width: 80vw;
   }
 
   .submit-adjust {
     .btn-primary {
-      padding: 15px;
-      margin: 40px 10px 10px 10px;
-      border-radius: 40px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border: 2px white solid;
+      padding: 10px;
+      margin: 4vh 10px 10px 10px;
+      border-radius: 20px;
+      background-color: $grey-light;
+      border: 5px white solid;
       opacity: 90%;
+      width: 70vw;
     }
     a {
       color: black;
-      font-weight: 400;
-      font-size: 28px;
+      font-weight: 700;
+      font-size: 20px;
     }
     input {
-      font-size: 28px;
+      font-size: 20px;
       margin-bottom: 5px;
-      color: white;
-      font-weight: 400;
+      color: black;
+      font-weight: 700;
       margin-bottom: 5px;
     }
   }
@@ -204,23 +199,25 @@
   }
 
   .next-game {
-    width: 200px;
+    width: 70vw;
     position: absolute;
     align-self: center ;
     bottom: 20px;
 
     .btn-primary {
       padding: 10px;
-      margin: 10px;
-      border-radius: 30px;
+      margin: 4vh 10px 10px 10px;
+      border-radius: 20px;
       background-color: $grey-light;
       border: 5px white solid;
-      opacity: 100%;
+      opacity: 90%;
+      width: 70vw;
     }
 
     a {
       color: black;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 20px;
     }
 
     h3 {
