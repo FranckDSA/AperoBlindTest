@@ -50,7 +50,7 @@ import { initScoresModal } from '../games/scoresModal.js';
 import { initPendingPlayers } from '../components/logointro.js';
 import { initEndScores } from '../components/logointro.js';
 import { endGame } from '../games/endGame.js';
-
+import { activeForm } from '../components/logointro.js';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -68,6 +68,7 @@ document.addEventListener('turbolinks:load', () => {
   setTimeout(initLogoFadeOut,2000);
   setTimeout(initEnterFadeIn,3000);
   initScoresModal();
+  activeForm();
   // endGame();
 
 
