@@ -3,7 +3,7 @@ const initIntroLogo = () => {
   if (!logo) {
     return
   }
-  const enter = document.querySelector('#enter');
+  // const enter = document.querySelector('#enter');
   logo.classList.add("animate__pulse");
 };
   const initLogoFadeOut = () => {
@@ -23,11 +23,19 @@ const initIntroLogo = () => {
   };
 
   const initPendingPlayers = () => {
-    const name = document.querySelector('#pendingplayers');
-    if (!name) {
+    const names = document.querySelectorAll('.pendingplayers');
+    if (!names) {
       return
     }
-    name.classList.add("animate__bounceInRight");
+    names.forEach((name) => {
+      name.classList.remove("animate__bounceInRight");
+    })
+    const lastName = names[names.length-1];
+    if (!lastName) {
+      return
+    }
+    console.log(lastName)
+    lastName.classList.add("animate__bounceInRight");
   };
 
   const initEndScores = () => {

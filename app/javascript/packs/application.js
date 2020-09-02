@@ -62,7 +62,6 @@ document.addEventListener('turbolinks:load', () => {
   validateAnswers();
   resumeGame();
 
-  // initIntroLogo();
   initEndScores();
   initPendingPlayers();
   setTimeout(initIntroLogo,1000);
