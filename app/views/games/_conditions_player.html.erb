@@ -10,6 +10,8 @@
  <%= render 'games/ended' %>
 <% elsif @game.state == "validation" %>
  <%= render 'games/validation_player' %>
+ <% elsif @game.state == "waiting_for_next_song" %>
+ <%= render 'games/waiting_for_next_song_player' %>
 <% elsif @game.state == "ended" %>
   <%= render 'games/ended' %>
 <% end %>

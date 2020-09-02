@@ -3,7 +3,7 @@ const initCounterTenSeconds = (linearProgress) => {
   const interval = setInterval( () => {
     progressCounter += 0.1;
     linearProgress.progress = progressCounter;
-    console.log(progressCounter);
+    // console.log(progressCounter);
     if (progressCounter >= 1) {
       clearInterval(interval);
     }

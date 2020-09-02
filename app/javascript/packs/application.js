@@ -50,6 +50,8 @@ import { initScoresModal } from '../games/scoresModal.js';
 import { initPendingPlayers } from '../components/logointro.js';
 import { initEndScores } from '../components/logointro.js';
 
+import { waitingForNextSong } from '../games/waitingForNextSong.js';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -69,6 +71,7 @@ document.addEventListener('turbolinks:load', () => {
   setTimeout(initEnterFadeIn,3000);
   initScoresModal();
 
+  waitingForNextSong();
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);
