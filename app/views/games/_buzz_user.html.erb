@@ -6,8 +6,8 @@
 
   <div id="buzzer-area">
     <div class="playing">
-      <span><h1 style="color: black"><%= @game.answers.last.player.user_name.upcase %></h1></span>
-      <span><h1 style="color: #858585">IS PLAYING<h1></span>
+      <span><h1 style="color: black; font-size: 28px"><%= @game.answers.last.player.user_name.upcase %></h1></span>
+      <span><h1 style="color: #858585;font-size: 28px">IS PLAYING<h1></span>
     </div>
 
     <div id="buzzer-user">
@@ -15,14 +15,14 @@
     </div>
   </div>
 
-  <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/media-payer-red_yywuw9", :width=> 357, :crop => :lpad) %>')">
+  <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/media-player-v2_o5e3df", :width=> 357, :crop => :lpad) %>')">
 
     <div class="play">
   <!--     <button class="mdc-icon-button">
         <i id="play" class="material-icons mdc-icon-button__icon">pause</i>
       </button> -->
       <span id="resume" class="material-icons" style= "color: white" data-game-id="<%= @game.id %>"> close </span>
-      <h3 style= "color: white">WRONG</h3>
+      <h3 style= "color: white"></h3>
     </div>
 
     <!-- <div class="middle-bar"></div> -->
@@ -40,7 +40,7 @@
   <!--     <button  class="mdc-icon-button">
         <i id="answer" class="material-icons mdc-icon-button__icon">done_outline</i>
       </button> -->
-      <h3 style="color: white;">GOOD</h3>
+      <h3 style="color: white;"></h3>
       <span id="validation" class="material-icons" style="color: white;" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>" > done </span>
     </div>
 
