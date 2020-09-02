@@ -41,6 +41,10 @@
 }
 
 .playlist-select {
-  height: calc(100vh - 392px);
+  //height: calc(100vh - 400px);
+  height: 60vh;
   padding: 10px;
+  overflow: scroll;
+  border: 1px white solid;
+  border-radius: 10px;
 }
