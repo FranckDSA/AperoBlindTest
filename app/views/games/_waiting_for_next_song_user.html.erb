@@ -3,11 +3,33 @@
   <%= render 'shared/navbar_abt' %>
 
   <div id="waiting-for-next-song" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>">
-    <h1 style="color:white;">
-      BRAVO LAST PLAYER ANSWER
+    <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+
+    <div class="last-player-answer">
+      <h1>👏👏 WELL DONE <%= @game.answers.last.player.user_name %>!</h1>
+    </div>
+
+    <div class="final-score">
+      <% if @game.players.present? %>
+        <h2>Score Recap:</h2>
+        <% @sorted.each_with_index do |player, index| %>
+          <div class="score">
+            <h2 id="coolscores" class="animate__animated" style="color: white; font-size: 20px;padding-left: 5px;"> <%=index +1%> - <%= player.user_name %> - <%= player.score %> POINTS</h2>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="countdown-ready-for-next-song">
+
+      <h1>
       READY FOR NEXT SONG...
-      3, 2, 1
-      IGNITION 🚀
-    </h1>
+      </h1>
+      <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/new-buzz-green_ci1hj2", :width=> 357, :crop => :lpad) %>')">
+        <div class="rond-noir">
+          <div id="timer-next-song"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

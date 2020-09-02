@@ -52,6 +52,7 @@ import { initEndScores } from '../components/logointro.js';
 import { endGame } from '../games/endGame.js';
 
 import { waitingForNextSong } from '../games/waitingForNextSong.js';
+import { timerNextSong } from '../games/timerNextSong.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -73,6 +74,7 @@ document.addEventListener('turbolinks:load', () => {
   // endGame();
 
   waitingForNextSong();
+  timerNextSong(5);
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);

@@ -120,7 +120,7 @@ const initPlayer = () => {
   if (window.spotifyPlayer) {
     if (buzzUser || gameState === "waiting_for_next_song") {
        window.spotifyPlayer.pause().then(() => {
-        console.log('Paused for Game master validation!');
+        console.log('Timer page for next song!');
       });
     } else {
       play({
