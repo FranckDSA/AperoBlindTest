@@ -5,7 +5,11 @@
       <%= cl_image_tag("AperoBlindTest/Download-Winner-PNG-File_geemhb") %>
   </div>
   <div class="thewinner">
-    <H2>THE WINNER: <%= @game.answers.last.player.user_name %></H2>
+    <% if @game.answers.present? %>
+      <H2>THE WINNER: <%= @game.answers.last.player.user_name %></H2>
+    <% else %>
+      <h2>No players...</h2>
+    <% end %>
   </div>
   <h1>Scores:</h1>
   <% @sorted = @game.players.sort_by { |obj| obj.score} %>
