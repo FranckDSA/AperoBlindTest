@@ -65,9 +65,11 @@ const initIntroLogo = () => {
 
   const initFormFadeIn = () => {
     const form = document.querySelector('#downhome');
+    const master = document.querySelector(".top")
     if (!form) {
       return
     }
+    master.classList.add("animate__fadeOut")
     form.classList.remove("hidden");
     form.classList.add("animate__fadeIn");
   };
