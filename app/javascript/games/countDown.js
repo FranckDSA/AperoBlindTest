@@ -25,7 +25,7 @@ const countDown = (tps) => {
       setTimeout(() => {countDown(restant)}, 1000);
     }
     else {
-      document.getElementById("countdown").innerHTML = 'X';
+      document.getElementById("countdown").innerHTML = '0';
 
     }
 };

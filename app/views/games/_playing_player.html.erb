@@ -40,17 +40,21 @@
       </div>
     </div>
 
-    <div>
-      <h4>BUZZ BELOW!</h4>
-    </div>
+    <h4>BUZZ TO GUESS!</h4>
 
   </div>
 
-  <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/new-buzz-white_yfnwww", :width=> 357, :crop => :lpad) %>')">
+  <div class="display-gif">
     <%= link_to game_answers_path(@game), method: :post do %>
       <%= cl_image_tag "AperoBlindTest/sound-1_luzly8.gif", crop: :fill, class:"gif-buzzer"%>
     <% end %>
   </div>
+
+  <!-- <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/new-buzz-white_yfnwww", :width=> 357, :crop => :lpad) %>')">
+    <%= link_to game_answers_path(@game), method: :post do %>
+      <%= cl_image_tag "AperoBlindTest/sound-1_luzly8.gif", crop: :fill, class:"gif-buzzer"%>
+    <% end %>
+  </div> -->
 
   <!-- <button id="click-modal"><i class="fas fa-star"></i></button> -->
 

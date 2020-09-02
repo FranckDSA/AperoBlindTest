@@ -50,6 +50,9 @@ import { initScoresModal } from '../games/scoresModal.js';
 import { initPendingPlayers } from '../components/logointro.js';
 import { initEndScores } from '../components/logointro.js';
 import { endGame } from '../games/endGame.js';
+import { initPulseBuzzer } from '../components/logointro.js';
+import { initPulseTimer } from '../components/logointro.js';
+import { activeForm } from '../components/logointro.js';
 
 import { waitingForNextSong } from '../games/waitingForNextSong.js';
 import { timerNextSong } from '../games/timerNextSong.js';
@@ -70,7 +73,10 @@ document.addEventListener('turbolinks:load', () => {
   setTimeout(initIntroLogo,1000);
   setTimeout(initLogoFadeOut,2000);
   setTimeout(initEnterFadeIn,3000);
+  initPulseBuzzer();
+  initPulseTimer();
   initScoresModal();
+  activeForm();
   // endGame();
 
   waitingForNextSong();

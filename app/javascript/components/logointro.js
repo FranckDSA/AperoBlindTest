@@ -45,8 +45,59 @@ const initIntroLogo = () => {
     }
     score.classList.add("animate__fadeInDownBig");
   };
+
+
+  const initPulseBuzzer = () => {
+    const buzz = document.querySelector('.display-gif');
+    if (!buzz) {
+      return
+    }
+    buzz.classList.add("animate__animated","animate__pulse");
+  };
+
+  const initPulseTimer = () => {
+    const timer = document.querySelector('.display-gif-timer');
+    if (!timer) {
+      return
+    }
+    timer.classList.add("animate__animated","animate__pulse");
+  };
+
+  const initLienFadeOut = () => {
+    const lien = document.querySelector('#lienform');
+    if (!lien) {
+      return
+    }
+    lien.classList.add("animate__fadeOut");
+  };
+
+  const initFormFadeIn = () => {
+    const form = document.querySelector('#downhome');
+    const master = document.querySelector(".top")
+    if (!form) {
+      return
+    }
+    master.classList.add("animate__fadeOut")
+    form.classList.remove("hidden");
+    form.classList.add("animate__fadeIn");
+  };
+
+  const activeForm = () => {
+    const lienclick = document.querySelector('#lienform');
+    if (!lienclick) {
+      return
+    }
+    lienclick.addEventListener("click", (event) => {
+      initLienFadeOut();
+      initFormFadeIn();
+    })
+  };
+
 export { initIntroLogo };
 export { initLogoFadeOut };
 export { initEnterFadeIn };
 export { initPendingPlayers };
 export { initEndScores };
+export { initPulseBuzzer };
+export { activeForm };
+export { initPulseTimer };
