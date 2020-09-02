@@ -7,6 +7,7 @@
     </div>
 
     <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+    <% @sorted_from_bottom = @game.players.sort_by { |obj| obj.score} %>
     <%# @top1 = @game.players.sort_by { |obj| obj.score}.reverse.first(1) %>
 
       <div class="winner-is">
@@ -21,7 +22,7 @@
       <div class="final-score">
         <% if @game.players.present? %>
           <h1>Scores:</h1>
-          <% @sorted.each do |player| %>
+          <% @sorted_from_bottom.each do |player| %>
             <div class="score">
               <h2 id="coolscores" class="animate__animated" style="color: white; font-size: 20px;padding-left: 5px;"><%= player.user_name %> - <%= player.score %> POINTS</h2>
             </div>
