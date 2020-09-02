@@ -51,6 +51,7 @@ import { initPendingPlayers } from '../components/logointro.js';
 import { initEndScores } from '../components/logointro.js';
 import { endGame } from '../games/endGame.js';
 import { initPulseBuzzer } from '../components/logointro.js';
+import { initPulseTimer } from '../components/logointro.js';
 import { activeForm } from '../components/logointro.js';
 
 document.addEventListener('turbolinks:load', () => {
@@ -70,6 +71,7 @@ document.addEventListener('turbolinks:load', () => {
   setTimeout(initLogoFadeOut,2000);
   setTimeout(initEnterFadeIn,3000);
   initPulseBuzzer();
+  initPulseTimer();
   initScoresModal();
   activeForm();
   // endGame();
