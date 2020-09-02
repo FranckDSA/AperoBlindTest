@@ -46,6 +46,15 @@ const initIntroLogo = () => {
     score.classList.add("animate__fadeInDownBig");
   };
 
+
+  const initPulseBuzzer = () => {
+    const buzz = document.querySelector('.display-gif');
+    if (!buzz) {
+      return
+    }
+    buzz.classList.add("animate__animated","animate__pulse");
+  };
+
   const initLienFadeOut = () => {
     const lien = document.querySelector('#lienform');
     if (!lien) {
@@ -79,4 +88,5 @@ export { initLogoFadeOut };
 export { initEnterFadeIn };
 export { initPendingPlayers };
 export { initEndScores };
+export { initPulseBuzzer };
 export { activeForm };
