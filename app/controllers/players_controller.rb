@@ -29,7 +29,7 @@ class PlayersController < ApplicationController
     @player.save
     # @player.update(params_player_update)
     @game = @player.game
-    @game.state = @player.score == @game.max_score ? "ended" : "playing"
+    @game.state = @player.score == @game.max_score ? "ended" : "waiting_for_next_song"
     @game.current_track_id += 1
     @game.save
     @answer = Answer.new

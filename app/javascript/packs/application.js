@@ -54,6 +54,9 @@ import { initPulseBuzzer } from '../components/logointro.js';
 import { initPulseTimer } from '../components/logointro.js';
 import { activeForm } from '../components/logointro.js';
 
+import { waitingForNextSong } from '../games/waitingForNextSong.js';
+import { timerNextSong } from '../games/timerNextSong.js';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -76,6 +79,8 @@ document.addEventListener('turbolinks:load', () => {
   activeForm();
   // endGame();
 
+  waitingForNextSong();
+  timerNextSong(5);
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
   // initCounterTenSeconds(linearProgress);

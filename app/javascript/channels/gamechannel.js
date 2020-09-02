@@ -13,11 +13,9 @@ const initGameCable = () => {
         console.log("Data received from current game channel and broadcasted");
         if (user == "true") {
           gameContainer.innerHTML = data.user;
-          // gameContainer.innerHTML = data;
         }
         else {
           gameContainer.innerHTML = data.player;
-          // gameContainer.innerHTML = data;
         }
         const event = document.createEvent("HTMLEvents");
         event.initEvent("turbolinks:load", true, true);
