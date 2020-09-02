@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
       player: conditions_player
     })
   end
+
+  def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
