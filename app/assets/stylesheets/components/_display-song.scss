@@ -1,8 +1,8 @@
 #display-song {
-  width: 375px;
-  height: 300px;
+  width: 100vw;
+  height: 36.94vh;
   position: absolute;
-  top: 70px;
+  top: 8.62vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -12,10 +12,10 @@
   //border-bottom: 4px $grey-light solid;
 
   .pic-frame {
-    width: 150px;
-    height: 150px;
+    width: 18.47vh;
+    height: 18.47vh;
     position: absolute;
-    top: 155px;
+    top: 19.09vh;
   }
 
   .img-track {
@@ -44,12 +44,12 @@
   }
 
   h1 {
-    width: 375px;
+    width: 100vw;
     color: white;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 2.46vh;
 
-    padding: 5px;
+    padding: 0.6vh;
     margin: 0px;
     background-color: #1E2023;
     //border-radius: 20px;
@@ -58,31 +58,31 @@
   h2 {
     color: $grey-medium;
     font-weight: 400;
-    font-size: 20px;
-    margin: 5px;
+    font-size: 2.46vh;
+    margin: 0.6vh;
   }
 
   h3 {
     color: $grey-medium;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 2.22vh;
     margin: 0px;
   }
 
   p {
     color: $grey-user;
     font-weight: 400;
-    font-size: px;
+    font-size: 1.97vh;
     text-align: left;
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 0.6vh;
     padding: 0px;
   }
 
 
   .material-icons {
     color: white;
-    font-size: 24px;
-    margin: 5px;
+    font-size: 2.95vh;
+    margin: 0.6vh;
   }
 }
 
