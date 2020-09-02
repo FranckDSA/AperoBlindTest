@@ -49,6 +49,7 @@ import { initEnterFadeIn } from '../components/logointro.js';
 import { initScoresModal } from '../games/scoresModal.js';
 import { initPendingPlayers } from '../components/logointro.js';
 import { initEndScores } from '../components/logointro.js';
+import { endGame } from '../games/endGame.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -68,6 +69,7 @@ document.addEventListener('turbolinks:load', () => {
   setTimeout(initLogoFadeOut,2000);
   setTimeout(initEnterFadeIn,3000);
   initScoresModal();
+  // endGame();
 
 
   // const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));

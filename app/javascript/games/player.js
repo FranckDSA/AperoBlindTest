@@ -131,11 +131,22 @@ const initPlayer = () => {
   /*Button Fin du jeu*/
   const button_endgame = document.querySelector('#end');
   if (button_endgame) {
-    button_endgame.addEventListener('click', () => {
+    button_endgame.addEventListener("click", () => {
       window.spotifyPlayer.disconnect();
       console.log('End of the game');
-    });
-  }
+      // const gameId = button_endgame.dataset.gameId;
+      fetch(`/games/${gameId}`, {
+        method: "PATCH",
+        body: JSON.stringify({game: {state: "ended" }}),
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-Token': csrfToken,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'same-origin'
+    })
+  });
+  };
 
    /*END GAME FRANCK*/
    const endedgame = document.querySelector('#ended');
