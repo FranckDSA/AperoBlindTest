@@ -3,31 +3,32 @@
 <%= render 'shared/navbar_abt_user' %>
 
   <div id="pending-user">
-    <h2 class="mt-5 mb-3">Hello <strong><%= @game.user.user_name %> !</strong></h2>
+    <h1>LET'S GO!</h1>
 
-    <h1>1. SHARE PIN WITH FRIENDS</h1>
-    <div class="box-game mt-3 mb-5">
-      <span class="box-game-pin"><%= @game.game_pin[0] %></span>
-      <span class="box-game-pin"><%= @game.game_pin[1] %></span>
-      <span class="box-game-pin"><%= @game.game_pin[2] %></span>
-      <span class="box-game-pin"><%= @game.game_pin[3] %></span>
+    <span><h2>Share this code with your friends</h2></span>
+    <div class="box-game mt-3 mb-3">
+      <span class="box-game-pin" style="font-family: 'Roboto Mono';"><%= @game.game_pin[0] %></span>
+      <span class="box-game-pin" style="font-family: 'Roboto Mono';"><%= @game.game_pin[1] %></span>
+      <span class="box-game-pin" style="font-family: 'Roboto Mono';"><%= @game.game_pin[2] %></span>
+      <span class="box-game-pin" style="font-family: 'Roboto Mono';"><%= @game.game_pin[3] %></span>
     </div>
 
-    <h1>2. WAIT FOR THEM TO JOIN</h1>
-    <div class="box-players-list mt-2 mb-5">
-      <h2> Player's list in the game </h2>
-        <% @game.players.each_with_index do |player, index| %>
-        <div class="container" >
-          <h2  class="pendingplayers animate__animated"><%= index + 1%> - <%= player.user_name %> is ready to play</h2>
+    <span><h2>Players in the room</h2></span>
+    <div class="cartouche">
+      <div>
+        <div class="cartouche-song">
+          <% sentences = ["is ready to play!", "is on fire!", "is going to win!"] %>
+          <% @game.players.each do |player| %>
+            <h2 class="pendingplayers animate__animated"><%= player.user_name %> <%= sentences.sample %></h2>
+          <% end %>
         </div>
-        <% end %>
+      </div>
     </div>
 
-    <h1>3. LAUNCH THE GAME</h1>
-    <div class="box-launch-game mt-2 mb-5">
+    <div class="box-launch-game mt-3 mb-3 submit-adjust">
       <%= simple_form_for @game, method: "PATCH" do |f|%>
       <%= f.hidden_field :state, value:"playing", type:"hidden" %>
-      <%= f.submit " CLICK WHEN READY ! ", class:"btn btn-primary"%>
+      <%= f.submit " CLICK WHEN READY ! ", class:"btn btn-nicolas"%>
       <% end %>
     </div>
   </div>
