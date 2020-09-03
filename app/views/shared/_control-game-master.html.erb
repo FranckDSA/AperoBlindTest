@@ -1,4 +1,4 @@
-<div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/player-playing_dr5xkk", :width=> 357, :crop => :lpad) %>')">
+<div class="master-control-area remote-controller" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/player-playing_dr5xkk", :crop => :fill) %>')">
 
   <div class="play">
 <!--     <button class="mdc-icon-button">
@@ -28,7 +28,7 @@
 
   <div class="endgame">
     <span id="end" class="material-icons" data-game-id="<%= @game.id %>"> stop </span>
-    <h3> STOP !</h3>
+    <h3> END GAME!</h3>
   </div>
 
 <!--   <div class="logo-bottom-left" >

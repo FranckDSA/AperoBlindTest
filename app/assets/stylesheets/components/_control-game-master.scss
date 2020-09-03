@@ -1,15 +1,21 @@
+.remote-controller {
+  height: 7.20vh
+}
+
 .master-control-area {
-  height: 425px;
-  width: $controle-size;
+  height: 52.33vh;
+  width: 43.96vh;
   //border-radius: 50%;
   //background-color: white;
   //border: 4px $spotify-green solid;
   position: absolute;
-  top: 385px;
+  top: 47.41vh;
   opacity: 100%;
+
+
   .play {
-    height: $controle-size/2;
-    width: $controle-size/2;
+    height: 21.98vh;
+    width: 21.98vh;
     border-top-left-radius: 100%;
     position: absolute;
     top: 0px;
@@ -21,26 +27,26 @@
     align-items: center;
     cursor: pointer;
       .material-icons {
-        font-size: 100px;
+        font-size: 12.31vh;
         color: $grey-user;
         margin: 0px;
         padding: 0px;
         position: absolute;
-        top: 40px;
-        right: 20px;
+        top: 4.92vh;
+        right: 2.46vh;
       }
       h3 {
         position: absolute;
-        bottom: 10px;
-        right: 20px;
+        bottom: 1.23vh;
+        right: 2.46vh;
         font-weight: 400;
-        right: 35px;
+        right: 4.31vh;
         color: $grey-user;
       }
   }
   .next {
-    height: $controle-size/2;
-    width: $controle-size/2;
+    height: 21.98vh;
+    width: 21.98vh;
     border-top-right-radius: 100%;
     position: absolute;
     top: 0px;
@@ -52,20 +58,20 @@
     align-items: center;
     cursor: pointer;
       .material-icons {
-        font-size: 100px;
+        font-size: 12.31vh;
         color: $grey-user;
         margin: 0px;
         padding: 0px;
         position: absolute;
-        top: 40px;
-        left: 20px;
+        top: 4.92vh;
+        left: 2.46vh;
     }
       h3 {
         position: absolute;
-        bottom: 10px;
-        right: 20px;
+        bottom: 1.23vh;
+        right: 2.46vh;
         font-weight: 400;
-        left: 35px;
+        left: 4.31vh;
         color: $grey-user;
       }
   }
@@ -76,18 +82,18 @@
     width: $controle-size;
     border: 1px white solid;
     position: absolute;
-    top: $controle-size/2;
+    top: 43.96vh;
     left: 0px;
     opacity: 10%;
   }
   .good-answer {
-    height: $controle-size/2;
-    width: $controle-size;
+    height: 21.98vh;
+    width: 43.96vh;
     // border-top: 1px white solid;
     //border-bottom-right-radius: 50%;
     //border-bottom-left-radius: 50%;
     position: absolute;
-    top: $controle-size/2;
+    top: 21.98vh;
     right: 0px;
     //background-color: white;
     opacity: 90%;
@@ -97,16 +103,16 @@
     align-items: center;
     cursor: pointer;
     .material-icons {
-      font-size: 100px;
+      font-size: 12.31vh;
       color: $grey-light;
       margin: 0px;
       padding: 0px;
       position: absolute;
-      top: 50px;
+      top: 6.16vh;
     }
     h3 {
       position: absolute;
-      top: 35px;
+      top: 4.31vh;
       font-weight: 400;
       // right: 35px;
       color: white;
@@ -114,21 +120,21 @@
   }
 
   .endgame {
-    height: 150px;
-    width: 375px;
+    height: 18.47vh;
+    width: 46.18vh;
     position: absolute;
     bottom: 0px;
     right: 0px;
     opacity: 80%;
     cursor: pointer;
     .material-icons {
-      font-size: 70px;
+      font-size: 8.62vh;
       color: $grey-user;
       margin: 0px;
       padding: 0px;
       position: absolute;
-      top: 39px;
-      right: 17px;
+      top: 4.80vh;
+      right: 2.09vh;
 
     }
     h3 {

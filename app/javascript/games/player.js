@@ -32,36 +32,11 @@ const initPlayer = () => {
   const currentTrackSpotifyId = playerElement.dataset.currentTrackSpotifyId;
   const gameId = playerElement.dataset.gameId;
   const nextTrackId = playerElement.dataset.nextTrackId;
-
   const buzzUser = document.querySelector("#buzz-user");
-
   const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
   gameState = playerElement.dataset.gameState;
   console.log("Current gameState => ", gameState);
-
-  /*Button play / pause*/
-
-  // const button = document.querySelector('#play');
-  // if (button) {
-  //   button.addEventListener('click', () => {
-  //     if (button.innerHTML == "Pause") {
-  //       button.innerHTML = "Play";
-  //       button.classList.remove("btn-light");
-  //       button.classList.add("btn-success");
-  //       window.spotifyPlayer.pause().then(() => {
-  //         console.log('Paused by Game Master!');
-  //       });
-  //     } else {
-  //       button.innerHTML = "Pause";
-  //       button.classList.remove("btn-success");
-  //       button.classList.add("btn-light");
-  //       window.spotifyPlayer.resume().then(() => {
-  //         console.log('Resumed by Game Master!');
-  //       });
-  //     };
-  //   });
-  // }
 
  /*Button Play ALEX*/
   const iconTogglePlay = document.querySelector('#play');
@@ -84,26 +59,6 @@ const initPlayer = () => {
       };
     });
   }
-
-  /*Button Next track*/
-  // const button_nexttrack = document.querySelector('#nexttrack');
-  // if (button_nexttrack) {
-  //   button_nexttrack.addEventListener('click', () => {
-  //     fetch(`/games/${gameId}`, {
-  //       method: "PATCH",
-  //       body: JSON.stringify({game: {current_track_id: nextTrackId }}),
-  //       headers: {
-  //         'X-Requested-With': 'XMLHttpRequest',
-  //         'X-CSRF-Token': csrfToken,
-  //         'Content-Type': 'application/json',
-  //       },
-  //       credentials: 'same-origin'
-  //     })
-  //     window.spotifyPlayer.nextTrack().then(() => {
-  //       console.log('Skipped to next track!');
-  //     });
-  //   });
-  // }
 
    /*Button NEXT TRACK ALEX*/
   const iconTogglenext = document.querySelector('#nexttrack');
@@ -163,9 +118,9 @@ const initPlayer = () => {
     document.head.appendChild(js);
   }
   if (window.spotifyPlayer) {
-    if (buzzUser) {
+    if (buzzUser || gameState === "waiting_for_next_song") {
        window.spotifyPlayer.pause().then(() => {
-        console.log('Paused for Game master validation!');
+        console.log('Timer page for next song!');
       });
     } else {
       play({
@@ -175,8 +130,6 @@ const initPlayer = () => {
     };
     return;
   };
-
-
 
   /*Lancement du player Spotify*/
   window.onSpotifyWebPlaybackSDKReady = () => {
@@ -192,7 +145,6 @@ const initPlayer = () => {
     window.spotifyPlayer.addListener('playback_error', ({ message }) => { console.error(message); });
 
     // Playback status updates
-    // A CHANGER NE PAS TOUCHER SVPPPPP
     window.spotifyPlayer.addListener('player_state_changed', state => {
       if (!state) {
         return
@@ -200,12 +152,11 @@ const initPlayer = () => {
       console.log("Track position - ms", state.position);
       if (gameState == "resuming") {
           window.spotifyPlayer.seek(state.position).then(() => {
-          console.log('Changed to previous track position!');
+          console.log('Resume to current track!');
           window.changedPosition = true;
           gameState = "playing";
         });
       }
-      console.log("Spotify player's state updated");
     });
 
     // Ready
