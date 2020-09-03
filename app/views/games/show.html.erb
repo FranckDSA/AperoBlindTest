@@ -1,5 +1,5 @@
 <!-- Id game & data-game-id importants -->
-<div id="game" data-game-id="<%= @game.id %>" data-user="<%= @game.user == current_user %>">
+<div id="game" data-game-id="<%= @game.id %>" data-user="<%= @game.user == current_user %>" data-player-id="<%= @current_player.id if @current_player%>">
   <% if current_user == @game.user %>
     <%= render 'games/conditions_user' %>
   <%# elsif current_user.nil? || current_user != @game.user %>
