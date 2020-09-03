@@ -1,13 +1,11 @@
 <div class="bottom hidden animate__animated" id="downhome">
 
-  <h3>Enter your game pin:</h3>
   <%= simple_form_for :player, url: players_path, defaults: {label: false} do |f| %>
-    <%= f.input :game_pin_entered, placeholder:'****' %>
+    <%= f.input :game_pin_entered, placeholder:'Game pin' %>
 
 
-    <h3>Enter your game username:</h3>
 
-    <%= f.input :user_name, placeholder:'SuperSunny' %>
+    <%= f.input :user_name, placeholder:'Username' %>
   <div class="submit-adjust">
     <%= f.submit "JOIN A GAME !", class: "btn btn-primary"%>
   </div>

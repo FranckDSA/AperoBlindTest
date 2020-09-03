@@ -27,7 +27,7 @@
  .top {
   width: 360px;
   position: absolute;
-  top: 13.00vh;
+  top: 38.00vh;
   text-align: center;
 
     h2 {
@@ -64,7 +64,7 @@
   .bottom {
   width: 360px;
   position: absolute;
-  top: 40vh;
+  top: 37vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -94,14 +94,14 @@
   }
 
   input {
-  font-size: 16px;
+  font-size: 20px;
   color: black;
   font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   margin-left: 10px;
   border-radius: 25px;
   text-align: center;
-  width: 80vw;
+  width: 70vw;
   }
 
   .submit-adjust {
