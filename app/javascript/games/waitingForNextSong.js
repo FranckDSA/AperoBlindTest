@@ -18,7 +18,7 @@ const waitingForNextSong = () => {
         },
         credentials: 'same-origin'
       })
-    }, 7000);
+    }, 8000);
 };
 
 export { waitingForNextSong };
