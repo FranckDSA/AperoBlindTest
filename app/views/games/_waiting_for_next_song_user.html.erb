@@ -1,35 +1,29 @@
-<div class="iphone-xs" style="background-image: linear-gradient(rgba(4,123,183,0.3),rgba(4,123,183,1)), url('<%= cl_image_path("AperoBlindTest/new-background_rxlqab", :fetch_format=>:auto, :crop => :scale) %>')">
 
-  <%= render 'shared/navbar_abt' %>
+<div class="iphone-xs" style="background-image: linear-gradient(rgba(250,250,250,1),rgba(250,250,250,1)), url('<%= cl_image_path("AperoBlindTest/new-background_rxlqab", :fetch_format=>:auto, :crop => :scale) %>')">
 
-  <div id="waiting-for-next-song" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>">
-    <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+  <%= render 'shared/navbar_abt_user' %>
 
-    <div class="last-player-answer">
-      <h1>👏👏 WELL DONE <%= @game.answers.last.player.user_name %>!</h1>
-    </div>
+  <div id="waiting-for-next-song" data-player-id="<%= @game.answers.last.player.id %>" data-game-id="<%= @game.id %>"></div>
+  <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
+  <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
 
-    <div class="final-score">
-      <% if @game.players.present? %>
-        <h2>Score Recap:</h2>
-        <% @sorted.each_with_index do |player, index| %>
-          <div class="score">
-            <h2 id="coolscores" class="animate__animated" style="color: white; font-size: 20px;padding-left: 5px;"> <%=index +1%> - <%= player.user_name %> - <%= player.score %> POINTS</h2>
+  <div id="display-song-player" style="color: #047BB7;">
+    <h1 style="background-color: #047BB7; color: white"><strong>👏 GOOD JOB <%= @game.answers.last.player.user_name %> !</strong></h1>
+    <h2 style="color:#047BB7;">Top 3</h2>
+    <div class="cartouche" style="color:#047BB7;">
+      <div>
+        <% @top3.each_with_index do |player, index| %>
+          <div class="cartouche-song">
+              <h3 style="color:#047BB7;"><strong><%= index + 1 %>. <%= player.user_name %> :</strong> <%= player.score %> POINTS </h3>
           </div>
         <% end %>
-      <% end %>
-    </div>
-
-    <div class="countdown-ready-for-next-song">
-
-      <h1>
-      READY FOR NEXT SONG...
-      </h1>
-      <div class="master-control-area" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url('<%= cl_image_path("AperoBlindTest/new-buzz-green_ci1hj2", :width=> 357, :crop => :lpad) %>')">
-        <div class="rond-noir">
-          <div id="timer-next-song"></div>
-        </div>
       </div>
     </div>
+    <h1 style="background-color: #047BB7; color: white"><strong>🐐 WTF <%= @sorted.last.user_name %>... SUCH A LOOSER</strong></h1>
+    <h4 style="color: #047BB7">NEXT SONG IN...</h4>
+  </div>
+
+  <div class="display-gif-timer" style="border: 2px #047BB7 solid">
+    <div id="timer-next-song" style="color: #047BB7"></div>
   </div>
 </div>
