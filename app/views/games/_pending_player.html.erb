@@ -6,22 +6,23 @@
 
     <h1>GOOD LUCK!</h1>
 
-    <span><h2>Your gamemaster</h2></span>
+    <span><h2>Gamemaster</h2></span>
 
     <div class="display-user-players">
       <img src="<%= @game.user.avatar %>" class="avatar-large" alt="">
       <h2 id="game-user">
-        <%= @game.user.user_name %> is waiting
+        <%= @game.user.user_name %>  is waiting... Hurry up!
       </h2>
     </div>
 
-    <span><h2>Your opponents</h2></span>
+    <span><h2>Players in the room</h2></span>
 
     <div class="cartouche">
       <div>
             <div class="cartouche-song">
+              <% sentences = ["is ready to play!", "is on fire!", "is going to win!"] %>
               <% @game.players.each do |player| %>
-                <h2 class="pendingplayers animate__animated"><%= player.user_name %> is ready to play</h2>
+                <h2 class="pendingplayers animate__animated"><%= player.user_name %> <%= sentences.sample %></h2>
               <% end %>
             </div>
       </div>

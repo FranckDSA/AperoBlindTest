@@ -147,9 +147,12 @@
   width: 36.94vh;
   border: 2px rgba(50,50,50,0.75) solid;
   animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .gif-buzzer {
-    margin-top: 3.07vh;
-    margin-left: 3.07vh;
+    // margin-top: 3.07vh;
+    // margin-left: 3.07vh;
     border-radius: 50%;
     height: 30.78vh;
     width: 30.78vh;
