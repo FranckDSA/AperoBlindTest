@@ -39,11 +39,13 @@ const initIntroLogo = () => {
   };
 
   const initEndScores = () => {
-    const score = document.querySelector('#coolscores');
-    if (!score) {
+    const scores = document.querySelectorAll('.coolscores');
+    if (!scores) {
       return
     }
-    score.classList.add("animate__fadeInDownBig");
+    scores.forEach((score) => {
+      score.classList.add("animate__fadeInDownBig");
+    })
   };
 
 
