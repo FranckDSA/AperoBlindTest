@@ -22,7 +22,7 @@
           <h1>Scores:</h1>
           <% @sorted.each do |player| %>
             <div class="score">
-              <h2 id="coolscores" class="animate__animated" style="color: white; font-size: 20px;padding-left: 5px;"><%= player.user_name %> - <%= player.score %> POINTS</h2>
+              <h2 class="coolscores animate__animated" style="color: white; font-size: 20px;padding-left: 5px;"><%= player.user_name %> - <%= player.score %> POINTS</h2>
             </div>
           <% end %>
         <% end %>
