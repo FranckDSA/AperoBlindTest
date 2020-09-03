@@ -25,7 +25,7 @@ const timerNextSong = (tps) => {
       setTimeout(() => {timerNextSong(restant)}, 1000);
     }
     else {
-      document.getElementById("timer-next-song").innerHTML = 'X';
+      document.getElementById("timer-next-song").innerHTML = 'GO!';
 
     }
 };
