@@ -1,32 +1,26 @@
-.btn-primary {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 20px;
-  background-color: green;
-  border: 2px white solid;
-  opacity: 100%;
-  color: white;
-  font-size: 28px;
-}
+  .btn-nicolas {
+      padding: 1.23vh;
+      margin: 4vh 1.23vh 1.23vh 1.23vh;
+      border-radius: 2.46vh;
+      background-color: $grey-light;
+      border: 0.6vh white solid;
+      opacity: 90%;
+      width: 70vw;
+    }
 
-.btn-primary:hover {
-  text-decoration: none;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 20px;
-  background-color: green;
-  border: 2px green solid;
-  opacity: 100%;
-  color: white;
-  font-size: 28px;
-  font-weight: bolder;
-}
+    .btn-nicolas input {
+      font-size: 20px;
+      margin-bottom: 0.6vh;
+      color: black;
+      font-weight: 700;
+      margin-bottom: 0.6vh;
+    }
 
 #pending-user {
   width: 375px;
   height: 300px;
   position: absolute;
-  top: 50px;
+  top: 70px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -42,15 +36,17 @@
     font-size: 26px;
     padding: 5px;
     margin: 0px;
-    background-color: #1E2023;
+    background-color: $blue-riviera;
     //border-radius: 20px;
   }
 
   h2 {
-    color: #1E2023;
+    color: $blue-riviera;
     font-weight: 400;
     font-size: 20px;
-    margin: 5px;
+    margin: 15px;
+    margin-top: 0px;
+    font-weight: lighter;
   }
 
   h3 {
@@ -82,10 +78,15 @@
 }
 
 .box-game-pin {
-  font-size: 50px;
+  font-size: 60px;
   border: 1px solid #1E2023;
   border-radius: 5px;
-  padding: 5px;
+  padding: 2px 5px;
   margin: 8px;
   width: 70px;
+}
+
+#pending-user > span > h2 {
+  margin-top: 40px;
+  font-weight:bold;
 }

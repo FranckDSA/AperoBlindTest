@@ -19,12 +19,12 @@
 
     <div class="cartouche">
       <div>
-            <div class="cartouche-song">
-              <% sentences = ["is ready to play!", "is on fire!", "is going to win!"] %>
+         <div class="cartouche-song">
+            <% sentences = ["is ready to play!", "is on fire!", "is going to win!"] %>
               <% @game.players.each do |player| %>
                 <h2 class="pendingplayers animate__animated"><%= player.user_name %> <%= sentences.sample %></h2>
               <% end %>
-            </div>
+         </div>
       </div>
     </div>
 
