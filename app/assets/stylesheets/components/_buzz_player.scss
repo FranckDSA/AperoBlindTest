@@ -6,8 +6,8 @@
 #buzzer-user #countdown  {
   //filter: contrast(2);
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 9.85vh;
+  width: 9.85vh;
   border: 1px solid $grey-dark;
   box-shadow: #D2D2D2;
   text-align: center;
@@ -18,10 +18,10 @@
 }
 
 #buzzer-area {
-  width: 375px;
-  height: 150px;
+  width: 46.18vh;
+  height: 18.47vh;
   position: absolute;
-  top: 225px;
+  top: 27.70vh;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
   //opacity: 0.9;
@@ -47,14 +47,14 @@
   h3 {
     color: $grey-medium;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 2.21vh;
     margin: 0px;
   }
 
   p {
     color: $grey-user;
     font-weight: 400;
-    font-size: px;
+    font-size: 2.21vhpx;
     text-align: left;
     margin: 0px 0px 0px 5px;
     padding: 0px;
@@ -71,28 +71,28 @@
 .rond-noir {
   background-color: black;
   border-radius: 50%;
-  width: 345px;
-  height: 345px;
+  width: 42.49vh;
+  height: 42.49vh;
   margin-left: 6px;
   margin-top: 5px;
 }
 
 #countdown {
-  font-size: 208px;
+  font-size: 25.61vh;
   color: white;
   text-align: center;
   align-items: center;
-  height: 300px;
-  width: 300px;
+  height: 36.94vh;
+  width: 36.94vh;
 }
 
 .display-gif-timer {
   border-radius: 50%;
   position: absolute;
-  top: 380px;
+  top: 46.80vh;
   opacity: 100%;
-  height: 300px;
-  width: 300px;
+  height: 36.94vh;
+  width: 36.94vh;
   border: 2px white solid;
   animation-iteration-count: 10;
 }
