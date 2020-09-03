@@ -25,7 +25,7 @@
   align-items: center;
 
  .top {
-  width: 44.33vh;
+  width: 35vh;
   position: absolute;
   top: 38.00vh;
   text-align: center;
@@ -47,12 +47,12 @@
 
     .btn-primary {
       padding: 10px;
-      margin: 4vh 1.23vh 1.23vh 1.23vh;
+      margin: 0vh 1.23vh 1.23vh 1.23vh;
       border-radius: 2.46vh;
       background-color: $grey-light;
       border: 0.6vh white solid;
       opacity: 90%;
-      width: 70vw;
+      width: 30vh;
     }
     a {
       color: black;
@@ -101,7 +101,7 @@
   margin-left: 1.23vh;
   border-radius: 3.07vh;
   text-align: center;
-  width: 70vw;
+  width: 30vh;
   }
 
   .submit-adjust {
@@ -112,7 +112,7 @@
       background-color: $grey-light;
       border: 0.6vh white solid;
       opacity: 90%;
-      width: 70vw;
+      width: 30vh;
     }
     a {
       color: black;
@@ -128,11 +128,6 @@
     }
   }
 }
-
-
-
-
-
 
 .hidden {
   visibility: hidden;
@@ -176,7 +171,7 @@
     h1 {
       font-size: 2.95vh;
       font-weight: 400;
-      color: $grey-light;
+      color: black;
       margin-bottom: 2.46vh;
     }
 
@@ -201,7 +196,8 @@
   .next-game {
     width: 70vw;
     position: absolute;
-    align-self: center ;
+    display: flex;
+    justify-content: center;
     bottom: 2.46vh;
 
     .btn-primary {
@@ -211,7 +207,7 @@
       background-color: $grey-light;
       border: 5px white solid;
       opacity: 90%;
-      width: 70vw;
+      width: 30vh;
     }
 
     a {
