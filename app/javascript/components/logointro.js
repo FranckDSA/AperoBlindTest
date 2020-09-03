@@ -69,6 +69,7 @@ const initIntroLogo = () => {
       return
     }
     lien.classList.add("animate__fadeOut");
+    lien.classList.add("hidden");
   };
 
   const initFormFadeIn = () => {
