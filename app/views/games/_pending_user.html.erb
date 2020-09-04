@@ -28,7 +28,7 @@
     <div class="box-launch-game mt-3 mb-3 submit-adjust">
       <%= simple_form_for @game, method: "PATCH" do |f|%>
       <%= f.hidden_field :state, value:"playing", type:"hidden" %>
-      <%= f.submit " CLICK WHEN READY ! ", class:"btn btn-nicolas"%>
+      <%= f.submit " CLICK WHEN READY ! ", class:"btn btn-nicolas", style:"font-size: 20px;font-weight: 700;" %>
       <% end %>
     </div>
   </div>
