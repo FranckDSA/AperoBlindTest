@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def broadcast
     conditions_user = render_to_string(partial: 'games/conditions_user')
     conditions_player = render_to_string(partial: 'games/conditions_player')
-    sorted = @game.players.sort_by { |obj| obj.score}.reverse.each_with_index.map{ |player, index| {id: player.id, score: player.score, rank: index + 1 }}
+    sorted = @game.players
     GameChannel.broadcast_to(@game, {
       user: conditions_user,
       player: conditions_player,

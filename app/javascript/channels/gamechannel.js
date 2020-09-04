@@ -20,6 +20,7 @@ const initGameCable = () => {
           gameContainer.innerHTML = data.player;
           console.log(data.ranks)
           const dataPlayer = data.ranks.find(element => element["id"] = parseInt(playerId) )
+          console.log(dataPlayer)
           const playerMessage = document.querySelector(".message-playing");
           if (playerMessage) {
             if (dataPlayer.rank === 1) {

@@ -7,26 +7,18 @@
     <span>
       <h1>
         <% @sorted = @game.players.sort_by { |obj| obj.score}.reverse %>
-        <% @top1 = @game.players.sort_by { |obj| obj.score}.reverse.first(1) %>
         <% @top3 = @game.players.sort_by { |obj| obj.score}.reverse.first(3) %>
-        <% @top5 = @game.players.sort_by { |obj| obj.score}.reverse.first(5) %>
-        <% if @top1.include?(@current_player) %>
-          YOU'RE THE BEST!
-        <% elsif @top3.include?(@current_player) %>
-          WELL DONE!
-        <% else  %>
-          KEEP GOING!
-        <% end %>
+        KEEP GOING!
       </h1>
     </span>
 
-    <div>
+   <!--  <div>
       <h2>
-        <% if @current_player %>
-        Your rank: <%= @sorted.index(@current_player) + 1%> / <%= @game.players.size %>
-        <% end %>
+        <%# if @current_player %>
+        Your rank: <%#= @sorted.index(@current_player) + 1%> / <%#= @game.players.size %>
+        <%# end %>
       </h2>
-    </div>
+    </div> -->
 
     <span><h2>Top 3</h2></span>
 
